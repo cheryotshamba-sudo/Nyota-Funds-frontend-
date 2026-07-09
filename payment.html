@@ -167,7 +167,7 @@ headers:{
 },
 body: JSON.stringify({
 phone: phone,
-amount: 350
+amount: Number(localStorage.getItem("processingFee"))
 })
 }
 );
