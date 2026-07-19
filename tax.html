@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Final Tax Processing Stage</title>
+
+<style>
+body{
+    margin:0;
+    padding:15px;
+    background:#0b6b0b;
+    font-family:Arial,sans-serif;
+}
+
+.container{
+    max-width:420px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+h1{
+    text-align:center;
+    color:#1565c0;
+    font-size:24px;
+}
+
+.status{
+    color:green;
+    font-size:18px;
+    line-height:35px;
+    text-align:center;
+}
+
+p{
+    text-align:center;
+    font-size:16px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    margin-top:20px;
+    background:#1565c0;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Final Tax Processing Stage</h1>
+
+<div class="status">
+✅ Processing fee paid<br>
+✅ Cross-network fee paid<br>
+✅ Commitment fee paid
+</div>
+
+<p>
+You're in the final tax processing stage.
+Complete the tax payment to finalize your NYOTA Funds application.
+</p>
+
+<p><b>Tax Processing Fee: Ksh 2</b></p>
+
+<input
+type="tel"
+id="phone"
+placeholder="2547XXXXXXXX">
+
+<button id="payBtn">
+Pay Now
+</button>
+
+<p id="stkMessage"></p>
+
+</div>
+</div>
+
+</body>
+</html>
