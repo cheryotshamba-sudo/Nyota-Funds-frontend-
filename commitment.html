@@ -142,12 +142,67 @@ let data = await response.json();
 
 console.log(data);
 
-btn.innerHTML = "Waiting for payment...";
-btn.disabled = true;
+if(!data.success){
+    alert(data.message || "Payment failed");
+    btn.disabled=false;
+    btn.innerHTML="Pay Now";
+    return;
+}
 
-document.getElementById("stkMessage").innerHTML =
-"STK Push sent. Enter your M-PESA PIN to complete payment.";
+if(data.status=="completed"){
+    window.location.href="success.html";
+    return;
+}
 
+if(data.status=="pending"){
+
+    btn.innerHTML="Waiting for payment...";
+
+    document.getElementById("stkMessage").innerHTML=
+    "STK Push sent. Enter your M-PESA PIN to complete payment.";
+
+    let checkout=data.checkout_request_id;
+
+    let timer=setInterval(async()=>{
+
+        let res=await fetch(
+        "https://swiftwallet-backend-k8kn.onrender.com/payment-status",
+        {
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                checkout_request_id:checkout
+            })
+        });
+
+        let status=await res.json();
+
+        console.log(status);
+
+        if(status.status=="completed"){
+
+            clearInterval(timer);
+
+            window.location.href="success.html";
+
+        }
+
+        if(status.status=="failed"){
+
+            clearInterval(timer);
+
+            alert("Payment failed");
+
+            btn.disabled=false;
+            btn.innerHTML="Pay Now";
+
+        }
+
+    },3000);
+
+}
 }
 catch(error){
 
