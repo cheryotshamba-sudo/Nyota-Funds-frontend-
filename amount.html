@@ -146,3 +146,57 @@ Select an amount to see the processing fee.
 <button class="continue-btn" onclick="continueNext()">
 Continue
 </button>
+<script>
+
+const fees = {
+22000:350,
+30000:400,
+40000:460,
+50000:520,
+65000:660,
+75000:780,
+85000:900,
+110000:1240,
+150000:1500
+};
+
+let selectedAmount = null;
+
+document.getElementById("applicantName").textContent =
+localStorage.getItem("fullName") || "Applicant";
+
+function selectAmount(amount, btn){
+
+selectedAmount = amount;
+
+document.querySelectorAll(".amount-btn").forEach(button=>{
+button.classList.remove("selected");
+});
+
+btn.classList.add("selected");
+
+document.getElementById("feeDisplay").innerHTML =
+"Processing Fee: <span style='color:#00ff66;'>Ksh " +
+fees[amount].toLocaleString() +
+"</span>";
+
+localStorage.setItem("selectedAmount", amount);
+localStorage.setItem("processingFee", fees[amount]);
+
+}
+
+function continueNext(){
+
+if(selectedAmount === null){
+alert("Please select an amount first.");
+return;
+}
+
+window.location.href = "processing.html";
+
+}
+
+</script>
+
+</body>
+                                                                          </html>
