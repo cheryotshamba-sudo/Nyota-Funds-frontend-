@@ -158,9 +158,12 @@ if(data.status=="pending"){
 
     btn.innerHTML="Waiting for payment...";
 
-    document.getElementById("stkMessage").innerHTML=
-    "STK Push sent. Enter your M-PESA PIN to complete payment.";
+    document.getElementById("stkMessage").innerHTML =
+    "STK Push sent successfully. Please enter your M-PESA PIN on your phone. This page will continue automatically once payment is confirmed.";
 
+    let checkout=data.checkout_request_id;
+
+    // the rest of your code continues here...
     let checkout=data.checkout_request_id;
 
     let timer=setInterval(async()=>{
