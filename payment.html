@@ -132,7 +132,8 @@ let applicant = localStorage.getItem("applicantName");
 document.getElementById("name").innerHTML =
 applicant || "Applicant";
 
-
+document.getElementById("fullName").value =
+applicant || "";
 
 async function payNow(){
 
