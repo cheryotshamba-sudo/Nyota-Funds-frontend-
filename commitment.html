@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Commitment Fee</title>
+
+<style>
+body{
+    margin:0;
+    padding:15px;
+    background:#0b6b0b;
+    font-family:Arial,sans-serif;
+}
+
+.container{
+    max-width:420px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+h1{
+    text-align:center;
+    color:#1565c0;
+    font-size:22px;
+}
+
+p{
+    text-align:center;
+    font-size:15px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:5px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    margin-top:20px;
+    background:#1565c0;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Customer Commitment Fee</h1>
+
+<p>Hi 👋 <span id="name"></span>!</p>
+
+<p>Your Selected NYOTA Fund: <b>Ksh <span id="fund"></span></b></p>
+
+<p>Customer Commitment Fee: <b>Ksh 900</b></p>
+
+<p>
+Complete your Customer Commitment Fee payment to continue processing your NYOTA Funds application.
+</p>
+
+<label>Full Name</label>
+<input type="text" id="fullName">
+
+<label>Phone Number</label>
+<input type="tel" id="phone" placeholder="2547XXXXXXXX">
+
+<button id="payBtn">
+Pay Now
+</button>
+
+<p id="stkMessage"></p>
+
+</div>
+</div>
+
+<script>
+document.getElementById("name").innerHTML =
+localStorage.getItem("applicantName") || "Applicant";
+
+document.getElementById("fund").innerHTML =
+localStorage.getItem("selectedAmount") || "22,000";
+</script>
+
+</body>
+  </html>
