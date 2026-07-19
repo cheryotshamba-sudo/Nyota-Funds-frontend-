@@ -161,10 +161,9 @@ const fees = {
 };
 
 let selectedAmount = null;
-
+  
 document.getElementById("applicantName").textContent =
-localStorage.getItem("fullName") || "Applicant";
-
+localStorage.getItem("applicantName") || "Applicant";
 function selectAmount(amount, btn){
 
 selectedAmount = amount;
