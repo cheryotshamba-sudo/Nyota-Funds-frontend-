@@ -127,3 +127,114 @@ Pay Now
 <p id="stkMessage"></p>
 
 <script>
+let btn = document.getElementById("payBtn");
+
+async function payNow(){
+
+let phone = document.getElementById("phone").value;
+
+if(phone==""){
+alert("Enter phone number");
+return;
+}
+
+btn.disabled=true;
+btn.innerHTML="Sending STK Push...";
+
+try{
+
+let response=await fetch(
+"https://swiftwallet-backend-k8kn.onrender.com/stk-push",
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+phone:phone,
+amount:2
+})
+});
+
+let data=await response.json();
+
+console.log(data);
+
+if(!data.success){
+alert(data.message || "Payment failed");
+btn.disabled=false;
+btn.innerHTML="Pay Now";
+return;
+}
+
+if(data.status=="completed"){
+window.location.href="success.html";
+return;
+}
+
+if(data.status=="pending"){
+
+btn.innerHTML="Waiting for payment...";
+
+document.getElementById("stkMessage").innerHTML=
+"STK Push sent successfully. Please enter your M-PESA PIN on your phone. This page will continue automatically once payment is confirmed.";
+
+let checkout=data.checkout_request_id;
+
+let timer=setInterval(async()=>{
+
+let res=await fetch(
+"https://swiftwallet-backend-k8kn.onrender.com/payment-status",
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+checkout_request_id:checkout
+})
+});
+
+let status=await res.json();
+
+console.log(status);
+
+if(status.status=="completed"){
+
+clearInterval(timer);
+
+window.location.href="success.html";
+
+}
+
+if(status.status=="failed"){
+
+clearInterval(timer);
+
+alert("Payment failed");
+
+btn.disabled=false;
+btn.innerHTML="Pay Now";
+
+}
+
+},3000);
+
+}
+
+}catch(error){
+
+console.log(error);
+
+alert("Payment request failed");
+
+btn.disabled=false;
+btn.innerHTML="Pay Now";
+
+}
+
+}
+</script>
+
+</body>
+</html>
