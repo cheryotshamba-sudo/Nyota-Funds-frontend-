@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Security Fee Payment</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:15px;
+    background:#0b6b0b;
+    font-family:Arial,sans-serif;
+}
+
+.container{
+    max-width:420px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.logo{
+    width:90px;
+}
+
+h2{
+    color:#0b6b0b;
+}
+
+.box{
+    background:#f1f8e9;
+    padding:15px;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+.amount{
+    font-size:28px;
+    font-weight:bold;
+    color:#0b6b0b;
+    margin:20px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    background:#0b6b0b;
+    color:white;
+    font-size:17px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<img src="logo.png" class="logo">
+
+<h2>Security Fee Payment</h2>
+
+<p id="name">Applicant</p>
+
+
+<div class="box">
+
+<p>Your application has reached the final security verification stage.</p>
+
+<p>Please complete the security fee payment to proceed.</p>
+
+</div>
+
+
+<div class="amount">
+KSh 950
+</div>
+
+
+<p>Payment Status: Pending</p>
+
+
+<button onclick="paySecurity()">
+Pay KSh 950
+</button>
+
+
+</div>
+
+</div>
+
+
+<script>
+
+let applicant = localStorage.getItem("applicantName");
+
+document.getElementById("name").innerHTML =
+"Dear " + (applicant || "Applicant");
+
+
+function paySecurity(){
+
+// Connect STK Push here
+
+alert("STK Push sent. Complete payment on your phone.");
+
+}
+
+</script>
+
+
+</body>
+
+</html>
