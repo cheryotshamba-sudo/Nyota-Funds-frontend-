@@ -1,194 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NYOTA FINDS KENYA</title>
+<title>NYOTA Fund Kenya</title>
 
 <style>
 
-body{
-    margin:0;
-    padding:20px;
-    background:#0b6b0b;
-    font-family:Arial,sans-serif;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
-.container{
-    max-width:450px;
-    margin:auto;
+body{
+background:#0b6b0b;
+padding:20px;
 }
 
 .card{
-    background:white;
-    padding:25px;
-    border-radius:12px;
+max-width:500px;
+margin:auto;
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+.header{
+padding:30px;
+text-align:center;
+}
+
+.logo{
+width:100%;
+max-height:180px;
+object-fit:contain;
+margin-bottom:20px;
 }
 
 h1{
-    text-align:center;
-    color:#1565c0;
+color:#1565c0;
+margin-bottom:10px;
 }
 
-label{
-    display:block;
-    margin-top:15px;
-    font-weight:bold;
+.subtitle{
+color:#333;
+line-height:1.7;
+margin-bottom:25px;
 }
 
-input, select{
-    width:100%;
-    padding:12px;
-    margin-top:6px;
-    border-radius:8px;
-    border:1px solid #ccc;
-    box-sizing:border-box;
+.about{
+padding:0 30px;
+line-height:1.8;
+color:#444;
+}
+
+.buttons{
+padding:30px;
 }
 
 button{
-    width:100%;
-    padding:14px;
-    margin-top:20px;
-    background:#1565c0;
-    color:white;
-    border:none;
-    border-radius:8px;
-    font-size:18px;
+width:100%;
+padding:16px;
+font-size:18px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+margin-bottom:15px;
+}
+
+.start{
+background:#22c55e;
+color:#fff;
+}
+
+.later{
+background:#1565c0;
+color:#fff;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="container">
-
 <div class="card">
 
-<h1>NYOTA FINDS KENYA</h1>
+<div class="header">
 
+<img src="logo.png" class="logo" alt="Logo">
 
-<form onsubmit="submitApplication(event)">
+<h1>NYOTA Fund Kenya</h1>
 
+<p class="subtitle">
+Empowering Youth • Supporting Businesses • Strengthening Kenya's Economy
+</p>
 
-<label>Full Name</label>
-<input type="text" id="applicantName" required>
+</div>
 
+<div class="about">
 
-<label>ID Number</label>
-<input type="number" required>
+<h2>About the NYOTA Fund</h2>
 
+<p>
+NYOTA Fund is a national financial empowerment initiative focused on supporting youth entrepreneurs across Kenya through accessible and affordable funding opportunities.
+</p>
 
-<label>Phone Number</label>
-<input type="tel" placeholder="07XXXXXXXX" required>
+</div>
 
+<div class="buttons">
 
-<label>County</label>
-<select required>
-
-<option value="">Select County</option>
-
-<option>Nairobi</option>
-<option>Mombasa</option>
-<option>Kwale</option>
-<option>Kilifi</option>
-<option>Tana River</option>
-<option>Lamu</option>
-<option>Taita Taveta</option>
-<option>Garissa</option>
-<option>Wajir</option>
-<option>Mandera</option>
-<option>Marsabit</option>
-<option>Isiolo</option>
-<option>Meru</option>
-<option>Tharaka Nithi</option>
-<option>Embu</option>
-<option>Kitui</option>
-<option>Machakos</option>
-<option>Makueni</option>
-<option>Nyandarua</option>
-<option>Nyeri</option>
-<option>Kirinyaga</option>
-<option>Murang'a</option>
-<option>Kiambu</option>
-<option>Turkana</option>
-<option>West Pokot</option>
-<option>Samburu</option>
-<option>Trans Nzoia</option>
-<option>Uasin Gishu</option>
-<option>Elgeyo Marakwet</option>
-<option>Nandi</option>
-<option>Baringo</option>
-<option>Laikipia</option>
-<option>Nakuru</option>
-<option>Narok</option>
-<option>Kajiado</option>
-<option>Kericho</option>
-<option>Bomet</option>
-<option>Kakamega</option>
-<option>Vihiga</option>
-<option>Bungoma</option>
-<option>Busia</option>
-<option>Siaya</option>
-<option>Kisumu</option>
-<option>Homa Bay</option>
-<option>Migori</option>
-<option>Kisii</option>
-<option>Nyamira</option>
-
-</select>
-
-
-<label>Occupation</label>
-<select required>
-
-<option value="">Select Occupation</option>
-<option>Business Owner</option>
-<option>Student</option>
-<option>Employed</option>
-<option>Farmer</option>
-<option>Driver</option>
-<option>Freelancer</option>
-<option>Self Employed</option>
-<option>Casual Worker</option>
-<option>Trader</option>
-<option>Other</option>
-
-</select>
-
-
-<button type="submit">
-Continue
+<button class="start" onclick="location.href='apply.html'">
+Start Application
 </button>
 
-
-</form>
+<button class="later">
+Apply Later
+</button>
 
 </div>
 
 </div>
-
-
-<script>
-
-function submitApplication(event){
-
-event.preventDefault();
-
-let name = document.getElementById("applicantName").value;
-
-localStorage.setItem("applicantName", name);
-
-window.location.href="purpose.html";
-
-}
-
-</script>
-
 
 </body>
-
 </html>
