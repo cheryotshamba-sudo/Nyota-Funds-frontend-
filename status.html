@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Application Status</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:15px;
+    background:#0b6b0b;
+    font-family:Arial,sans-serif;
+}
+
+.container{
+    max-width:420px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.logo{
+    width:90px;
+}
+
+h2{
+    color:#0b6b0b;
+}
+
+.status-box{
+    background:#e8f5e9;
+    padding:15px;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+.status{
+    font-size:20px;
+    font-weight:bold;
+    color:#0b6b0b;
+    margin:15px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    margin-top:20px;
+    border:none;
+    border-radius:8px;
+    background:#0b6b0b;
+    color:white;
+    font-size:16px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<img src="logo.png" class="logo">
+
+<h2>Application Status</h2>
+
+<p id="name">Applicant</p>
+
+
+<div class="status-box">
+
+<p>Your payment stages have been completed successfully.</p>
+
+<p>Your application is now under final processing.</p>
+
+</div>
+
+
+<div class="status">
+STATUS: PROCESSING
+</div>
+
+
+<p>Please keep your phone available for further updates.</p>
+
+
+<button onclick="window.location.href='index.html'">
+Return Home
+</button>
+
+
+</div>
+
+</div>
+
+
+<script>
+
+let applicant = localStorage.getItem("applicantName");
+
+document.getElementById("name").innerHTML =
+"Dear " + (applicant || "Applicant");
+
+</script>
+
+
+</body>
+
+</html>
