@@ -24,7 +24,7 @@ body{
 
 .card{
     background:white;
-    padding:20px;
+    padding:25px;
     border-radius:12px;
     box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
@@ -42,26 +42,33 @@ p{
     line-height:1.6;
 }
 
+.amount{
+    font-size:22px;
+    font-weight:bold;
+    color:#0b6b0b;
+    margin:20px 0;
+}
+
 label{
     display:block;
     margin-top:18px;
-    margin-bottom:6px;
+    margin-bottom:8px;
     font-weight:bold;
 }
 
 input{
     width:100%;
     padding:14px;
-    border-radius:8px;
     border:1px solid #ccc;
-    box-sizing:border-box;
+    border-radius:8px;
     font-size:16px;
+    box-sizing:border-box;
 }
 
 button{
     width:100%;
     padding:15px;
-    margin-top:22px;
+    margin-top:25px;
     background:#1565c0;
     color:white;
     border:none;
@@ -70,8 +77,12 @@ button{
     cursor:pointer;
 }
 
+button:disabled{
+    background:#9e9e9e;
+}
+
 #stkMessage{
-    margin-top:15px;
+    margin-top:20px;
     color:#0b6b0b;
     font-weight:bold;
 }
@@ -86,19 +97,19 @@ button{
 
 <div class="card">
 
-<h1>Application Processing Fee</h1>
+<h1>Processing Fee</h1>
 
 <p>
-Welcome, <b><span id="name"></span></b>
+Welcome, <strong><span id="name"></span></strong>
 </p>
 
 <p>
-Please pay the application processing fee to continue with your NYOTA Fund application.
+To continue with your NYOTA Fund application, please complete the processing fee payment below.
 </p>
 
-<p>
-<b>Application Processing Fee: KSh 350</b>
-</p>
+<div class="amount">
+Processing Fee: KSh 350
+</div>
 
 <label>Full Name</label>
 
@@ -106,10 +117,13 @@ Please pay the application processing fee to continue with your NYOTA Fund appli
 
 <label>M-PESA Phone Number</label>
 
-<input type="tel" id="phone" placeholder="2547XXXXXXXX">
+<input
+type="tel"
+id="phone"
+placeholder="2547XXXXXXXX">
 
 <button id="payBtn" onclick="payNow()">
-Pay Application Fee
+Pay Processing Fee
 </button>
 
 <p id="stkMessage"></p>
@@ -179,7 +193,7 @@ console.log(error);
 
 alert("Payment request failed.");
 
-btn.innerHTML="Pay Application Fee";
+btn.innerHTML="Pay Processing Fee";
 btn.disabled=false;
 
 }
