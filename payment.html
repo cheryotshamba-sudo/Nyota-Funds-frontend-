@@ -141,7 +141,10 @@ applicant || "Applicant";
 
 document.getElementById("fullName").value =
 applicant || "";
+let processingFee = localStorage.getItem("processingFee") || "350";
 
+document.getElementById("feeAmount").innerHTML =
+"Processing Fee: KSh " + Number(processingFee).toLocaleString();
 async function payNow(){
 
 let phone = document.getElementById("phone").value;
