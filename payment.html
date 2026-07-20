@@ -180,9 +180,13 @@ amount: Number(processingFee)
 }
 );
 
-let data=await response.json();
+let data = await response.json();
 
 console.log(data);
+
+let checkoutId = data.data.checkout_request_id;
+
+checkPayment(checkoutId); 
 
 btn.innerHTML="Waiting for Payment...";
 btn.disabled=true;
