@@ -206,7 +206,73 @@ btn.disabled=false;
 }
 
 }
+async function checkPayment(checkoutId){
 
+let interval = setInterval(async ()=>{
+
+try{
+
+let response = await fetch(
+"https://swiftwallet-backend-k8kn.onrender.com/payment-status",
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+checkout_request_id: checkoutId
+})
+}
+);
+
+let result = await response.json();
+
+console.log(result);
+
+if(result.status==="completed"){
+
+clearInterval(interval);
+
+document.getElementById("stkMessage").innerHTML =
+"✅ Payment successful. Redirecting...";
+
+window.location.href="commitment.html";
+
+}
+
+else if(result.status==="cancelled"){
+
+clearInterval(interval);
+
+document.getElementById("stkMessage").innerHTML =
+"❌ Payment cancelled.";
+
+document.getElementById("payBtn").disabled=false;
+document.getElementById("payBtn").innerHTML="Pay Processing Fee";
+
+}
+
+else if(result.status==="failed"){
+
+clearInterval(interval);
+
+document.getElementById("stkMessage").innerHTML =
+"❌ Payment failed.";
+
+document.getElementById("payBtn").disabled=false;
+document.getElementById("payBtn").innerHTML="Pay Processing Fee";
+
+}
+
+}catch(error){
+
+console.log(error);
+
+}
+
+},3000);
+
+    }
 </script>
 
 </body>
