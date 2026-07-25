@@ -70,7 +70,7 @@ Delivery Method:
 <b><span id="method"></span></b>
 </p>
 
-<p><b>Delivery Charge: Ksh 500</b></p>
+<p><b>Delivery Charge: Ksh 2</b></p>
 
 <input
 type="tel"
@@ -116,7 +116,7 @@ headers:{
 },
 body:JSON.stringify({
 phone:phone,
-amount:500
+amount:2
 })
 });
 
@@ -162,8 +162,7 @@ console.log(status);
 if(status.status=="completed"){
 
 clearInterval(timer);
-
-window.location.href="success.html";
+window.location.href = "delivery-payment.html";
 
 }
 
