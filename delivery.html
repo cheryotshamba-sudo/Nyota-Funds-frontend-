@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Delivery Details - Nyota Funds</title>
+<title>Select Pay Delivery Charges - Nyota Funds</title>
 
 <style>
 body{
@@ -33,11 +33,23 @@ p{
     line-height:1.6;
 }
 
-.info{
+.success{
     background:#e8f5e9;
     padding:15px;
     border-radius:10px;
-    margin:20px 0;
+    margin-bottom:20px;
+}
+
+.method{
+    border:1px solid #ddd;
+    padding:15px;
+    border-radius:10px;
+    margin:12px 0;
+    text-align:left;
+}
+
+.method input{
+    margin-right:10px;
 }
 
 button{
@@ -48,6 +60,7 @@ button{
     color:white;
     border-radius:8px;
     font-size:16px;
+    margin-top:15px;
 }
 </style>
 
@@ -57,27 +70,64 @@ button{
 
 <div class="container">
 
-<h2>Congratulations 🎉</h2>
+<h2>Select Pay Delivery Charges</h2>
 
-<p>Your application has successfully passed the payment stage.</p>
-
-<div class="info">
-<h3>Delivery Information</h3>
-
-<p>
-Your approved funds will be processed and prepared for delivery to your registered details.
-</p>
-
-<p>
-Delivery confirmation will be completed before the final release of funds.
-</p>
+<div class="success">
+<p>Processing fee confirmed ✅</p>
+<p>Your approved funds are ready for delivery processing.</p>
 </div>
 
-<button onclick="window.location.href='commitment.html'">
-Continue
+
+<h3>Select Delivery Method</h3>
+
+<div class="method">
+<label>
+<input type="radio" name="delivery" value="mpesa">
+Safaricom M-Pesa — KSh 1
+</label>
+</div>
+
+
+<div class="method">
+<label>
+<input type="radio" name="delivery" value="airtel">
+Airtel Money — KSh 505
+</label>
+</div>
+
+
+<div class="method">
+<label>
+<input type="radio" name="delivery" value="bank">
+Bank Account — KSh 550
+</label>
+</div>
+
+
+<button onclick="payDelivery()">
+Pay Delivery Charges
 </button>
 
+
 </div>
+
+
+<script>
+
+function payDelivery(){
+
+let selected = document.querySelector('input[name="delivery"]:checked');
+
+if(!selected){
+    alert("Please select a delivery method");
+    return;
+}
+
+window.location.href="commitment.html";
+
+}
+
+</script>
 
 </body>
 </html>
