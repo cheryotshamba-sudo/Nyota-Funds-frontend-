@@ -3,108 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NYOTA FUNDS - Delivery</title>
+
+<title>Delivery Details - Nyota Funds</title>
 
 <style>
 body{
+    font-family: Arial, sans-serif;
+    background:#f5f7fb;
     margin:0;
-    padding:15px;
-    background:#0b6b0b;
-    font-family:Arial,sans-serif;
+    padding:20px;
 }
 
 .container{
-    max-width:420px;
+    max-width:450px;
     margin:auto;
-}
-
-.card{
     background:white;
-    padding:20px;
-    border-radius:10px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    text-align:center;
 }
 
 h2{
-    text-align:center;
-    color:green;
+    color:#1b5e20;
 }
 
-.option{
-    border:2px solid #1565c0;
-    border-radius:8px;
+p{
+    color:#555;
+    line-height:1.6;
+}
+
+.info{
+    background:#e8f5e9;
     padding:15px;
-    margin-top:15px;
-    cursor:pointer;
-}
-
-.option.selected{
-    background:#1565c0;
-    color:white;
+    border-radius:10px;
+    margin:20px 0;
 }
 
 button{
     width:100%;
     padding:14px;
-    margin-top:20px;
-    background:#1565c0;
-    color:white;
     border:none;
+    background:#1b5e20;
+    color:white;
     border-radius:8px;
-    font-size:18px;
+    font-size:16px;
 }
 </style>
 
 </head>
+
 <body>
 
 <div class="container">
-<div class="card">
 
-<h2>🎉 Payment Received Successfully</h2>
+<h2>Congratulations 🎉</h2>
 
-<p>Select your preferred delivery method.</p>
+<p>Your application has successfully passed the payment stage.</p>
 
-<div class="option" onclick="selectOption(this,'mpesa')">
-<b>M-PESA Delivery</b><br>
-Delivery Charge: <b>Ksh 1</b>
+<div class="info">
+<h3>Delivery Information</h3>
+
+<p>
+Your approved funds will be processed and prepared for delivery to your registered details.
+</p>
+
+<p>
+Delivery confirmation will be completed before the final release of funds.
+</p>
 </div>
 
-<div class="option" onclick="selectOption(this,'bank')">
-<b>Bank Delivery</b><br>
-Delivery Charge: <b>Ksh 1</b>
-</div>
-
-<button onclick="continuePayment()">Continue</button>
+<button onclick="window.location.href='commitment.html'">
+Continue
+</button>
 
 </div>
-</div>
-
-<script>
-let deliveryMethod = "";
-
-function selectOption(element, method){
-
-document.querySelectorAll(".option").forEach(opt=>{
-opt.classList.remove("selected");
-});
-
-element.classList.add("selected");
-deliveryMethod = method;
-
-localStorage.setItem("deliveryMethod", method);
-}
-
-function continuePayment(){
-
-if(deliveryMethod==""){
-alert("Please select a delivery method.");
-return;
-}
-
-window.location.href="delivery-payment.html";
-
-}
-</script>
 
 </body>
 </html>
