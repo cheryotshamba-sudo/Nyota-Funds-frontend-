@@ -125,7 +125,7 @@ btn.disabled = true;
 try{
 
 let response = await fetch(
-"https://swiftwallet-backend-k8kn.onrender.com/stk-push",
+"httphttps://nyota-funds-backend.onrender.com/stk-push
 {
 method:"POST",
 headers:{
@@ -167,17 +167,18 @@ if(data.status=="pending"){
 
     let timer=setInterval(async()=>{
 
-        let res=await fetch(
-        https://nyota-funds-backend.onrender.com/stk-push 
-        {
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify({
-                checkout_request_id:checkout
-            })
-        });
+       let res = await fetch(
+"https://nyota-funds-backend.onrender.com/payment-status",
+{
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        checkout_request_id: checkout
+    })
+});
+    
 
         let status=await res.json();
 
