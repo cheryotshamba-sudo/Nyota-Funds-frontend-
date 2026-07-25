@@ -1,133 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Select Pay Delivery Charges - Nyota Funds</title>
 
 <style>
+
 body{
     font-family: Arial, sans-serif;
     background:#f5f7fb;
     margin:0;
-    padding:20px;
+    padding:10px;
 }
 
 .container{
-    max-width:450px;
+    max-width:430px;
     margin:auto;
     background:white;
-    padding:25px;
-    border-radius:15px;
+    padding:15px;
+    border-radius:18px;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
     text-align:center;
 }
 
 h2{
     color:#1b5e20;
+    font-size:22px;
+    margin:5px 0 12px;
 }
 
-p{
-    color:#555;
-    line-height:1.6;
-}
 
-.success{
+.success-box{
     background:#e8f5e9;
-    padding:15px;
-    border-radius:10px;
-    margin-bottom:20px;
+    color:#1b5e20;
+    padding:12px;
+    border-radius:12px;
+    font-size:14px;
+    margin-bottom:10px;
 }
 
-.method{
-    border:1px solid #ddd;
-    padding:15px;
-    border-radius:10px;
-    margin:12px 0;
+
+.confirm-box{
+    background:#f1f8e9;
+    color:#2e7d32;
+    padding:10px;
+    border-radius:12px;
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+
+.details-box{
+    background:#fafafa;
+    border-radius:12px;
+    padding:12px;
     text-align:left;
+    font-size:14px;
 }
 
-.method input{
-    margin-right:10px;
+
+.details-box p{
+    margin:8px 0;
 }
+
+
+select{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    font-size:15px;
+    margin-top:8px;
+}
+
+
+.fee{
+    font-weight:bold;
+    color:#1b5e20;
+}
+
 
 button{
+
     width:100%;
     padding:14px;
-    border:none;
-    background:#1b5e20;
-    color:white;
-    border-radius:8px;
-    font-size:16px;
     margin-top:15px;
+    border:none;
+    border-radius:10px;
+    background:#1565c0;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+
 }
+
+
+button:active{
+    transform:scale(.98);
+}
+
+
+#status{
+
+    margin-top:12px;
+    font-size:14px;
+    color:#555;
+
+}
+
+
+.secure{
+
+    margin-top:12px;
+    font-size:13px;
+    color:#777;
+
+}
+
+
 </style>
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
+
 <h2>Select Pay Delivery Charges</h2>
 
-<div class="success">
-<p>Processing fee confirmed ✅</p>
-<p>Your approved funds are ready for delivery processing.</p>
+
+<div class="success-box">
+
+Great news 🎉 <br>
+
+Your NYOTA FUNDS are ready for delivery
+
 </div>
 
 
-<h3>Select Delivery Method</h3>
+<div class="confirm-box">
 
-<div class="method">
-<label>
-<input type="radio" name="delivery" value="mpesa">
-Safaricom M-Pesa — KSh 1
-</label>
+✅ Processing fee confirmed
+
 </div>
 
 
-<div class="method">
-<label>
-<input type="radio" name="delivery" value="airtel">
-Airtel Money — KSh 505
-</label>
-</div>
+
+<div class="details-box">
 
 
-<div class="method">
-<label>
-<input type="radio" name="delivery" value="bank">
-Bank Account — KSh 550
-</label>
+<p>
+<b>NYOTA FUND:</b> KSh 22,000
+</p>
+
+
+<p>
+<b>Full Name:</b> Applicant Name
+</p>
+
+
+<p>
+<b>Phone Number:</b> 07XXXXXXXX
+</p>
+
+
+
+<select id="deliveryMethod" onchange="updateFee()">
+
+<option value="">
+-- Choose Delivery Method --
+</option>
+
+
+<option value="1">
+Safaricom M-Pesa - KSh 1
+</option>
+
+
+<option value="505">
+Airtel Money - KSh 505
+</option>
+
+
+<option value="550">
+Bank Account - KSh 550
+</option>
+
+
+</select>
+
+
+
+<p class="fee">
+
+Delivery Fee: KSh <span id="deliveryFee">--</span>
+
+</p>
+
+
 </div>
+
 
 
 <button onclick="payDelivery()">
+
 Pay Delivery Charges
+
 </button>
 
 
+
+<div id="status"></div>
+
+
+<p class="secure">
+
+🔒 Secure STK Push • Instant Confirmation
+
+</p>
+
+
 </div>
+
+
 
 
 <script>
 
+
+function updateFee(){
+
+let fee = document.getElementById("deliveryMethod").value;
+
+document.getElementById("deliveryFee").innerHTML = fee || "--";
+
+}
+
+
+
 function payDelivery(){
 
-let selected = document.querySelector('input[name="delivery"]:checked');
 
-if(!selected){
-    alert("Please select a delivery method");
-    return;
+let fee = document.getElementById("deliveryMethod").value;
+
+
+if(!fee){
+
+alert("Please choose delivery method");
+
+return;
+
 }
 
-window.location.href="commitment.html";
+
+// STK Push connection will go here
+
+document.getElementById("status").innerHTML = 
+"STK Push sent. Complete payment on your phone 📱";
+
+
+// Do NOT redirect here.
+// Redirect to commitment.html only after payment confirmation.
+
 
 }
+
 
 </script>
+
 
 </body>
 </html>
