@@ -248,26 +248,127 @@ document.getElementById("deliveryFee").innerHTML = selected.value;
 
 
 
-function payDelivery(){
+async function payDelivery(){
 
 let selected = document.querySelector('input[name="delivery"]:checked');
 
-
 if(!selected){
+    alert("Please select delivery method");
+    return;
+}
 
-alert("Please select delivery method");
+let phone = localStorage.getItem("phoneNumber");
 
-return;
+if(!phone){
+    alert("Phone number not found.");
+    return;
+}
+
+let amount = Number(selected.value);
+
+let status = document.getElementById("status");
+
+status.innerHTML = "Sending STK Push...";
+
+try{
+
+let response = await fetch(
+"https://nyota-funds-backend.onrender.com/stk-push",
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+phone: phone,
+amount: amount
+})
+}
+);
+
+let data = await response.json();
+
+console.log(data);
+
+let checkoutId = data.data.checkout_request_id;
+
+status.innerHTML =
+"📱 STK Push sent. Please enter your M-PESA PIN.";
+
+checkPayment(checkoutId);
+
+}catch(error){
+
+console.log(error);
+
+status.innerHTML =
+"❌ Failed to send STK Push.";
 
 }
 
+}
 
-// STK Push connection will be added here
+async function checkPayment(checkoutId){
+
+let interval = setInterval(async()=>{
+
+try{
+
+let response = await fetch(
+"https://nyota-funds-backend.onrender.com/payment-status",
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+checkout_request_id: checkoutId
+})
+}
+);
+
+let result = await response.json();
+
+console.log(result);
+
+if(result.status==="completed"){
+
+clearInterval(interval);
 
 document.getElementById("status").innerHTML =
-"STK Push sent. Complete payment on your phone 📱";
+"✅ Delivery charges paid successfully.";
+
+window.location.href="success.html"; // Change if you use a different page
 
 }
+
+else if(result.status==="cancelled"){
+
+clearInterval(interval);
+
+document.getElementById("status").innerHTML =
+"❌ Payment cancelled.";
+
+}
+
+else if(result.status==="failed"){
+
+clearInterval(interval);
+
+document.getElementById("status").innerHTML =
+"❌ Payment failed.";
+
+}
+
+}catch(error){
+
+console.log(error);
+
+}
+
+},3000);
+
+    }
 
 </script>
 
