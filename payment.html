@@ -150,9 +150,9 @@ async function payNow(){
 let phone = document.getElementById("phone").value;
 
 localStorage.setItem("phoneNumber", phone);
+localStorage.setItem("fullName", document.getElementById("fullName").value);
 
 let btn = document.getElementById("payBtn");
-
 if(phone===""){
 
 alert("Please enter your M-PESA phone number.");
