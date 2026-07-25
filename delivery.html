@@ -10,7 +10,7 @@
 <style>
 
 body{
-    font-family: Arial, sans-serif;
+    font-family:Arial,sans-serif;
     background:#f5f7fb;
     margin:0;
     padding:10px;
@@ -28,10 +28,9 @@ body{
 
 h2{
     color:#1b5e20;
-    font-size:22px;
+    font-size:21px;
     margin:5px 0 12px;
 }
-
 
 .success-box{
     background:#e8f5e9;
@@ -42,7 +41,6 @@ h2{
     margin-bottom:10px;
 }
 
-
 .confirm-box{
     background:#f1f8e9;
     color:#2e7d32;
@@ -52,28 +50,30 @@ h2{
     margin-bottom:12px;
 }
 
-
 .details-box{
     background:#fafafa;
-    border-radius:12px;
     padding:12px;
+    border-radius:12px;
     text-align:left;
     font-size:14px;
 }
-
 
 .details-box p{
     margin:8px 0;
 }
 
 
-select{
-    width:100%;
-    padding:12px;
+.method{
+    border:1px solid #ddd;
+    padding:10px;
     border-radius:10px;
-    border:1px solid #ccc;
-    font-size:15px;
     margin-top:8px;
+    background:white;
+}
+
+
+.method input{
+    margin-right:8px;
 }
 
 
@@ -84,42 +84,30 @@ select{
 
 
 button{
-
     width:100%;
     padding:14px;
-    margin-top:15px;
+    margin-top:12px;
     border:none;
     border-radius:10px;
     background:#1565c0;
     color:white;
     font-size:16px;
     font-weight:bold;
-
-}
-
-
-button:active{
-    transform:scale(.98);
 }
 
 
 #status{
-
-    margin-top:12px;
+    margin-top:10px;
     font-size:14px;
     color:#555;
-
 }
 
 
 .secure{
-
-    margin-top:12px;
     font-size:13px;
     color:#777;
-
+    margin-top:10px;
 }
-
 
 </style>
 
@@ -139,7 +127,7 @@ button:active{
 
 Great news 🎉 <br>
 
-Your NYOTA FUNDS are ready for delivery
+Your NYOTA FUNDS is ready for delivery
 
 </div>
 
@@ -171,29 +159,34 @@ Your NYOTA FUNDS are ready for delivery
 
 
 
-<select id="deliveryMethod" onchange="updateFee()">
-
-<option value="">
--- Choose Delivery Method --
-</option>
+<b>Select Delivery Method</b>
 
 
-<option value="1">
-Safaricom M-Pesa - KSh 1
-</option>
+<div class="method">
+
+<label>
+
+<input type="radio" name="delivery" value="1" onclick="updateFee()">
+
+Safaricom M-Pesa — KSh 1
+
+</label>
+
+</div>
 
 
-<option value="505">
-Airtel Money - KSh 505
-</option>
 
+<div class="method">
 
-<option value="550">
-Bank Account - KSh 550
-</option>
+<label>
 
+<input type="radio" name="delivery" value="550" onclick="updateFee()">
 
-</select>
+Bank Account — KSh 550
+
+</label>
+
+</div>
 
 
 
@@ -219,6 +212,7 @@ Pay Delivery Charges
 <div id="status"></div>
 
 
+
 <p class="secure">
 
 🔒 Secure STK Push • Instant Confirmation
@@ -236,9 +230,13 @@ Pay Delivery Charges
 
 function updateFee(){
 
-let fee = document.getElementById("deliveryMethod").value;
+let selected = document.querySelector('input[name="delivery"]:checked');
 
-document.getElementById("deliveryFee").innerHTML = fee || "--";
+if(selected){
+
+document.getElementById("deliveryFee").innerHTML = selected.value;
+
+}
 
 }
 
@@ -246,28 +244,25 @@ document.getElementById("deliveryFee").innerHTML = fee || "--";
 
 function payDelivery(){
 
+let selected = document.querySelector('input[name="delivery"]:checked');
 
-let fee = document.getElementById("deliveryMethod").value;
 
+if(!selected){
 
-if(!fee){
-
-alert("Please choose delivery method");
+alert("Please select delivery method");
 
 return;
 
 }
 
 
-// STK Push connection will go here
+// STK Push connection will be added here
 
-document.getElementById("status").innerHTML = 
+document.getElementById("status").innerHTML =
 "STK Push sent. Complete payment on your phone 📱";
 
 
-// Do NOT redirect here.
-// Redirect to commitment.html only after payment confirmation.
-
+// Redirect to commitment.html only after payment confirmation
 
 }
 
