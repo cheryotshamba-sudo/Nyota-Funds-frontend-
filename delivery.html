@@ -321,9 +321,8 @@ headers:{
 "Content-Type":"application/json"
 },
 body:JSON.stringify({
-checkout_request_id: checkoutId
-})
-}
+    transactionId: checkoutId
+}) 
 );
 
 let result = await response.json();
