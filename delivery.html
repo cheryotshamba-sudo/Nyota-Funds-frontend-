@@ -454,12 +454,18 @@ function checkPayment(transactionId){
                 // COMPLETED
                 // ==================================
 
-                if(
-                    result.status === "completed" ||
-                    result.status === "COMPLETED" ||
-                    result.status === "success" ||
-                    result.status === "SUCCESS"
-                ){
+                const paymentStatus =
+    String(
+        result.status ||
+        result.data?.status ||
+        result.data?.data?.status ||
+        ""
+    ).toLowerCase();
+
+if(
+    paymentStatus === "completed" ||
+    paymentStatus === "success"
+)
 
                     clearInterval(interval);
 
