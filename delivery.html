@@ -320,8 +320,11 @@ method:"POST",
 headers:{
 "Content-Type":"application/json"
 },
-body:JSON.stringify({
-    transactionId: checkoutId
+let checkoutId =
+    data.checkout_request_id ||
+    data.transactionId ||
+    data.data?.checkout_request_id ||
+    data.data?.transactionId; 
 }) 
 );
 
