@@ -414,6 +414,18 @@ function checkPayment(transactionId){
 
             try{
 
+                // ==================================
+                // DEBUG TRANSACTION ID
+                // ==================================
+
+                console.log(
+                    "SENDING PAYMENT STATUS:",
+                    {
+                        transactionId: transactionId
+                    }
+                );
+
+
                 const response =
                     await fetch(
                         "https://nyota-funds-backend.onrender.com/payment-status",
@@ -451,21 +463,26 @@ function checkPayment(transactionId){
 
 
                 // ==================================
-                // COMPLETED
+                // GET PAYMENT STATUS
                 // ==================================
 
                 const paymentStatus =
-    String(
-        result.status ||
-        result.data?.status ||
-        result.data?.data?.status ||
-        ""
-    ).toLowerCase();
+                    String(
+                        result.status ||
+                        result.data?.status ||
+                        result.data?.data?.status ||
+                        ""
+                    ).toLowerCase();
 
-if(
-    paymentStatus === "completed" ||
-    paymentStatus === "success"
-)
+
+                // ==================================
+                // COMPLETED
+                // ==================================
+
+                if(
+                    paymentStatus === "completed" ||
+                    paymentStatus === "success"
+                ){
 
                     clearInterval(interval);
 
@@ -476,10 +493,10 @@ if(
 
                     setTimeout(()=>{
 
-                        window.location.href = "commitment.html";
+                        window.location.href =
+                            "commitment.html";
 
                     },1000);
-
 
                 }
 
@@ -489,8 +506,7 @@ if(
                 // ==================================
 
                 else if(
-                    result.status === "cancelled" ||
-                    result.status === "CANCELLED"
+                    paymentStatus === "cancelled"
                 ){
 
                     clearInterval(interval);
@@ -515,8 +531,7 @@ if(
                 // ==================================
 
                 else if(
-                    result.status === "failed" ||
-                    result.status === "FAILED"
+                    paymentStatus === "failed"
                 ){
 
                     clearInterval(interval);
