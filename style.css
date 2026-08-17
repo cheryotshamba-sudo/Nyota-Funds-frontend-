@@ -17,37 +17,15 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* ================================
-   MAIN HERO
-================================ */
+/* =================================
+   FULL SCREEN HERO
+================================= */
 
 .hero {
     position: relative;
-    min-height: 100vh;
     width: 100%;
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 50% 65%,
-            rgba(137, 43, 226, 0.32) 0%,
-            rgba(81, 21, 130, 0.18) 25%,
-            rgba(11, 2, 23, 0) 60%
-        ),
-        linear-gradient(
-            180deg,
-            #0B0217 0%,
-            #100322 50%,
-            #0B0217 100%
-        );
-}
-
-/* Purple glow at bottom */
-
-.hero {
-    position: relative;
     min-height: 100vh;
-    width: 100%;
+
     overflow-x: hidden;
     overflow-y: auto;
 
@@ -66,9 +44,32 @@ body {
         );
 }
 
-/* ================================
-   CONTAINER
-================================ */
+/* Bottom purple glow */
+
+.hero::before {
+    content: "";
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    left: 50%;
+    bottom: -430px;
+
+    transform: translateX(-50%);
+
+    background: rgba(145, 45, 255, 0.35);
+
+    filter: blur(110px);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+/* =================================
+   FULL WIDTH CONTAINER
+================================= */
 
 .container {
     position: relative;
@@ -80,19 +81,23 @@ body {
     min-height: 100vh;
 
     margin: 0;
+
     padding: 20px 18px 40px;
 }
-/* ================================
+
+/* =================================
    LOGO
-================================ */
+================================= */
 
 .logo {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    margin-top: 10px;
-    margin-bottom: 30px;
+    width: 100%;
+
+    margin-top: 8px;
+    margin-bottom: 28px;
 }
 
 .logo img {
@@ -103,9 +108,9 @@ body {
     object-fit: contain;
 }
 
-/* ================================
+/* =================================
    HEADINGS
-================================ */
+================================= */
 
 h1 {
     text-align: center;
@@ -114,26 +119,28 @@ h1 {
     line-height: 1.2;
     font-weight: 700;
 
-    color: #ffffff;
+    color: #fff;
 
     margin-bottom: 12px;
 }
 
 .subtitle {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto 28px;
+
     text-align: center;
 
     font-size: 15px;
     line-height: 1.6;
 
     color: rgba(255, 255, 255, 0.72);
-
-    margin: 0 auto 28px;
-    max-width: 430px;
 }
 
-/* ================================
+/* =================================
    CARD
-================================ */
+================================= */
 
 .card {
     width: 100%;
@@ -159,11 +166,12 @@ h1 {
     -webkit-backdrop-filter: blur(15px);
 }
 
-/* ================================
+/* =================================
    FORM
-================================ */
+================================= */
 
 .form-group {
+    width: 100%;
     margin-bottom: 18px;
 }
 
@@ -181,17 +189,18 @@ label {
 input,
 select {
     width: 100%;
-
     height: 52px;
 
     padding: 0 15px;
 
     border: 1px solid rgba(255, 255, 255, 0.12);
+
     border-radius: 13px;
 
     outline: none;
 
     background: rgba(255, 255, 255, 0.07);
+
     color: #fff;
 
     font-family: inherit;
@@ -226,19 +235,18 @@ select option {
     color: #fff;
 }
 
-/* ================================
+/* =================================
    BUTTON
-================================ */
+================================= */
 
 button {
     width: 100%;
-
     min-height: 54px;
+
+    margin-top: 8px;
 
     border: none;
     border-radius: 14px;
-
-    margin-top: 8px;
 
     background:
         linear-gradient(
@@ -281,9 +289,9 @@ button:disabled {
     transform: none;
 }
 
-/* ================================
-   AMOUNT OPTIONS
-================================ */
+/* =================================
+   AMOUNT GRID
+================================= */
 
 .amount-grid {
     display: grid;
@@ -292,10 +300,14 @@ button:disabled {
 
     gap: 12px;
 
+    width: 100%;
+
     margin-top: 10px;
 }
 
 .amount-option {
+    width: 100%;
+
     padding: 16px 10px;
 
     border-radius: 14px;
@@ -336,11 +348,13 @@ button:disabled {
         0 0 20px rgba(155, 53, 255, 0.15);
 }
 
-/* ================================
+/* =================================
    INFORMATION BOX
-================================ */
+================================= */
 
 .info-box {
+    width: 100%;
+
     margin-top: 20px;
 
     padding: 15px;
@@ -359,11 +373,13 @@ button:disabled {
     color: rgba(255, 255, 255, 0.70);
 }
 
-/* ================================
-   SUCCESS / STATUS
-================================ */
+/* =================================
+   SUCCESS
+================================= */
 
 .success {
+    width: 100%;
+
     text-align: center;
 
     padding: 25px 10px;
@@ -390,6 +406,7 @@ button:disabled {
 
 .success h2 {
     font-size: 25px;
+
     margin-bottom: 10px;
 }
 
@@ -397,16 +414,19 @@ button:disabled {
     color: rgba(255, 255, 255, 0.70);
 
     font-size: 14px;
+
     line-height: 1.6;
 }
 
-/* ================================
+/* =================================
    FOOTER
-================================ */
+================================= */
 
 .footer {
     position: relative;
     z-index: 2;
+
+    width: 100%;
 
     text-align: center;
 
@@ -417,13 +437,16 @@ button:disabled {
     font-size: 12px;
 }
 
-/* ================================
+/* =================================
    MOBILE
-================================ */
+================================= */
 
 @media (max-width: 480px) {
 
     .container {
+        width: 100%;
+        min-height: 100vh;
+
         padding: 16px 14px 35px;
     }
 
@@ -441,40 +464,60 @@ button:disabled {
 
     .subtitle {
         font-size: 14px;
+
         margin-bottom: 22px;
     }
 
     .card {
+        width: 100%;
+
         padding: 20px 16px;
+
         border-radius: 19px;
     }
 
     input,
     select {
+        width: 100%;
+
         height: 50px;
+
         font-size: 14px;
     }
 
     button {
+        width: 100%;
+
         min-height: 52px;
+
         font-size: 15px;
     }
 
     .amount-grid {
+        width: 100%;
+
+        grid-template-columns: repeat(2, 1fr);
+
         gap: 9px;
     }
 
     .amount-option {
         padding: 14px 8px;
+
         font-size: 14px;
     }
 }
 
-/* ================================
+/* =================================
    SMALL PHONES
-================================ */
+================================= */
 
 @media (max-width: 360px) {
+
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
 
     h1 {
         font-size: 24px;
@@ -485,6 +528,6 @@ button:disabled {
     }
 
     .amount-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 }
