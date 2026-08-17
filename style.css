@@ -531,6 +531,10 @@ button:disabled {
         grid-template-columns: 1fr 1fr;
     }
 }
+/* =================================
+   LIVE COMMENTS
+================================= */
+
 .comments-box{
     width:100%;
     margin-top:25px;
@@ -542,41 +546,54 @@ button:disabled {
 .comments-box h2{
     text-align:center;
     margin-bottom:15px;
+    color:#fff;
 }
 
 .comments-window{
-    height:220px;
+    width:100%;
+    height:300px;
     overflow:hidden;
     position:relative;
 }
 
+.comments-track{
+    display:flex;
+    flex-direction:column;
+    animation:scrollComments 60s linear infinite;
+}
+
 .comment{
+    flex-shrink:0;
     padding:13px;
     margin-bottom:10px;
     border-radius:12px;
     background:rgba(255,255,255,0.08);
-    animation:flowComments 18s linear infinite;
+    border:1px solid rgba(255,255,255,0.06);
 }
 
 .comment strong{
     display:block;
     margin-bottom:4px;
+    color:#fff;
 }
 
 .comment p{
     margin:0 0 5px;
+    color:rgba(255,255,255,0.85);
+    line-height:1.4;
 }
 
 .comment small{
     opacity:.6;
+    font-size:11px;
 }
 
-@keyframes flowComments{
-    from{
-        transform:translateY(230px);
+@keyframes scrollComments{
+    0%{
+        transform:translateY(0);
     }
 
-    to{
-        transform:translateY(-650px);
+    100%{
+        transform:translateY(-50%);
     }
 }
