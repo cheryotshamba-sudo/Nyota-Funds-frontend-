@@ -171,6 +171,10 @@ return;
 
 localStorage.setItem("purpose",selected.value);
 
+const button = document.getElementById("continueBtn");
+button.textContent = "Processing...";
+button.disabled = true;
+
 window.location.href="amount.html";
 
 }
