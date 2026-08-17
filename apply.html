@@ -231,7 +231,7 @@ background:#6C1DCE;
 
 </select>
 
-<button type="submit">Continue</button>
+<button type="submit" id="continueBtn">Continue</button>
 
 </form>
 
@@ -242,16 +242,22 @@ background:#6C1DCE;
 <script>
 function submitApplication(event){
 
-event.preventDefault();
+    event.preventDefault();
 
-let name=document.getElementById("applicantName").value;
+    const button = document.getElementById("continueBtn");
 
-localStorage.setItem("applicantName",name);
+    button.textContent = "Processing...";
+    button.disabled = true;
 
-window.location.href="purpose.html";
+    let name = document.getElementById("applicantName").value;
+
+    localStorage.setItem("applicantName", name);
+
+    setTimeout(function(){
+        window.location.href = "purpose.html";
+    }, 500);
 
 }
 </script>
-
 </body>
 </html>
