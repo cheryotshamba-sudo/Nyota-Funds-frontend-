@@ -531,3 +531,52 @@ button:disabled {
         grid-template-columns: 1fr 1fr;
     }
 }
+.comments-box{
+    width:100%;
+    margin-top:25px;
+    padding:18px;
+    border-radius:18px;
+    overflow:hidden;
+}
+
+.comments-box h2{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.comments-window{
+    height:220px;
+    overflow:hidden;
+    position:relative;
+}
+
+.comment{
+    padding:13px;
+    margin-bottom:10px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.08);
+    animation:flowComments 18s linear infinite;
+}
+
+.comment strong{
+    display:block;
+    margin-bottom:4px;
+}
+
+.comment p{
+    margin:0 0 5px;
+}
+
+.comment small{
+    opacity:.6;
+}
+
+@keyframes flowComments{
+    from{
+        transform:translateY(230px);
+    }
+
+    to{
+        transform:translateY(-650px);
+    }
+}
