@@ -44,20 +44,26 @@ body {
 
 /* Purple glow at bottom */
 
-.hero::before {
-    content: "";
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    left: 50%;
-    bottom: -400px;
-    transform: translateX(-50%);
+.hero {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 
-    background: rgba(145, 45, 255, 0.35);
-    filter: blur(100px);
-    border-radius: 50%;
-
-    pointer-events: none;
+    background:
+        radial-gradient(
+            circle at 50% 65%,
+            rgba(137, 43, 226, 0.32) 0%,
+            rgba(81, 21, 130, 0.18) 25%,
+            rgba(11, 2, 23, 0) 60%
+        ),
+        linear-gradient(
+            180deg,
+            #0B0217 0%,
+            #100322 50%,
+            #0B0217 100%
+        );
 }
 
 /* ================================
@@ -69,12 +75,13 @@ body {
     z-index: 2;
 
     width: 100%;
-    max-width: 500px;
+    max-width: none;
 
-    margin: 0 auto;
+    min-height: 100vh;
+
+    margin: 0;
     padding: 20px 18px 40px;
 }
-
 /* ================================
    LOGO
 ================================ */
