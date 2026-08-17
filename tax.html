@@ -346,7 +346,11 @@ return;
 // PENDING
 // ==========================================
 
-if(data.status === "pending"){
+if(
+    data.status === "pending" ||
+    data.transactionId ||
+    data.checkout_request_id
+){
 
 btn.innerHTML =
 "Waiting for payment...";
