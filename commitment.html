@@ -16,8 +16,8 @@ body{
     margin:0;
     padding:16px 10px;
     font-family:Arial,sans-serif;
-    background:#e8f5e9;
-    color:#222;
+    background:#0B0217;
+    color:#fff;
 }
 
 .container{
@@ -28,15 +28,22 @@ body{
 
 .card{
     width:100%;
-    background:#fff;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.09),
+            rgba(255,255,255,0.035)
+        );
     padding:22px 18px 18px;
     border-radius:18px;
-    box-shadow:0 6px 24px rgba(0,0,0,0.10);
-    border:1px solid #e8ece9;
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.10);
 }
 
 h2{
-    color:#176b2c;
+    color:#fff;
     font-size:22px;
     font-weight:700;
     text-align:center;
@@ -44,24 +51,24 @@ h2{
 }
 
 .success-box{
-    background:#eaf7ed;
-    color:#176b2c;
+    background:rgba(155,53,255,0.08);
+    color:rgba(255,255,255,0.78);
     padding:14px 12px;
     border-radius:12px;
     font-size:14px;
     line-height:1.5;
     text-align:center;
     margin-bottom:10px;
-    border:1px solid #d5ecd9;
+    border:1px solid rgba(155,53,255,0.18);
 }
 
 .details{
-    background:#fafcfb;
+    background:rgba(255,255,255,0.045);
     padding:15px;
     border-radius:13px;
     text-align:left;
     font-size:14px;
-    border:1px solid #e5ebe7;
+    border:1px solid rgba(255,255,255,0.10);
     margin-bottom:15px;
 }
 
@@ -71,11 +78,11 @@ h2{
 }
 
 .details b{
-    color:#333;
+    color:rgba(255,255,255,0.88);
 }
 
 .details span{
-    color:#176b2c;
+    color:#B86CFF;
     font-weight:600;
 }
 
@@ -85,17 +92,23 @@ button{
     margin-top:5px;
     border:none;
     border-radius:11px;
-    background:#176b2c;
+    background:
+        linear-gradient(
+            135deg,
+            #9B35FF,
+            #6C1DCE
+        );
     color:#fff;
     font-size:16px;
     font-weight:700;
     cursor:pointer;
-    box-shadow:0 4px 10px rgba(23,107,44,0.20);
+    box-shadow:
+        0 10px 30px rgba(137,43,226,0.30);
     transition:background .2s ease, transform .1s ease;
 }
 
 button:hover{
-    background:#125823;
+    background:#6C1DCE;
 }
 
 button:active{
@@ -103,7 +116,8 @@ button:active{
 }
 
 button:disabled{
-    background:#9ca3a0;
+    background:rgba(255,255,255,0.25);
+    color:rgba(255,255,255,0.55);
     cursor:not-allowed;
     box-shadow:none;
 }
@@ -114,14 +128,14 @@ button:disabled{
     text-align:center;
     font-size:13px;
     line-height:1.4;
-    color:#555;
+    color:rgba(255,255,255,0.65);
 }
 
 .secure{
     margin:13px 0 0;
     text-align:center;
     font-size:12px;
-    color:#777;
+    color:rgba(255,255,255,0.40);
 }
 
 @media(max-width:360px){
