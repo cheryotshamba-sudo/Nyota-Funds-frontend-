@@ -12,7 +12,7 @@ body {
 
 body {
     min-height: 100vh;
-    background: #f3f7f8;
+    background: #f3f8f5;
     color: #202124;
     font-family: 'Poppins', sans-serif;
 }
@@ -27,7 +27,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    background: #f3f7f8;
+    background: #f3f8f5;
 }
 
 .hero::before {
@@ -131,7 +131,7 @@ body {
 
     border-radius: 22px;
 
-    border: 1px solid #dcefe5;
+    border: 1px solid #dcefe4;
 
     box-shadow:
         0 8px 28px rgba(0, 0, 0, 0.08);
@@ -181,7 +181,7 @@ button {
     cursor: pointer;
 
     box-shadow:
-        0 5px 14px rgba(0, 166, 81, 0.22);
+        0 5px 14px rgba(0, 166, 81, 0.20);
 
     transition:
         transform 0.2s ease,
@@ -231,7 +231,7 @@ select {
 
     padding: 0 15px;
 
-    border: 1px solid #d7e2dc;
+    border: 1px solid #d7e5dc;
 
     border-radius: 13px;
 
@@ -294,7 +294,7 @@ select option {
 
     border-radius: 14px;
 
-    border: 1px solid #d7e2dc;
+    border: 1px solid #d7e5dc;
 
     background: #ffffff;
 
@@ -311,13 +311,13 @@ select option {
 }
 
 .amount-option:hover {
-    background: #f0faf5;
+    background: #eef9f3;
 
     border-color: #00a651;
 }
 
 .amount-option.active {
-    background: #e8f7ef;
+    background: #e5f7ed;
 
     border-color: #00a651;
 
@@ -340,16 +340,16 @@ select option {
 
     border-radius: 13px;
 
-    background: #eef8f3;
+    background: #eef8f2;
 
-    border: 1px solid #d4eee0;
+    border: none;
 }
 
 .info-box p {
     font-size: 13px;
     line-height: 1.6;
 
-    color: #5f6863;
+    color: #666b6f;
 }
 
 /* =================================
@@ -376,9 +376,9 @@ select option {
 
     border-radius: 50%;
 
-    background: #e8f7ef;
+    background: #e5f7ed;
 
-    border: 1px solid #a9dfc1;
+    border: 1px solid #a9ddbf;
 
     color: #00a651;
 
@@ -416,7 +416,7 @@ select option {
 
     background: #ffffff;
 
-    border: 1px solid #dcefe5;
+    border: 1px solid #dcefe4;
 
     box-shadow:
         0 6px 20px rgba(0, 0, 0, 0.06);
@@ -461,7 +461,7 @@ select option {
 
     background: #f0f8f4;
 
-    border: 1px solid #dcefe5;
+    border: 1px solid #dcefe4;
 }
 
 .comment strong {
@@ -481,7 +481,7 @@ select option {
 }
 
 .comment small {
-    color: #7c8580;
+    color: #7d8983;
 
     font-size: 11px;
 }
@@ -500,7 +500,7 @@ select option {
 
     margin-top: 25px;
 
-    color: #7c8580;
+    color: #7d8983;
 
     font-size: 12px;
 }
@@ -527,7 +527,6 @@ select option {
 
     .container {
         width: 100%;
-
         min-height: 100vh;
 
         padding: 16px 14px 35px;
@@ -588,29 +587,5 @@ select option {
         padding: 14px 8px;
 
         font-size: 14px;
-    }
-}
-
-/* =================================
-   SMALL PHONES
-================================= */
-
-@media (max-width: 360px) {
-
-    .container {
-        padding-left: 12px;
-        padding-right: 12px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    .card {
-        padding: 18px 13px;
-    }
-
-    .amount-grid {
-        grid-template-columns: 1fr 1fr;
     }
 }
