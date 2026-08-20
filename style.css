@@ -12,7 +12,7 @@ body {
 
 body {
     min-height: 100vh;
-    background: #f3f8f5;
+    background: #f3f7f8;
     color: #202124;
     font-family: 'Poppins', sans-serif;
 }
@@ -27,7 +27,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    background: #f3f8f5;
+    background: #f3f7f8;
 }
 
 .hero::before {
@@ -131,7 +131,7 @@ body {
 
     border-radius: 22px;
 
-    border: 1px solid #dcefe4;
+    border: 1px solid #dcefe5;
 
     box-shadow:
         0 8px 28px rgba(0, 0, 0, 0.08);
@@ -231,7 +231,7 @@ select {
 
     padding: 0 15px;
 
-    border: 1px solid #d7e5dc;
+    border: 1px solid #dfe4e6;
 
     border-radius: 13px;
 
@@ -294,7 +294,7 @@ select option {
 
     border-radius: 14px;
 
-    border: 1px solid #d7e5dc;
+    border: 1px solid #dfe4e6;
 
     background: #ffffff;
 
@@ -311,17 +311,17 @@ select option {
 }
 
 .amount-option:hover {
-    background: #eef9f3;
+    background: #f1faf5;
 
     border-color: #00a651;
 }
 
 .amount-option.active {
-    background: #e5f7ed;
+    background: #eaf7ef;
 
     border-color: #00a651;
 
-    color: #008f45;
+    color: #00a651;
 
     box-shadow:
         0 3px 10px rgba(0, 166, 81, 0.10);
@@ -340,7 +340,7 @@ select option {
 
     border-radius: 13px;
 
-    background: #eef8f2;
+    background: #eef8f3;
 
     border: none;
 }
@@ -376,9 +376,9 @@ select option {
 
     border-radius: 50%;
 
-    background: #e5f7ed;
+    background: #eaf7ef;
 
-    border: 1px solid #a9ddbf;
+    border: 1px solid #b9e2c9;
 
     color: #00a651;
 
@@ -416,7 +416,7 @@ select option {
 
     background: #ffffff;
 
-    border: 1px solid #dcefe4;
+    border: 1px solid #dcefe5;
 
     box-shadow:
         0 6px 20px rgba(0, 0, 0, 0.06);
@@ -459,9 +459,9 @@ select option {
 
     border-radius: 12px;
 
-    background: #f0f8f4;
+    background: #f1faf5;
 
-    border: 1px solid #dcefe4;
+    border: 1px solid #e5eaec;
 }
 
 .comment strong {
@@ -481,7 +481,7 @@ select option {
 }
 
 .comment small {
-    color: #7d8983;
+    color: #7f8883;
 
     font-size: 11px;
 }
@@ -500,7 +500,7 @@ select option {
 
     margin-top: 25px;
 
-    color: #7d8983;
+    color: #7f8883;
 
     font-size: 12px;
 }
@@ -587,5 +587,29 @@ select option {
         padding: 14px 8px;
 
         font-size: 14px;
+    }
+}
+
+/* =================================
+   SMALL PHONES
+================================= */
+
+@media (max-width: 360px) {
+
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .card {
+        padding: 18px 13px;
+    }
+
+    .amount-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
