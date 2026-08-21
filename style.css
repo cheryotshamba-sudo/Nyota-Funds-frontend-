@@ -270,11 +270,11 @@ select option {
 button {
     width: 100%;
     min-height: 54px;
-
-    margin-top: 8px;
+    padding: 15px;
+    margin-top: 25px;
 
     border: none;
-    border-radius: 14px;
+    border-radius: 12px;
 
     background:
         linear-gradient(
@@ -287,8 +287,8 @@ button {
 
     color: #171100;
 
-    font-family: inherit;
-    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
     font-weight: 800;
 
     cursor: pointer;
@@ -316,7 +316,7 @@ button:active {
 }
 
 button:disabled {
-    opacity: 0.55;
+    opacity: 0.6;
     cursor: not-allowed;
     transform: none;
 }
