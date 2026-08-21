@@ -7,8 +7,8 @@
 
 <title>NYOTA FUNDS KENYA</title>
 
-
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -16,80 +16,48 @@
     font-family:Arial,sans-serif;
 }
 
-html,
-body{
-    width:100%;
-    height:100%;
-}
-
 body{
     background:#0B0217;
     color:#fff;
-    overflow:hidden;
+    min-height:100vh;
 }
 
 .container{
-    width:100%;
     max-width:500px;
-    height:100vh;
     margin:auto;
-    padding:18px 20px 105px;
-    position:relative;
-}
-
-/* ===============================
-   FIXED TOP CONTENT
-================================ */
-
-.fixed-header{
-    position:relative;
-    z-index:10;
-    background:#0B0217;
+    min-height:100vh;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
 }
 
 h1{
     text-align:center;
-    color:#D4AF37;
+    color:#fff;
     font-size:36px;
     font-weight:700;
-    margin-bottom:18px;
+    margin-bottom:20px;
 }
 
 .message{
     text-align:center;
     font-size:27px;
     font-weight:400;
-    line-height:1.4;
-    margin-bottom:22px;
-    color:rgba(255,255,255,0.85);
+    line-height:1.8;
+    margin-bottom:25px;
+    color:rgba(255,255,255,0.72);
 }
 
 .message b{
-    color:#D4AF37;
     font-weight:700;
 }
 
 h2{
     text-align:center;
-    color:#D4AF37;
+    color:#fff;
     font-size:27px;
     font-weight:700;
-    margin-bottom:18px;
-}
-
-/* ===============================
-   AMOUNTS ONLY SCROLL
-================================ */
-
-.amount-area{
-    height:calc(100vh - 390px);
-    overflow-y:auto;
-    padding-bottom:30px;
-    scrollbar-width:none;
-}
-
-.amount-area::-webkit-scrollbar{
-    display:none;
+    margin-bottom:20px;
 }
 
 .amount-grid{
@@ -99,21 +67,20 @@ h2{
 }
 
 .amount-btn{
-    background:rgba(212,175,55,0.055);
+    background:rgba(255,255,255,0.055);
     color:#fff;
-    border:1px solid rgba(212,175,55,0.28);
+    border:1px solid rgba(255,255,255,0.10);
     border-radius:15px;
     padding:18px 10px;
     font-size:27px;
     font-weight:700;
     cursor:pointer;
-    transition:.2s;
+    transition:.3s;
 }
 
 .amount-btn.selected{
-    background:linear-gradient(135deg,#D4AF37,#A67C00);
-    color:#0B0217;
-    border-color:#D4AF37;
+    background:linear-gradient(135deg,#9B35FF,#6C1DCE);
+    border-color:#9B35FF;
 }
 
 #feeDisplay{
@@ -130,33 +97,18 @@ h2{
     font-weight:700;
 }
 
-/* ===============================
-   FIXED CONTINUE
-================================ */
-
 .continue-btn{
-    position:fixed;
-    left:50%;
-    bottom:15px;
-    transform:translateX(-50%);
-    width:calc(100% - 40px);
-    max-width:460px;
+    margin-top:auto;
+    width:100%;
     padding:18px;
-    background:linear-gradient(135deg,#D4AF37,#A67C00);
-    color:#0B0217;
+    background:linear-gradient(135deg,#9B35FF,#6C1DCE);
+    color:white;
     border:none;
     border-radius:15px;
     font-size:27px;
     font-weight:700;
     cursor:pointer;
-    z-index:100;
-    box-shadow:0 5px 20px rgba(0,0,0,.4);
 }
-
-.continue-btn:disabled{
-    opacity:.7;
-}
-    
 
 </style>
 
@@ -209,6 +161,7 @@ Select an amount to see the processing fee.
 <button class="continue-btn" onclick="continueNext()">
 Continue
 </button>
+
 <script>
 
 const fees = {
@@ -224,9 +177,10 @@ const fees = {
 };
 
 let selectedAmount = null;
-  
+
 document.getElementById("applicantName").textContent =
 localStorage.getItem("applicantName") || "Applicant";
+
 function selectAmount(amount, btn){
 
 selectedAmount = amount;
@@ -270,4 +224,4 @@ setTimeout(() => {
 </script>
 
 </body>
-                                                                          </html>
+</html>
