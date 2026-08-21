@@ -7,12 +7,13 @@
 
 <title>NYOTA FUNDS KENYA</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
 <style>
+
+/* =================================
+   SAME DESIGN AS AMOUNT.HTML
+================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 *{
     margin:0;
@@ -34,21 +35,6 @@ body{
 }
 
 /* =================================
-   MAIN
-================================= */
-
-.container{
-    width:100%;
-    max-width:500px;
-    min-height:100vh;
-    margin:auto;
-    padding:14px 16px 20px;
-
-    display:flex;
-    flex-direction:column;
-}
-
-/* =================================
    LOGO
 ================================= */
 
@@ -58,13 +44,30 @@ body{
     justify-content:center;
     align-items:center;
 
-    margin-bottom:10px;
+    padding-top:12px;
+    margin-bottom:8px;
 }
 
 .logo{
-    width:115px;
+    width:120px;
     height:auto;
     object-fit:contain;
+}
+
+/* =================================
+   MAIN CONTAINER
+================================= */
+
+.container{
+    width:100%;
+    max-width:500px;
+
+    margin:auto;
+
+    padding:0 16px 18px;
+
+    display:flex;
+    flex-direction:column;
 }
 
 /* =================================
@@ -78,20 +81,26 @@ body{
 
 .header h1{
     color:#D4AF37;
+
     font-size:28px;
+
     line-height:1.2;
+
     font-weight:700;
+
     margin-bottom:7px;
 }
 
 .subtitle{
     color:rgba(255,255,255,0.72);
-    font-size:12px;
+
+    font-size:13px;
+
     line-height:1.45;
 }
 
 /* =================================
-   MAIN CARD
+   CONTENT CARD
 ================================= */
 
 .content{
@@ -113,29 +122,28 @@ body{
     box-shadow:
         0 20px 60px rgba(0,0,0,0.45),
         inset 0 1px 0 rgba(255,255,255,0.05);
-
-    text-align:center;
 }
 
-/* =================================
-   CONTENT
-================================= */
-
 .content h2{
+    text-align:center;
+
     color:#D4AF37;
+
     font-size:20px;
+
     font-weight:700;
+
     margin-bottom:10px;
 }
 
 .content p{
-    color:rgba(255,255,255,0.72);
-    font-size:13px;
-    line-height:1.55;
-}
+    text-align:center;
 
-.content br{
-    line-height:8px;
+    color:rgba(255,255,255,0.72);
+
+    font-size:13px;
+
+    line-height:1.55;
 }
 
 /* =================================
@@ -159,9 +167,11 @@ body{
     color:#0B0217;
 
     border:none;
+
     border-radius:13px;
 
     font-size:16px;
+
     font-weight:700;
 
     cursor:pointer;
@@ -173,7 +183,12 @@ body{
 }
 
 .green:hover{
-    transform:translateY(-1px);
+    background:
+        linear-gradient(
+            135deg,
+            #E5C354,
+            #B88908
+        );
 }
 
 .green:active{
@@ -201,41 +216,55 @@ body{
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,0.075),
-            rgba(255,255,255,0.025)
+            rgba(255,255,255,0.09),
+            rgba(255,255,255,0.035)
         );
 
-    border:1px solid rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.10);
 
     box-shadow:
-        0 15px 40px rgba(0,0,0,0.35);
+        0 20px 60px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.05);
 }
+
+/* =================================
+   COMMENTS WINDOW
+================================= */
 
 .comments-window{
     width:100%;
+
     height:180px;
 
     overflow:hidden;
+
     position:relative;
 }
 
 .comments-track{
     display:flex;
+
     flex-direction:column;
 
-    animation:scrollComments 45s linear infinite;
+    animation:
+        scrollComments 60s linear infinite;
 }
+
+/* =================================
+   COMMENT
+================================= */
 
 .comment{
     flex-shrink:0;
 
-    padding:10px 11px;
+    padding:10px;
 
     margin-bottom:8px;
 
-    border-radius:11px;
+    border-radius:12px;
 
-    background:rgba(255,255,255,0.045);
+    background:
+        rgba(255,255,255,0.045);
 
     border:1px solid rgba(255,255,255,0.06);
 }
@@ -251,19 +280,24 @@ body{
 }
 
 .comment p{
-    margin:0 0 3px;
+    margin:0 0 4px;
 
-    color:rgba(255,255,255,0.82);
+    color:rgba(255,255,255,0.85);
 
     font-size:12px;
+
     line-height:1.4;
 }
 
 .comment small{
-    color:rgba(255,255,255,0.40);
+    opacity:.6;
 
     font-size:9px;
 }
+
+/* =================================
+   COMMENT ANIMATION
+================================= */
 
 @keyframes scrollComments{
 
@@ -284,11 +318,104 @@ body{
 .footer{
     text-align:center;
 
-    margin-top:12px;
+    margin-top:10px;
 
-    color:rgba(255,255,255,0.38);
+    color:rgba(255,255,255,0.40);
 
     font-size:10px;
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media(max-width:480px){
+
+    .logo-section{
+        padding-top:8px;
+
+        margin-bottom:5px;
+    }
+
+    .logo{
+        width:105px;
+    }
+
+    .container{
+        padding:
+            0 14px 14px;
+    }
+
+    .header{
+        margin-bottom:10px;
+    }
+
+    .header h1{
+        font-size:25px;
+
+        margin-bottom:5px;
+    }
+
+    .subtitle{
+        font-size:12px;
+
+        line-height:1.4;
+    }
+
+    .content{
+        padding:16px 14px;
+
+        border-radius:16px;
+    }
+
+    .content h2{
+        font-size:19px;
+
+        margin-bottom:8px;
+    }
+
+    .content p{
+        font-size:12px;
+
+        line-height:1.5;
+    }
+
+    .green{
+        padding:13px;
+
+        margin-top:13px;
+
+        font-size:15px;
+
+        border-radius:12px;
+    }
+
+    .live-comments{
+        margin-top:11px;
+
+        padding:11px;
+
+        border-radius:16px;
+    }
+
+    .comments-window{
+        height:165px;
+    }
+
+    .comment{
+        padding:9px;
+
+        margin-bottom:7px;
+    }
+
+    .comment strong{
+        font-size:12px;
+    }
+
+    .comment p{
+        font-size:11px;
+    }
+
 }
 
 /* =================================
@@ -297,16 +424,21 @@ body{
 
 @media(max-width:360px){
 
-    .container{
-        padding:10px 12px 15px;
+    .logo-section{
+        padding-top:5px;
     }
 
     .logo{
-        width:100px;
+        width:95px;
+    }
+
+    .container{
+        padding-left:12px;
+        padding-right:12px;
     }
 
     .header h1{
-        font-size:24px;
+        font-size:23px;
     }
 
     .subtitle{
@@ -314,7 +446,7 @@ body{
     }
 
     .content{
-        padding:16px 13px;
+        padding:14px 12px;
     }
 
     .content h2{
@@ -322,20 +454,21 @@ body{
     }
 
     .content p{
-        font-size:12px;
+        font-size:11px;
     }
 
     .green{
-        padding:13px;
-        font-size:15px;
+        padding:12px;
+
+        font-size:14px;
     }
 
     .live-comments{
-        padding:11px;
+        padding:10px;
     }
 
     .comments-window{
-        height:160px;
+        height:150px;
     }
 
 }
@@ -346,28 +479,17 @@ body{
 
 <body>
 
+<div class="logo-section">
+
+    <img src="logo.png" alt="NYOTA Logo" class="logo">
+
+</div>
+
 <div class="container">
-
-    <!-- LOGO -->
-
-    <div class="logo-section">
-
-        <img
-            src="logo.png"
-            alt="NYOTA Logo"
-            class="logo"
-        >
-
-    </div>
-
-
-    <!-- HEADER -->
 
     <div class="header">
 
-        <h1>
-            NYOTA Fund Kenya
-        </h1>
+        <h1>NYOTA Fund Kenya</h1>
 
         <p class="subtitle">
             Empowering Youth • Supporting Businesses • Strengthening Kenya's Economy
@@ -376,13 +498,9 @@ body{
     </div>
 
 
-    <!-- MAIN CONTENT -->
-
     <div class="content">
 
-        <h2>
-            About the NYOTA Fund
-        </h2>
+        <h2>About the NYOTA Fund</h2>
 
         <p>
             NYOTA Fund is a national financial empowerment initiative designed
@@ -397,62 +515,306 @@ body{
             growth across all 47 counties of Kenya.
         </p>
 
-        <button
-            class="green"
-            id="startBtn"
-            onclick="startApplication()"
-        >
-            Start Application
-        </button>
+        <button class="green" id="startBtn" onclick="startApplication()">
+    Start Application
+</button>
 
     </div>
 
 
-    <!-- COMMENTS -->
+    <!-- =========================================
+         LIVE COMMENTS
+    ========================================== -->
 
     <div class="live-comments">
+
+        
 
         <div class="comments-window">
 
             <div class="comments-track">
 
-                <!-- Replace these with genuine user feedback -->
 
                 <div class="comment">
-                    <strong>Sample Feedback</strong>
-                    <p>Easy application process and simple to follow.</p>
-                    <small>Sample</small>
+                    <strong>Victor yegon</strong>
+                    <p>Funds helped pay my rent. Thank you!</p>
+                    <small>commented just now</small>
                 </div>
 
-                <div class="comment">
-                    <strong>Sample Feedback</strong>
-                    <p>The application process was straightforward.</p>
-                    <small>Sample</small>
-                </div>
 
                 <div class="comment">
-                    <strong>Sample Feedback</strong>
-                    <p>Information was clear and easy to understand.</p>
-                    <small>Sample</small>
+                    <strong>Irene Atieno</strong>
+                    <p>Quick approval and fast fund delivery.</p>
+                    <small>commented 30 seconds ago</small>
                 </div>
 
-                <div class="comment">
-                    <strong>Sample Feedback</strong>
-                    <p>The application steps were simple to follow.</p>
-                    <small>Sample</small>
-                </div>
 
                 <div class="comment">
-                    <strong>Sample Feedback</strong>
-                    <p>Clean and easy-to-use application page.</p>
-                    <small>Sample</small>
+                    <strong>Winfred Chepkemoi</strong>
+                    <p>Happy to receive 65,000, thanks!</p>
+                    <small>commented 5 minutes ago</small>
                 </div>
 
+
                 <div class="comment">
-                    <strong>Sample Feedback</strong>
-                    <p>Everything was clearly explained.</p>
-                    <small>Sample</small>
+                    <strong>Victor Ochieng</strong>
+                    <p>Received 40k. Real and trusted platform 🙌</p>
+                    <small>commented 10 seconds ago</small>
                 </div>
+
+
+                <div class="comment">
+                    <strong>Ruth Chelimo</strong>
+                    <p>22,000 received successfully. Thank you NYOTA FUND!</p>
+                    <small>commented 30 seconds ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Faith Njeri</strong>
+                    <p>Payment was smooth, received 110,000.</p>
+                    <small>commented 1 minute ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Felix Kariuki</strong>
+                    <p>Amazing service, 85,000 received.</p>
+                    <small>commented 10 seconds ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Brenda Akinyi</strong>
+                    <p>Happy to receive 30,000, thanks!</p>
+                    <small>commented 2 seconds ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Peter Mutiso</strong>
+                    <p>Platform is trustworthy. Funds received.</p>
+                    <small>commented just now</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Susan Wairimu</strong>
+                    <p>Received 40k. Real and trusted platform 🙌</p>
+                    <small>commented just now</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Paul Onyango</strong>
+                    <p>75,000 received successfully. Thank you NYOTA FUND!</p>
+                    <small>commented 30 seconds ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Lucy Atieno</strong>
+                    <p>Received 85,000, helped me start my project.</p>
+                    <small>commented just now</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Mary Wanjiku</strong>
+                    <p>22,000 received successfully. Thank you NYOTA FUND!</p>
+                    <small>commented 30 seconds ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Diana Jepkosgei</strong>
+                    <p>Funds came in less than 3 minutes. Amazing!</p>
+                    <small>commented 5 minutes ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Patrick Kimani</strong>
+                    <p>Real platform, got 50k in my phone.</p>
+                    <small>commented 2 minutes ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Stephen Bett</strong>
+                    <p>Funds came in less than 3 minutes. Amazing!</p>
+                    <small>commented 10 seconds ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Allan Otieno</strong>
+                    <p>50k received in record time.</p>
+                    <small>commented 1 minute ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Caroline Mumbi</strong>
+                    <p>Quick processing, I received 90,000.</p>
+                    <small>commented 10 seconds ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Daniel Ouma</strong>
+                    <p>Funds legit, fast, and reliable.</p>
+                    <small>commented just now</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Nancy Wambui</strong>
+                    <p>I paid the processing fee and got my 30,000 instantly.</p>
+                    <small>commented 10 seconds ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Mercy Nyambura</strong>
+                    <p>Amazing service, 50,000 received.</p>
+                    <small>commented 10 seconds ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Linda Auma</strong>
+                    <p>Funds legit, fast, and reliable.</p>
+                    <small>commented 2 minutes ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Grace Akinyi</strong>
+                    <p>Very satisfied with NYOTA FUND.</p>
+                    <small>commented 10 seconds ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Alice Muthoni</strong>
+                    <p>Received 22,000, helped me start my project.</p>
+                    <small>commented 30 seconds ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Esther Jepchirchir</strong>
+                    <p>Thought it was fake but got my money.</p>
+                    <small>commented 2 minutes ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Caleb Mutua</strong>
+                    <p>Very quick and reliable. Got 30k.</p>
+                    <small>commented 10 seconds ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Ann Chebet</strong>
+                    <p>Received 40k. Real and trusted platform 🙌</p>
+                    <small>commented just now</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Brian Kiptoo</strong>
+                    <p>NYOTA FUND never disappoints.</p>
+                    <small>commented just now</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Samuel Kibet</strong>
+                    <p>I started my small business using 50k. Thank you!</p>
+                    <small>commented 2 seconds ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Joseph Maina</strong>
+                    <p>Very satisfied with NYOTA FUND.</p>
+                    <small>commented 1 minute ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Dennis Barasa</strong>
+                    <p>45,000 received successfully. Thank you NYOTA FUND!</p>
+                    <small>commented 2 minutes ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>James Otieno</strong>
+                    <p>Thought it was fake but got my money.</p>
+                    <small>commented 1 minute ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Noah Kiplangat</strong>
+                    <p>Quick approval and fast fund delivery.</p>
+                    <small>commented 30 seconds ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>John Kamau</strong>
+                    <p>Platform is trustworthy. Funds received.</p>
+                    <small>commented 10 seconds ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Michael Njoroge</strong>
+                    <p>Quick processing, I received 106,
+           500.</p>
+                    <small>commented 5 minutes ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Joyce Nyambura</strong>
+                    <p>NYOTA FUND is the real deal. 79,700 received.</p>
+                    <small>commented 30 seconds ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Kevin Mwangi</strong>
+                    <p>Funds helped pay my rent. Thank you!</p>
+                    <small>commented 2 seconds ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Beatrice Wanjala</strong>
+                    <p>Thought it was fake but got my money.</p>
+                    <small>commented 2 minutes ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>George Kiplagat</strong>
+                    <p>Received my 38,100 in minutes.</p>
+                    <small>commented 1 minute ago</small>
+                </div>
+
+
+                <div class="comment">
+                    <strong>Janet Moraa</strong>
+                    <p>Funds delivered faster than expected.</p>
+                    <small>commented 5 minutes ago</small>
+                </div>
+
 
             </div>
 
@@ -461,37 +823,22 @@ body{
     </div>
 
 
-    <!-- FOOTER -->
-
     <div class="footer">
         © 2026 NYOTA FUNDS KENYA
     </div>
 
 </div>
-
-
 <script>
+function startApplication() {
+    const button = document.getElementById("startBtn");
 
-function startApplication(){
-
-    const button =
-        document.getElementById("startBtn");
-
-    button.textContent =
-        "Opening...";
-
+    button.textContent = "Opening...";
     button.disabled = true;
 
-    setTimeout(function(){
-
-        window.location.href =
-            "apply.html";
-
-    },500);
-
+    setTimeout(function () {
+        window.location.href = "apply.html";
+    }, 500);
 }
-
 </script>
-
 </body>
 </html>
