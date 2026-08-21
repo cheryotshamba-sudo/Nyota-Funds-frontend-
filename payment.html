@@ -2,32 +2,21 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>NYOTA FUNDS</title>
-</style>
- *{
-    box-sizing:border-box;
-}
 
-html{
-    min-height:100%;
+<style>
+*{
+    box-sizing:border-box;
 }
 
 body{
     margin:0;
-    min-height:100vh;
-    padding:18px 10px;
-    font-family:Arial,Helvetica,sans-serif;
-    background:
-        radial-gradient(
-            circle at top,
-            rgba(132,38,220,.22),
-            transparent 38%
-        ),
-        #0B0217;
+    padding:16px 10px;
+    font-family:Arial,sans-serif;
+    background:#0B0217;
     color:#fff;
 }
 
@@ -38,168 +27,97 @@ body{
 }
 
 .card{
-    position:relative;
-    overflow:hidden;
     width:100%;
-    padding:25px 18px 20px;
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:20px;
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.105),
-            rgba(255,255,255,.035)
+            rgba(255,255,255,0.09),
+            rgba(255,255,255,0.035)
         );
-    box-shadow:
-        0 25px 70px rgba(0,0,0,.50),
-        inset 0 1px 0 rgba(255,255,255,.06);
-}
+    padding:22px 18px 18px;
+    border-radius:18px;
 
-.card::before{
-    content:"";
-    position:absolute;
-    width:180px;
-    height:180px;
-    top:-100px;
-    right:-80px;
-    border-radius:50%;
-    background:rgba(155,53,255,.18);
-    filter:blur(30px);
-    pointer-events:none;
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.10);
 }
 
 h1{
-    position:relative;
-    margin:0 0 14px;
     text-align:center;
     color:#fff;
-    font-size:23px;
+    font-size:22px;
     font-weight:700;
-    letter-spacing:.2px;
+    margin:2px 0 16px;
 }
 
 p{
-    position:relative;
-    margin:9px 0;
     text-align:center;
-    color:rgba(255,255,255,.70);
     font-size:14px;
-    line-height:1.55;
-}
-
-p strong{
-    color:#fff;
+    line-height:1.5;
+    color:rgba(255,255,255,0.72);
 }
 
 .amount{
-    position:relative;
-    margin:21px 0;
-    padding:16px 12px;
-    text-align:center;
-    color:#fff;
+    background:rgba(155,53,255,0.08);
+    border:1px solid rgba(155,53,255,0.18);
+    border-radius:12px;
+    padding:14px 10px;
     font-size:20px;
     font-weight:700;
-    border:1px solid rgba(168,72,255,.30);
-    border-radius:13px;
-    background:
-        linear-gradient(
-            135deg,
-            rgba(155,53,255,.15),
-            rgba(108,29,206,.06)
-        );
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.04);
+    text-align:center;
+    color:#fff;
+    margin:18px 0;
 }
 
 label{
     display:block;
-    margin:17px 0 7px;
-    color:rgba(255,255,255,.90);
+    margin-top:15px;
+    margin-bottom:7px;
     font-size:14px;
     font-weight:700;
+    color:rgba(255,255,255,0.88);
 }
 
 input{
     width:100%;
-    height:51px;
-    padding:0 14px;
-    border:1px solid rgba(255,255,255,.13);
-    border-radius:11px;
-    outline:none;
-    background:rgba(255,255,255,.065);
-    color:#fff;
-    font-family:Arial,Helvetica,sans-serif;
+    padding:14px 12px;
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:10px;
     font-size:16px;
-    transition:
-        border-color .2s ease,
-        box-shadow .2s ease,
-        background .2s ease;
-}
-
-input::placeholder{
-    color:rgba(255,255,255,.38);
+    background:rgba(255,255,255,0.07);
+    color:#fff;
+    outline:none;
 }
 
 input:focus{
-    border-color:#9B35FF;
-    background:rgba(155,53,255,.08);
-    box-shadow:
-        0 0 0 3px rgba(155,53,255,.13);
-}
-
-input[readonly]{
-    color:rgba(255,255,255,.70);
+    border-color:rgba(169,72,255,0.8);
+    box-shadow:0 0 0 3px rgba(155,55,255,0.12);
 }
 
 button{
     width:100%;
-    height:52px;
-    margin-top:20px;
-    border:0;
-    border-radius:12px;
-    outline:none;
-    background:
-        linear-gradient(
-            135deg,
-            #A13BFF,
-            #701FCF
-        );
-    color:#fff;
-    font-family:Arial,Helvetica,sans-serif;
+    padding:15px;
+    margin-top:17px;
+    background:linear-gradient(135deg,#9B35FF,#6C1DCE);
+    color:white;
+    border:none;
+    border-radius:11px;
     font-size:16px;
     font-weight:700;
     cursor:pointer;
-    box-shadow:
-        0 12px 32px rgba(137,43,226,.35),
-        inset 0 1px 0 rgba(255,255,255,.14);
-    transition:
-        transform .15s ease,
-        box-shadow .2s ease,
-        opacity .2s ease;
-}
-
-button:hover{
-    box-shadow:
-        0 14px 38px rgba(137,43,226,.45),
-        inset 0 1px 0 rgba(255,255,255,.16);
+    box-shadow:0 10px 30px rgba(137,43,226,0.30);
 }
 
 button:active{
     transform:scale(.98);
 }
 
-button:disabled{
-    background:rgba(255,255,255,.18);
-    color:rgba(255,255,255,.55);
-    cursor:not-allowed;
-    box-shadow:none;
-}
-
-#stkMessage{
+#message{
     min-height:20px;
-    margin:14px 0 0;
-    text-align:center;
-    color:#C17AFF;
+    margin-top:13px;
+    color:#B86CFF;
     font-size:13px;
     font-weight:600;
     line-height:1.5;
@@ -212,30 +130,19 @@ button:disabled{
     }
 
     .card{
-        padding:21px 14px 17px;
-        border-radius:16px;
+        padding:18px 13px 15px;
+        border-radius:15px;
     }
 
     h1{
         font-size:20px;
     }
 
-    .amount{
-        font-size:18px;
-        padding:14px 10px;
-    }
-
-    input,
     button{
-        height:49px;
-    }
-
-    button{
+        padding:14px;
         font-size:15px;
     }
-}   
-
-    
+}
 </style>
 </head>
 
@@ -248,285 +155,64 @@ button:disabled{
 <h1>Processing Fee</h1>
 
 <p>
-Welcome, <strong><span id="name"></span></strong>
+Welcome, <strong>Cheryot</strong>
 </p>
 
 <p>
-To continue with your NYOTA Fund application, please complete the processing fee payment below.
+To continue with your NYOTA Fund application,
+please complete the processing fee payment below.
 </p>
 
-<div class="amount" id="feeAmount">
+<div class="amount">
 Processing Fee: KSh 350
 </div>
 
 <label>Full Name</label>
 
-<input type="text" id="fullName" readonly>
+<input
+    type="text"
+    id="fullName"
+    value="Cheryot"
+    readonly
+>
 
 <label>M-PESA Phone Number</label>
 
 <input
-type="tel"
-id="phone"
-placeholder="2547XXXXXXXX">
+    type="tel"
+    id="phone"
+    placeholder="2547XXXXXXXX"
+>
 
 <button id="payBtn" onclick="payNow()">
 Pay Processing Fee
 </button>
 
-<p id="stkMessage"></p>
+<p id="message"></p>
 
 </div>
 
 </div>
 
 <script>
+function payNow(){
 
-let applicant = localStorage.getItem("applicantName");
-
-document.getElementById("name").innerHTML =
-    applicant || "Applicant";
-
-document.getElementById("fullName").value =
-    applicant || "";
-
-let processingFee =
-    localStorage.getItem("processingFee") || "350";
-
-document.getElementById("feeAmount").innerHTML =
-    "Processing Fee: KSh " +
-    Number(processingFee).toLocaleString();
-
-
-async function payNow() {
-
-    let phone =
+    const phone =
         document.getElementById("phone").value.trim();
 
-    localStorage.setItem(
-        "phoneNumber",
-        phone
-    );
+    const message =
+        document.getElementById("message");
 
-    localStorage.setItem(
-        "fullName",
-        document.getElementById("fullName").value
-    );
-
-    let btn =
-        document.getElementById("payBtn");
-
-    if (phone === "") {
-
-        alert(
-            "Please enter your M-PESA phone number."
-        );
-
+    if(phone === ""){
+        message.textContent =
+            "Please enter your M-PESA phone number.";
         return;
     }
 
-    btn.innerHTML =
-        "Sending STK Push...";
-
-    btn.disabled = true;
-
-    try {
-
-        let response = await fetch(
-            "https://nyota-funds-backend.onrender.com/stk-push",
-            {
-                method: "POST",
-
-                headers: {
-                    "Content-Type":
-                        "application/json"
-                },
-
-                body: JSON.stringify({
-                    phone: phone,
-
-                    amount:
-                        Number(processingFee)
-                })
-            }
-        );
-
-        let data =
-            await response.json();
-
-        console.log(
-            "STK RESPONSE:",
-            data
-        );
-
-        if (!response.ok || !data.success) {
-
-            throw new Error(
-                data.message ||
-                "STK Push failed"
-            );
-        }
-
-        /*
-         * Paylor returns transactionId.
-         * Our backend also returns it as
-         * checkout_request_id for compatibility.
-         */
-
-        let transactionId =
-            data.transactionId ||
-            data.checkout_request_id;
-
-        if (!transactionId) {
-
-            throw new Error(
-                "No Paylor transaction ID received"
-            );
-        }
-
-        btn.innerHTML =
-    "Processing...";
-
-        document.getElementById(
-            "stkMessage"
-        ).innerHTML =
-            "An M-PESA payment request has been sent to your phone. Please enter your M-PESA PIN to complete the payment.";
-
-        checkPayment(
-            transactionId
-        );
-
-    } catch (error) {
-
-        console.log(
-            "PAYMENT ERROR:",
-            error
-        );
-
-        alert(
-            error.message ||
-            "Payment request failed."
-        );
-
-        btn.innerHTML =
-            "Pay Processing Fee";
-
-        btn.disabled = false;
-    }
+    message.textContent =
+        "Demo mode: no payment has been processed.";
 }
-
-
-async function checkPayment(
-    transactionId
-) {
-
-    let interval =
-        setInterval(async () => {
-
-            try {
-
-                let response =
-                    await fetch(
-                        "https://nyota-funds-backend.onrender.com/payment-status",
-                        {
-                            method: "POST",
-
-                            headers: {
-                                "Content-Type":
-                                    "application/json"
-                            },
-
-                            body:
-                                JSON.stringify({
-                                    transactionId:
-                                        transactionId
-                                })
-                        }
-                    );
-
-                let result =
-                    await response.json();
-
-                console.log(
-                    "PAYMENT STATUS:",
-                    result
-                );
-
-                if (
-                    !result.success ||
-                    !result.data
-                ) {
-                    return;
-                }
-
-                let payment =
-                    result.data;
-
-                let status =
-                    String(
-                        payment.status || ""
-                    ).toUpperCase();
-
-
-                if (
-                    status === "COMPLETED"
-                ) {
-
-                    clearInterval(
-                        interval
-                    );
-
-                    document.getElementById(
-                        "stkMessage"
-                    ).innerHTML =
-                        "✅ Payment successful. Redirecting...";
-
-                    window.location.href =
-                        "delivery.html";
-                }
-
-
-                else if (
-                    status === "CANCELLED" ||
-                    status === "FAILED"
-                ) {
-
-                    clearInterval(
-                        interval
-                    );
-
-                    document.getElementById(
-                        "stkMessage"
-                    ).innerHTML =
-                        "❌ Payment " +
-                        status.toLowerCase() +
-                        ".";
-
-                    document.getElementById(
-                        "payBtn"
-                    ).disabled = false;
-
-                    document.getElementById(
-                        "payBtn"
-                    ).innerHTML =
-                        "Pay Processing Fee";
-                }
-
-            } catch (error) {
-
-                console.log(
-                    "STATUS ERROR:",
-                    error
-                );
-
-            }
-
-        }, 3000);
-
-}
-
 </script>
 
 </body>
-
 </html>
