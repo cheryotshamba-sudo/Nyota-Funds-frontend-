@@ -223,7 +223,7 @@ button:disabled{
 
 <small>Funds disbursement Fee</small>
 
-<strong>KSh 900</strong>
+<strong>KSh 1</strong>
 
 </div>
 
@@ -232,7 +232,7 @@ button:disabled{
     id="payBtn"
     onclick="paySecurity()"
 >
-    Pay KSh 900
+    Pay KSh 1
 </button>
 
 
@@ -255,7 +255,7 @@ const BACKEND =
     "https://nyota-funds-backend.onrender.com";
 
 
-const FEE = 900;
+const FEE = 1;
 
 
 const button =
@@ -477,7 +477,7 @@ function checkPayment(transactionId){
                     button.disabled = false;
 
                     button.textContent =
-                        "Pay KSh 900";
+                        "Pay KSh 1";
 
                     return;
                 }
