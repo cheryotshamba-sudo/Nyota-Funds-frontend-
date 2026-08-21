@@ -8,6 +8,7 @@
 
 <title>DISBURSEMENT FEE PAYMENT </title>
 
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap');
 
@@ -18,9 +19,9 @@
 body{
     margin:0;
     padding:16px 10px;
-    font-family:'Mali',cursive;
-    background:#eef4f8;
-    color:#16445b;
+    font-family:'Mali',sans-serif;
+    background:#0B0217;
+    color:#fff;
 }
 
 .container{
@@ -31,11 +32,18 @@ body{
 
 .card{
     width:100%;
-    background:#fff;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.09),
+            rgba(255,255,255,0.035)
+        );
     padding:24px 20px;
     border-radius:14px;
-    border:1px solid #e0e8ed;
-    box-shadow:0 2px 10px rgba(0,0,0,.07);
+    border:1px solid rgba(255,255,255,0.10);
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
 .logo{
@@ -49,14 +57,14 @@ h2{
     text-align:center;
     margin:5px 0 15px;
     font-size:22px;
-    color:#16445b;
+    color:#D4AF37;
     font-weight:700;
 }
 
 .intro{
     text-align:center;
-    color:#666;
-    font-family:Arial,sans-serif;
+    color:rgba(255,255,255,0.72);
+    font-family:'Mali',sans-serif;
     font-size:14px;
     line-height:1.6;
 }
@@ -65,22 +73,22 @@ h2{
     margin-top:18px;
     padding:15px;
     border-radius:12px;
-    background:#fff;
-    border:1px solid #e0e8ed;
+    background:rgba(255,255,255,0.045);
+    border:1px solid rgba(255,255,255,0.10);
 }
 
 .details p{
     margin:9px 0;
-    font-family:Arial,sans-serif;
+    font-family:'Mali',sans-serif;
     font-size:14px;
 }
 
 .details b{
-    color:#16445b;
+    color:rgba(255,255,255,0.88);
 }
 
 .details span{
-    color:#125d83;
+    color:#D4AF37;
     font-weight:700;
 }
 
@@ -89,20 +97,20 @@ h2{
     padding:16px;
     text-align:center;
     border-radius:12px;
-    background:#eef4f8;
-    border:1px solid #e0e8ed;
+    background:rgba(212,175,55,0.08);
+    border:1px solid rgba(212,175,55,0.18);
 }
 
 .amount small{
     display:block;
-    color:#666;
-    font-family:Arial,sans-serif;
+    color:rgba(255,255,255,0.65);
+    font-family:'Mali',sans-serif;
     margin-bottom:5px;
 }
 
 .amount strong{
     font-size:28px;
-    color:#125d83;
+    color:#D4AF37;
 }
 
 button{
@@ -111,16 +119,24 @@ button{
     padding:15px;
     border:0;
     border-radius:14px;
-    background:#125d83;
-    color:#fff;
-    font-family:'Mali',cursive;
+    background:
+        linear-gradient(
+            135deg,
+            #D4AF37,
+            #A67C00
+        );
+    color:#0B0217;
+    font-family:'Mali',sans-serif;
     font-size:20px;
     font-weight:600;
     cursor:pointer;
+    box-shadow:
+        0 10px 30px rgba(212,175,55,0.30);
 }
 
 button:disabled{
-    background:#aaa;
+    background:rgba(255,255,255,0.25);
+    color:rgba(255,255,255,0.55);
     cursor:not-allowed;
 }
 
@@ -128,19 +144,19 @@ button:disabled{
     min-height:22px;
     margin-top:14px;
     text-align:center;
-    font-family:Arial,sans-serif;
+    font-family:'Mali',sans-serif;
     font-size:13px;
     line-height:1.5;
-    color:#125d83;
+    color:#D4AF37;
 }
 
 .notice{
     margin-top:18px;
     padding:12px;
     border-radius:9px;
-    background:#eef4f8;
-    color:#777;
-    font-family:Arial,sans-serif;
+    background:rgba(255,255,255,0.045);
+    color:rgba(255,255,255,0.50);
+    font-family:'Mali',sans-serif;
     font-size:11px;
     line-height:1.5;
     text-align:center;
@@ -162,7 +178,7 @@ button:disabled{
     }
 
 }
-</style> 
+</style>
 
 
 
