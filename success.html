@@ -7,26 +7,26 @@
 
 <title>NYOTA FUNDS</title>
 
-<style>
+<script>
 
-body{
-    background:#0B0217;
+const applicant =
+    localStorage.getItem("fullName") ||
+    localStorage.getItem("applicantName") ||
+    "Applicant";
+
+document.getElementById("name").textContent =
+    applicant;
+
+
+function finish(){
+
+    alert(
+        "Thank you for choosing NYOTA FUNDS."
+    );
+
 }
 
-h1{
-    color:#9B35FF;
-}
-
-button{
-    background:#9B35FF;
-    color:#fff;
-}
-
-button:hover{
-    background:#6C1DCE;
-}
-
-</style>
+</script>
 
 </head>
 
