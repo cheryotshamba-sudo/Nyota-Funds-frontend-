@@ -9,11 +9,14 @@
 <title>NYOTA FUNDS KENYA</title>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 html,
@@ -24,7 +27,6 @@ body {
 
 body {
     min-height: 100vh;
-    padding: 20px;
 
     background:
         radial-gradient(
@@ -45,16 +47,23 @@ body {
 
 .container {
     width: 100%;
-    max-width: 450px;
+    max-width: 500px;
+    min-height: 100vh;
+
     margin: auto;
+
+    padding: 10px 16px;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .card {
     width: 100%;
 
-    padding: 25px;
+    padding: 22px 18px;
 
-    border-radius: 15px;
+    border-radius: 18px;
 
     background:
         linear-gradient(
@@ -63,7 +72,7 @@ body {
             rgba(255, 255, 255, 0.025)
         );
 
-    border: 1px solid rgba(255, 193, 7, 0.16);
+    border: 1px solid rgba(255, 205, 70, 0.16);
 
     box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.65),
@@ -77,16 +86,17 @@ body {
 h1 {
     text-align: center;
 
-    margin-bottom: 30px;
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 700;
 
-    font-size: 28px;
-    font-weight: 800;
+    margin-bottom: 12px;
 
     background:
         linear-gradient(
             180deg,
             #fff3ad 0%,
-            #ffd34f 25%,
+            #ffd54f 25%,
             #e0a51c 55%,
             #9a6509 100%
         );
@@ -100,10 +110,10 @@ h1 {
 }
 
 .question {
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 700;
 
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
     color: #fff;
 }
@@ -112,17 +122,20 @@ h1 {
     display: flex;
     align-items: center;
 
-    padding: 14px;
+    width: 100%;
 
-    margin-bottom: 12px;
+    padding: 11px 12px;
+
+    margin-bottom: 8px;
 
     border: 1px solid rgba(255, 255, 255, 0.10);
 
-    border-radius: 10px;
+    border-radius: 12px;
 
     cursor: pointer;
 
     font-size: 17px;
+    font-weight: 500;
 
     background: rgba(255, 255, 255, 0.045);
 
@@ -147,20 +160,21 @@ h1 {
     background:
         linear-gradient(
             135deg,
-            rgba(255, 211, 79, 0.16),
-            rgba(55, 190, 30, 0.08)
+            rgba(255, 211, 79, 0.20),
+            rgba(45, 190, 25, 0.12)
         );
 
-    border-color: rgba(255, 193, 7, 0.75);
+    border-color: #e7b52b;
 
     box-shadow:
-        0 0 18px rgba(255, 193, 7, 0.08);
+        0 0 20px rgba(255, 193, 7, 0.12),
+        inset 0 0 15px rgba(255, 193, 7, 0.03);
 }
 
 .option input {
-    margin-right: 15px;
+    margin-right: 13px;
 
-    transform: scale(1.3);
+    transform: scale(1.2);
 
     accent-color: #e2a91e;
 
@@ -170,11 +184,11 @@ h1 {
 button {
     width: 100%;
 
-    min-height: 54px;
+    min-height: 52px;
 
-    padding: 15px;
+    padding: 12px;
 
-    margin-top: 25px;
+    margin-top: 8px;
 
     background:
         linear-gradient(
@@ -191,8 +205,9 @@ button {
 
     border-radius: 12px;
 
-    font-size: 17px;
-    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
 
     cursor: pointer;
 
@@ -230,32 +245,41 @@ button:disabled {
 
 @media (max-width: 480px) {
 
-    body {
-        padding: 16px 14px 30px;
+    .container {
+        width: 100%;
+        min-height: 100vh;
+
+        padding: 8px 14px;
     }
 
     .card {
+        width: 100%;
+
         padding: 20px 16px;
-        border-radius: 15px;
+
+        border-radius: 18px;
     }
 
     h1 {
-        font-size: 25px;
-        margin-bottom: 25px;
+        font-size: 27px;
+        margin-bottom: 8px;
     }
 
     .question {
-        font-size: 18px;
+        font-size: 19px;
+        margin-bottom: 8px;
     }
 
     .option {
-        padding: 13px;
-        font-size: 15px;
+        padding: 10px 11px;
+        margin-bottom: 7px;
+        font-size: 16px;
     }
 
     button {
-        min-height: 52px;
-        font-size: 16px;
+        min-height: 50px;
+        padding: 10px;
+        font-size: 19px;
     }
 }
 
@@ -265,7 +289,7 @@ button:disabled {
 
 @media (max-width: 360px) {
 
-    body {
+    .container {
         padding-left: 12px;
         padding-right: 12px;
     }
@@ -275,7 +299,7 @@ button:disabled {
     }
 
     h1 {
-        font-size: 23px;
+        font-size: 24px;
     }
 
     .question {
@@ -283,12 +307,16 @@ button:disabled {
     }
 
     .option {
-        font-size: 14px;
+        font-size: 15px;
+        padding: 9px 10px;
+    }
+
+    button {
+        font-size: 18px;
     }
 }
+
 </style>
-
-
 
 </head>
 
@@ -309,8 +337,6 @@ What will you do with the funds?
 Starting a Business
 </label>
 
-
-
 <label class="option">
 <input type="radio" name="purpose" value="Education">
 Education
@@ -320,8 +346,6 @@ Education
 <input type="radio" name="purpose" value="Agriculture">
 Agriculture
 </label>
-
-
 
 <label class="option">
 <input type="radio" name="purpose" value="Home Improvement">
@@ -339,7 +363,7 @@ Other
 </label>
 
 <button id="continueBtn" onclick="continueNext()">
-    Continue
+Continue
 </button>
 
 </div>
@@ -350,20 +374,34 @@ Other
 
 function continueNext(){
 
-let selected=document.querySelector('input[name="purpose"]:checked');
+let selected =
+document.querySelector(
+    'input[name="purpose"]:checked'
+);
 
 if(!selected){
+
 alert("Please select a purpose.");
+
 return;
+
 }
 
-localStorage.setItem("purpose",selected.value);
+localStorage.setItem(
+    "purpose",
+    selected.value
+);
 
-const button = document.getElementById("continueBtn");
-button.textContent = "Processing...";
+const button =
+document.getElementById("continueBtn");
+
+button.textContent =
+"Processing...";
+
 button.disabled = true;
 
-window.location.href="amount.html";
+window.location.href =
+"amount.html";
 
 }
 
