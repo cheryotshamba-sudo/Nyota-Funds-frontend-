@@ -16,6 +16,12 @@
     font-family:Arial,sans-serif;
 }
 
+html,
+body{
+    width:100%;
+    min-height:100%;
+}
+
 body{
     background:#0B0217;
     color:#fff;
@@ -26,65 +32,71 @@ body{
     max-width:500px;
     margin:auto;
     min-height:100vh;
-    padding:20px;
+    padding:16px 20px;
     display:flex;
     flex-direction:column;
 }
 
 h1{
     text-align:center;
-    color:#fff;
+    color:#D4AF37;
     font-size:36px;
     font-weight:700;
-    margin-bottom:20px;
+    margin-bottom:12px;
 }
 
 .message{
     text-align:center;
     font-size:27px;
     font-weight:400;
-    line-height:1.15;
-    margin-bottom:25px;
+    line-height:1.35;
+    margin-bottom:14px;
     color:rgba(255,255,255,0.72);
 }
 
 .message b{
+    color:#D4AF37;
     font-weight:700;
 }
 
 h2{
     text-align:center;
-    color:#fff;
+    color:#D4AF37;
     font-size:27px;
     font-weight:700;
-    margin-bottom:20px;
+    margin-bottom:12px;
 }
 
 .amount-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:15px;
+    gap:10px;
 }
 
 .amount-btn{
-    background:rgba(255,255,255,0.055);
+    background:rgba(212,175,55,0.055);
     color:#fff;
-    border:1px solid rgba(255,255,255,0.10);
+    border:1px solid rgba(212,175,55,0.25);
     border-radius:15px;
-    padding:18px 10px;
+    padding:14px 10px;
     font-size:27px;
     font-weight:700;
     cursor:pointer;
     transition:.3s;
 }
 
+.amount-btn:hover{
+    border-color:#D4AF37;
+}
+
 .amount-btn.selected{
-    background:linear-gradient(135deg,#9B35FF,#6C1DCE);
-    border-color:#9B35FF;
+    background:linear-gradient(135deg,#D4AF37,#A67C00);
+    color:#0B0217;
+    border-color:#D4AF37;
 }
 
 #feeDisplay{
-    margin:25px 0;
+    margin:12px 0;
     text-align:center;
     font-size:24px;
     font-weight:400;
@@ -95,19 +107,72 @@ h2{
 #feeDisplay span{
     font-size:27px;
     font-weight:700;
+    color:#D4AF37;
 }
 
 .continue-btn{
-    margin-top:auto;
+    margin-top:4px;
     width:100%;
-    padding:18px;
-    background:linear-gradient(135deg,#9B35FF,#6C1DCE);
-    color:white;
+    padding:14px;
+    background:linear-gradient(135deg,#D4AF37,#A67C00);
+    color:#0B0217;
     border:none;
     border-radius:15px;
     font-size:27px;
     font-weight:700;
     cursor:pointer;
+}
+
+.continue-btn:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+}
+
+@media(max-height:700px){
+
+    .container{
+        padding:10px 16px;
+    }
+
+    h1{
+        font-size:30px;
+        margin-bottom:7px;
+    }
+
+    .message{
+        font-size:20px;
+        line-height:1.25;
+        margin-bottom:8px;
+    }
+
+    h2{
+        font-size:21px;
+        margin-bottom:8px;
+    }
+
+    .amount-grid{
+        gap:7px;
+    }
+
+    .amount-btn{
+        padding:10px 6px;
+        font-size:21px;
+    }
+
+    #feeDisplay{
+        margin:8px 0;
+        font-size:19px;
+    }
+
+    #feeDisplay span{
+        font-size:21px;
+    }
+
+    .continue-btn{
+        margin-top:2px;
+        padding:11px;
+        font-size:21px;
+    }
 }
 
 </style>
@@ -126,7 +191,8 @@ Congratulations 🎉 <span id="applicantName"></span><br><br>
 
 You're eligible for <b>NYOTA Funds Limits.</b><br>
 
-Kindly choose the amount you want and pay the processing fee to continue.
+Kindly choose the amount you want and pay the
+<b>program processing fee</b> to continue.
 
 </div>
 
@@ -134,23 +200,50 @@ Kindly choose the amount you want and pay the processing fee to continue.
 
 <div class="amount-grid">
 
-<button class="amount-btn" onclick="selectAmount(22000,this)">Ksh 22,000</button>
+<button class="amount-btn"
+onclick="selectAmount(22000,this)">
+Ksh 22,000
+</button>
 
-<button class="amount-btn" onclick="selectAmount(30000,this)">Ksh 30,000</button>
+<button class="amount-btn"
+onclick="selectAmount(30000,this)">
+Ksh 30,000
+</button>
 
-<button class="amount-btn" onclick="selectAmount(40000,this)">Ksh 40,000</button>
+<button class="amount-btn"
+onclick="selectAmount(40000,this)">
+Ksh 40,000
+</button>
 
-<button class="amount-btn" onclick="selectAmount(50000,this)">Ksh 50,000</button>
+<button class="amount-btn"
+onclick="selectAmount(50000,this)">
+Ksh 50,000
+</button>
 
-<button class="amount-btn" onclick="selectAmount(65000,this)">Ksh 65,000</button>
+<button class="amount-btn"
+onclick="selectAmount(65000,this)">
+Ksh 65,000
+</button>
 
-<button class="amount-btn" onclick="selectAmount(75000,this)">Ksh 75,000</button>
+<button class="amount-btn"
+onclick="selectAmount(75000,this)">
+Ksh 75,000
+</button>
 
-<button class="amount-btn" onclick="selectAmount(85000,this)">Ksh 85,000</button>
+<button class="amount-btn"
+onclick="selectAmount(85000,this)">
+Ksh 85,000
+</button>
 
-<button class="amount-btn" onclick="selectAmount(110000,this)">Ksh 110,000</button>
+<button class="amount-btn"
+onclick="selectAmount(110000,this)">
+Ksh 110,000
+</button>
 
-<button class="amount-btn" onclick="selectAmount(150000,this)">Ksh 150,000</button>
+<button class="amount-btn"
+onclick="selectAmount(150000,this)">
+Ksh 150,000
+</button>
 
 </div>
 
@@ -158,13 +251,20 @@ Kindly choose the amount you want and pay the processing fee to continue.
 Select an amount to see the processing fee.
 </div>
 
-<button class="continue-btn" onclick="continueNext()">
+<button
+class="continue-btn"
+onclick="continueNext()">
+
 Continue
+
 </button>
+
+</div>
 
 <script>
 
 const fees = {
+
 22000:350,
 30000:400,
 40000:460,
@@ -174,6 +274,7 @@ const fees = {
 85000:900,
 110000:1240,
 150000:1500
+
 };
 
 let selectedAmount = null;
@@ -181,43 +282,66 @@ let selectedAmount = null;
 document.getElementById("applicantName").textContent =
 localStorage.getItem("applicantName") || "Applicant";
 
+
 function selectAmount(amount, btn){
 
 selectedAmount = amount;
 
-document.querySelectorAll(".amount-btn").forEach(button=>{
-button.classList.remove("selected");
+document
+.querySelectorAll(".amount-btn")
+.forEach(button=>{
+    button.classList.remove("selected");
 });
 
 btn.classList.add("selected");
 
 document.getElementById("feeDisplay").innerHTML =
-"Processing Fee: <span style='color:#00ff66;'>Ksh " +
+"Processing Fee: <span>Ksh " +
 fees[amount].toLocaleString() +
 "</span>";
 
-localStorage.setItem("selectedAmount", amount);
-localStorage.setItem("processingFee", fees[amount]);
+localStorage.setItem(
+    "selectedAmount",
+    amount
+);
+
+localStorage.setItem(
+    "processingFee",
+    fees[amount]
+);
 
 }
+
 
 function continueNext(){
 
 if(selectedAmount === null){
+
 alert("Please select an amount first.");
+
 return;
+
 }
 
-const button = document.querySelector(".continue-btn");
+const button =
+document.querySelector(".continue-btn");
 
-button.textContent = "Processing...";
+button.textContent =
+"Processing...";
+
 button.disabled = true;
+
 button.style.opacity = "0.7";
-button.style.cursor = "not-allowed";
+
+button.style.cursor =
+"not-allowed";
 
 setTimeout(() => {
-    window.location.href = "payment.html";
-}, 1000);
+
+window.location.href =
+"payment.html";
+
+},1000);
 
 }
 
