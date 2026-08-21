@@ -20,51 +20,48 @@ html,
 body{
     width:100%;
     height:100%;
-    overflow:hidden;
 }
 
 body{
     background:#0B0217;
     color:#fff;
+    overflow:hidden;
 }
 
 .container{
     width:100%;
     max-width:500px;
     height:100vh;
-    min-height:100vh;
     margin:auto;
-    padding:12px 16px;
-    display:flex;
-    flex-direction:column;
-    overflow:hidden;
+    padding:18px 20px 105px;
+    position:relative;
 }
 
 /* ===============================
-   TITLE
+   FIXED TOP CONTENT
 ================================ */
+
+.fixed-header{
+    position:relative;
+    z-index:10;
+    background:#0B0217;
+}
 
 h1{
     text-align:center;
     color:#D4AF37;
-    font-size:30px;
+    font-size:36px;
     font-weight:700;
-    margin-bottom:8px;
-    flex-shrink:0;
+    margin-bottom:18px;
 }
-
-/* ===============================
-   MESSAGE
-================================ */
 
 .message{
     text-align:center;
-    font-size:18px;
+    font-size:27px;
     font-weight:400;
-    line-height:1.25;
-    margin-bottom:9px;
+    line-height:1.4;
+    margin-bottom:22px;
     color:rgba(255,255,255,0.85);
-    flex-shrink:0;
 }
 
 .message b{
@@ -72,40 +69,45 @@ h1{
     font-weight:700;
 }
 
-/* ===============================
-   HEADING
-================================ */
-
 h2{
     text-align:center;
     color:#D4AF37;
-    font-size:20px;
+    font-size:27px;
     font-weight:700;
-    margin-bottom:9px;
-    flex-shrink:0;
+    margin-bottom:18px;
 }
 
 /* ===============================
-   AMOUNTS
+   AMOUNTS ONLY SCROLL
 ================================ */
+
+.amount-area{
+    height:calc(100vh - 390px);
+    overflow-y:auto;
+    padding-bottom:30px;
+    scrollbar-width:none;
+}
+
+.amount-area::-webkit-scrollbar{
+    display:none;
+}
 
 .amount-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:7px;
-    flex-shrink:0;
+    gap:15px;
 }
 
 .amount-btn{
     background:rgba(212,175,55,0.055);
     color:#fff;
     border:1px solid rgba(212,175,55,0.28);
-    border-radius:10px;
-    padding:10px 6px;
-    font-size:18px;
+    border-radius:15px;
+    padding:18px 10px;
+    font-size:27px;
     font-weight:700;
     cursor:pointer;
-    min-height:43px;
+    transition:.2s;
 }
 
 .amount-btn.selected{
@@ -114,96 +116,47 @@ h2{
     border-color:#D4AF37;
 }
 
-/* ===============================
-   FEE
-================================ */
-
 #feeDisplay{
-    margin:8px 0;
+    margin:25px 0;
     text-align:center;
-    font-size:17px;
+    font-size:24px;
     font-weight:400;
-    min-height:21px;
+    min-height:30px;
     color:rgba(255,255,255,0.85);
-    flex-shrink:0;
 }
 
 #feeDisplay span{
-    font-size:19px;
+    font-size:27px;
     font-weight:700;
 }
 
 /* ===============================
-   CONTINUE
+   FIXED CONTINUE
 ================================ */
 
 .continue-btn{
-    margin-top:auto;
-    width:100%;
-    padding:11px;
+    position:fixed;
+    left:50%;
+    bottom:15px;
+    transform:translateX(-50%);
+    width:calc(100% - 40px);
+    max-width:460px;
+    padding:18px;
     background:linear-gradient(135deg,#D4AF37,#A67C00);
     color:#0B0217;
     border:none;
-    border-radius:10px;
-    font-size:20px;
+    border-radius:15px;
+    font-size:27px;
     font-weight:700;
     cursor:pointer;
-    flex-shrink:0;
+    z-index:100;
+    box-shadow:0 5px 20px rgba(0,0,0,.4);
 }
 
-/* ===============================
-   VERY SMALL PHONES
-================================ */
-
-@media(max-height:650px){
-
-    .container{
-        padding:8px 14px;
-    }
-
-    h1{
-        font-size:25px;
-        margin-bottom:5px;
-    }
-
-    .message{
-        font-size:15px;
-        line-height:1.18;
-        margin-bottom:6px;
-    }
-
-    h2{
-        font-size:17px;
-        margin-bottom:6px;
-    }
-
-    .amount-grid{
-        gap:5px;
-    }
-
-    .amount-btn{
-        padding:8px 5px;
-        min-height:36px;
-        font-size:15px;
-        border-radius:8px;
-    }
-
-    #feeDisplay{
-        margin:5px 0;
-        font-size:14px;
-    }
-
-    #feeDisplay span{
-        font-size:16px;
-    }
-
-    .continue-btn{
-        padding:9px;
-        font-size:17px;
-        border-radius:9px;
-    }
+.continue-btn:disabled{
+    opacity:.7;
 }
-
+    
 
 </style>
 
