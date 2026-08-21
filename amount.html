@@ -29,10 +29,11 @@ body{
 }
 
 .container{
+    width:100%;
     max-width:500px;
     margin:auto;
     min-height:100vh;
-    padding:20px;
+    padding:20px 20px 105px;
     display:flex;
     flex-direction:column;
 }
@@ -106,8 +107,12 @@ h2{
 }
 
 .continue-btn{
-    margin-top:auto;
-    width:100%;
+    position:fixed;
+    left:50%;
+    bottom:15px;
+    transform:translateX(-50%);
+    width:calc(100% - 40px);
+    max-width:460px;
     padding:18px;
     background:linear-gradient(135deg,#D4AF37,#A67C00);
     color:#0B0217;
@@ -116,41 +121,8 @@ h2{
     font-size:27px;
     font-weight:700;
     cursor:pointer;
-}
-
-@media(max-width:400px){
-    .container{
-        padding:16px;
-    }
-
-    h1{
-        font-size:32px;
-    }
-
-    .message{
-        font-size:23px;
-    }
-
-    h2{
-        font-size:24px;
-    }
-
-    .amount-btn{
-        font-size:23px;
-        padding:16px 8px;
-    }
-
-    #feeDisplay{
-        font-size:21px;
-    }
-
-    #feeDisplay span{
-        font-size:24px;
-    }
-
-    .continue-btn{
-        font-size:24px;
-    }
+    z-index:1000;
+    box-shadow:0 5px 20px rgba(0,0,0,0.4);
 }
 
 
