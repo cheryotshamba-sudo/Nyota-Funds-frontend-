@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>NYOTA Fund Kenya - Application</title>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 html,
@@ -21,7 +27,6 @@ body {
 
 body {
     min-height: 100vh;
-    padding: 20px;
 
     background:
         radial-gradient(
@@ -41,39 +46,39 @@ body {
 }
 
 .container {
-    position: relative;
-    z-index: 2;
-
     width: 100%;
     max-width: 500px;
 
-    margin: auto;
-}
+    min-height: 100vh;
 
-/* =================================
-   APPLICATION CARD
-================================= */
+    margin: auto;
+
+    padding: 10px 16px;
+
+    display: flex;
+    flex-direction: column;
+}
 
 .card {
     width: 100%;
 
-    padding: 25px;
+    padding: 20px 18px;
 
-    border-radius: 20px;
+    border-radius: 18px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(255, 255, 255, 0.075),
-            rgba(255, 255, 255, 0.025)
+            rgba(255,255,255,0.075),
+            rgba(255,255,255,0.025)
         );
 
-    border: 1px solid rgba(255, 193, 7, 0.16);
+    border: 1px solid rgba(255,205,70,0.16);
 
     box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.65),
-        0 0 35px rgba(255, 193, 7, 0.035),
-        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        0 20px 60px rgba(0,0,0,0.65),
+        0 0 35px rgba(255,193,7,0.035),
+        inset 0 1px 0 rgba(255,255,255,0.06);
 
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
@@ -86,17 +91,17 @@ body {
 h1 {
     text-align: center;
 
-    margin-bottom: 10px;
-
     font-size: 30px;
     line-height: 1.2;
-    font-weight: 800;
+    font-weight: 700;
+
+    margin-bottom: 6px;
 
     background:
         linear-gradient(
             180deg,
             #fff3ad 0%,
-            #ffd34f 25%,
+            #ffd54f 25%,
             #e0a51c 55%,
             #9a6509 100%
         );
@@ -106,18 +111,19 @@ h1 {
     -webkit-text-fill-color: transparent;
 
     text-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.6);
+        0 4px 12px rgba(0,0,0,0.6);
 }
 
 p {
     text-align: center;
 
-    color: rgba(255, 255, 255, 0.72);
+    font-size: 16px;
+    line-height: 1.35;
+    font-weight: 400;
 
-    margin-bottom: 25px;
+    color: rgba(255,255,255,0.72);
 
-    font-size: 14px;
-    line-height: 1.6;
+    margin-bottom: 12px;
 }
 
 /* =================================
@@ -127,40 +133,39 @@ p {
 label {
     display: block;
 
-    margin-top: 18px;
-    margin-bottom: 6px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 
-    color: rgba(255, 255, 255, 0.88);
+    color: rgba(255,255,255,0.90);
 }
 
 /* =================================
-   INPUTS & SELECTS
+   INPUTS / SELECTS
 ================================= */
 
 input,
 select {
     width: 100%;
 
-    height: 50px;
+    height: 45px;
 
-    padding: 0 14px;
+    padding: 0 13px;
 
-    margin-top: 0;
+    border: 1px solid rgba(255,255,255,0.12);
 
-    border: 1px solid rgba(255, 255, 255, 0.12);
-
-    border-radius: 10px;
+    border-radius: 11px;
 
     outline: none;
 
-    font-size: 15px;
-
-    background: rgba(255, 255, 255, 0.055);
+    background: rgba(255,255,255,0.055);
 
     color: #fff;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
 
     transition:
         border-color 0.25s ease,
@@ -169,18 +174,18 @@ select {
 }
 
 input::placeholder {
-    color: rgba(255, 255, 255, 0.42);
+    color: rgba(255,255,255,0.42);
 }
 
 input:focus,
 select:focus {
-    border-color: rgba(255, 197, 45, 0.85);
+    border-color: rgba(255,197,45,0.85);
 
-    background: rgba(255, 255, 255, 0.075);
+    background: rgba(255,255,255,0.075);
 
     box-shadow:
-        0 0 0 3px rgba(255, 193, 7, 0.10),
-        0 0 18px rgba(255, 193, 7, 0.06);
+        0 0 0 3px rgba(255,193,7,0.10),
+        0 0 18px rgba(255,193,7,0.06);
 }
 
 select {
@@ -202,11 +207,11 @@ select option {
 button {
     width: 100%;
 
-    min-height: 54px;
+    min-height: 50px;
 
-    padding: 15px;
+    padding: 10px;
 
-    margin-top: 25px;
+    margin-top: 14px;
 
     border: none;
 
@@ -223,14 +228,15 @@ button {
 
     color: #171100;
 
-    font-size: 17px;
-    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
 
     cursor: pointer;
 
     box-shadow:
-        0 10px 30px rgba(255, 193, 7, 0.18),
-        inset 0 1px 0 rgba(255, 255, 255, 0.55);
+        0 10px 30px rgba(255,193,7,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.55);
 
     transition:
         transform 0.2s ease,
@@ -242,8 +248,8 @@ button:hover {
     transform: translateY(-2px);
 
     box-shadow:
-        0 14px 35px rgba(255, 193, 7, 0.28),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        0 14px 35px rgba(255,193,7,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.6);
 }
 
 button:active {
@@ -260,15 +266,15 @@ button:disabled {
    MOBILE
 ================================= */
 
-@media (max-width: 480px) {
+@media (max-width:480px) {
 
-    body {
-        padding: 16px 14px 30px;
+    .container {
+        padding: 8px 14px;
     }
 
     .card {
-        padding: 20px 16px;
-        border-radius: 19px;
+        padding: 18px 16px;
+        border-radius: 18px;
     }
 
     h1 {
@@ -276,19 +282,26 @@ button:disabled {
     }
 
     p {
-        font-size: 14px;
-        margin-bottom: 22px;
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    label {
+        font-size: 15px;
+        margin-top: 9px;
+        margin-bottom: 4px;
     }
 
     input,
     select {
-        height: 50px;
+        height: 43px;
         font-size: 14px;
     }
 
     button {
-        min-height: 52px;
-        font-size: 16px;
+        min-height: 49px;
+        font-size: 19px;
+        margin-top: 13px;
     }
 }
 
@@ -296,21 +309,40 @@ button:disabled {
    SMALL PHONES
 ================================= */
 
-@media (max-width: 360px) {
+@media (max-width:360px) {
 
-    body {
+    .container {
         padding-left: 12px;
         padding-right: 12px;
     }
 
     .card {
-        padding: 18px 13px;
+        padding: 17px 13px;
     }
 
     h1 {
         font-size: 24px;
     }
+
+    p {
+        font-size: 14px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input,
+    select {
+        height: 41px;
+        font-size: 13px;
+    }
+
+    button {
+        font-size: 18px;
+    }
 }
+
 </style>
 
 </head>
@@ -328,13 +360,29 @@ button:disabled {
 <form onsubmit="submitApplication(event)">
 
 <label>Full Name</label>
-<input type="text" id="applicantName" placeholder="Enter your full name" required>
+
+<input
+type="text"
+id="applicantName"
+placeholder="Enter your full name"
+required
+>
 
 <label>National ID Number</label>
-<input type="number" placeholder="Enter your ID Number" required>
+
+<input
+type="number"
+placeholder="Enter your ID Number"
+required
+>
 
 <label>Phone Number</label>
-<input type="tel" placeholder="07XXXXXXXX" required>
+
+<input
+type="tel"
+placeholder="07XXXXXXXX"
+required
+>
 
 <label>County</label>
 
@@ -437,7 +485,9 @@ button:disabled {
 
 </select>
 
-<button type="submit" id="continueBtn">Continue</button>
+<button type="submit" id="continueBtn">
+Continue
+</button>
 
 </form>
 
@@ -446,24 +496,38 @@ button:disabled {
 </div>
 
 <script>
+
 function submitApplication(event){
 
     event.preventDefault();
 
-    const button = document.getElementById("continueBtn");
+    const button =
+        document.getElementById("continueBtn");
 
-    button.textContent = "Processing...";
+    button.textContent =
+        "Processing...";
+
     button.disabled = true;
 
-    let name = document.getElementById("applicantName").value;
+    let name =
+        document.getElementById("applicantName").value;
 
-    localStorage.setItem("applicantName", name);
+    localStorage.setItem(
+        "applicantName",
+        name
+    );
 
     setTimeout(function(){
-        window.location.href = "purpose.html";
+
+        window.location.href =
+            "purpose.html";
+
     }, 500);
 
 }
+
 </script>
+
 </body>
+
 </html>
