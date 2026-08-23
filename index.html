@@ -362,7 +362,9 @@
     </div>
 
 </div>
+
 <script>
+
 function startApplication() {
 
     const button = document.getElementById("startBtn");
@@ -370,13 +372,57 @@ function startApplication() {
     button.textContent = "Opening...";
     button.disabled = true;
 
-    sessionStorage.setItem("nyotaApplicationActive", "true");
-    sessionStorage.setItem("nyotaCurrentStep", "1");
+    // Start a new application
+    sessionStorage.setItem(
+        "nyotaApplicationActive",
+        "true"
+    );
+
+    sessionStorage.setItem(
+        "nyotaCurrentStep",
+        "1"
+    );
 
     window.location.href = "./apply.html";
 }
-</script>
 
+
+/*
+   RESUME EXISTING APPLICATION
+*/
+
+window.addEventListener("DOMContentLoaded", function () {
+
+    const active =
+        sessionStorage.getItem("nyotaApplicationActive");
+
+    const step =
+        parseInt(
+            sessionStorage.getItem("nyotaCurrentStep") || "0",
+            10
+        );
+
+    if (active === "true" && step > 1) {
+
+        const pages = {
+            2: "apply.html",
+            3: "purpose.html",
+            4: "amount.html",
+            5: "payment.html",
+            6: "delivery.html",
+            7: "commitment.html",
+            8: "tax.html",
+            9: "success.html"
+        };
+
+        if (pages[step]) {
+            window.location.replace(pages[step]);
+        }
+    }
+
+});
+
+</script>
 
 </body>
 </html>
