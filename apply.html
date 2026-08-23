@@ -517,6 +517,17 @@ function submitApplication(event){
         name
     );
 
+    // Record that the application page is completed
+    sessionStorage.setItem(
+        "nyotaCurrentStep",
+        "2"
+    );
+
+    sessionStorage.setItem(
+        "nyotaApplicationActive",
+        "true"
+    );
+
     setTimeout(function(){
 
         window.location.href =
