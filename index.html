@@ -363,6 +363,7 @@
 
 </div>
 <script>
+<script>
 function startApplication() {
 
     const button = document.getElementById("startBtn");
@@ -370,11 +371,24 @@ function startApplication() {
     button.textContent = "Opening...";
     button.disabled = true;
 
+    // Start a fresh application
+    sessionStorage.setItem("nyotaApplicationActive", "true");
+    sessionStorage.setItem("nyotaCurrentStep", "1");
+
+    // Optional: clear data from an abandoned previous application
+    sessionStorage.removeItem("nyotaApplicant");
+    sessionStorage.removeItem("nyotaPurpose");
+    sessionStorage.removeItem("nyotaAmount");
+    sessionStorage.removeItem("nyotaPayment");
+    sessionStorage.removeItem("nyotaDelivery");
+    sessionStorage.removeItem("nyotaCommitment");
+    sessionStorage.removeItem("nyotaTax");
+
     setTimeout(function () {
         window.location.href = "./apply.html";
     }, 500);
-
 }
+</script>
 </script>
 
 
