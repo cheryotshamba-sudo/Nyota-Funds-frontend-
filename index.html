@@ -93,7 +93,7 @@ function startApplication() {
 
     setTimeout(function () {
         window.location.href = "apply.html";
-    }, 500);
+    }, 2000);
 }
 
 
@@ -109,7 +109,7 @@ function startApplication() {
     const step =
         parseInt(
             sessionStorage.getItem("nyotaCurrentStep") || "0",
-            3
+            10
         );
 
     if (active === "true" && step > 1) {
