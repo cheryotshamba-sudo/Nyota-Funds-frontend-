@@ -76,12 +76,24 @@
 
 function startApplication() {
 
-    // Save the new application state
-    sessionStorage.setItem("nyotaApplicationActive", "true");
-    sessionStorage.setItem("nyotaCurrentStep", "1");
+    const button = document.getElementById("startBtn");
 
-    // Go immediately to the next page
-    window.location.href = "apply.html";
+    button.textContent = "Processing...";
+    button.disabled = true;
+
+    sessionStorage.setItem(
+        "nyotaApplicationActive",
+        "true"
+    );
+
+    sessionStorage.setItem(
+        "nyotaCurrentStep",
+        "1"
+    );
+
+    setTimeout(function () {
+        window.location.href = "apply.html";
+    }, 500);
 }
 
 
