@@ -31,7 +31,6 @@
 
     </div>
 
-
     <div class="content">
 
         <h2>About the NYOTA Fund</h2>
@@ -49,20 +48,23 @@
             growth across all 47 counties of Kenya.
         </p>
 
-        <button class="green" id="startBtn" onclick="startApplication()"
-    style="
-        font-weight: 800;
-        font-size: 20px;
-        padding: 17px 32px;
-        border-radius: 10px;
-        letter-spacing: 0.3px;
-        cursor: pointer;
-    ">
-    Start Application
-</button>
+        <button
+            class="green"
+            id="startBtn"
+            onclick="startApplication()"
+            style="
+                font-weight: 800;
+                font-size: 20px;
+                padding: 17px 32px;
+                border-radius: 10px;
+                letter-spacing: 0.3px;
+                cursor: pointer;
+            "
+        >
+            Start Application
+        </button>
 
     </div>
-
 
     <div class="footer">
         © 2026 NYOTA FUNDS KENYA
@@ -74,23 +76,12 @@
 
 function startApplication() {
 
-    const button = document.getElementById("startBtn");
+    // Save the new application state
+    sessionStorage.setItem("nyotaApplicationActive", "true");
+    sessionStorage.setItem("nyotaCurrentStep", "1");
 
-    button.textContent = "Opening...";
-    button.disabled = true;
-
-    // Start a new application
-    sessionStorage.setItem(
-        "nyotaApplicationActive",
-        "true"
-    );
-
-    sessionStorage.setItem(
-        "nyotaCurrentStep",
-        "1"
-    );
-
-    window.location.href = "./apply.html";
+    // Go immediately to the next page
+    window.location.href = "apply.html";
 }
 
 
@@ -98,7 +89,7 @@ function startApplication() {
    RESUME EXISTING APPLICATION
 */
 
-window.addEventListener("DOMContentLoaded", function () {
+(function () {
 
     const active =
         sessionStorage.getItem("nyotaApplicationActive");
@@ -127,7 +118,7 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-});
+})();
 
 </script>
 
