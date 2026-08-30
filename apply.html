@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,24 +9,20 @@
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
-html,
-body {
+html, body {
     width: 100%;
     min-height: 100%;
 }
 
 body {
     min-height: 100vh;
-
     background:
         radial-gradient(
             circle at 50% 20%,
@@ -41,29 +36,20 @@ body {
             #0a0c0d 50%,
             #030405 100%
         );
-
     color: #fff;
 }
 
 .container {
     width: 100%;
     max-width: 500px;
-
     min-height: 100vh;
-
     margin: auto;
-
     padding: 10px 16px;
-
-    display: flex;
-    flex-direction: column;
 }
 
 .card {
     width: 100%;
-
     padding: 20px 18px;
-
     border-radius: 18px;
 
     background:
@@ -84,17 +70,11 @@ body {
     -webkit-backdrop-filter: blur(15px);
 }
 
-/* =================================
-   HEADING
-================================= */
-
 h1 {
     text-align: center;
-
     font-size: 30px;
     line-height: 1.2;
     font-weight: 700;
-
     margin-bottom: 6px;
 
     background:
@@ -109,68 +89,39 @@ h1 {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-
-    text-shadow:
-        0 4px 12px rgba(0,0,0,0.6);
 }
 
 p {
     text-align: center;
-
     font-size: 16px;
     line-height: 1.35;
-    font-weight: 400;
-
     color: rgba(255,255,255,0.72);
-
     margin-bottom: 12px;
 }
 
-/* =================================
-   LABELS
-================================= */
-
 label {
     display: block;
-
     margin-top: 10px;
     margin-bottom: 5px;
-
     font-size: 16px;
     font-weight: 600;
-
     color: rgba(255,255,255,0.90);
 }
-
-/* =================================
-   INPUTS / SELECTS
-================================= */
 
 input,
 select {
     width: 100%;
-
     height: 45px;
-
     padding: 0 13px;
 
     border: 1px solid rgba(255,255,255,0.12);
-
     border-radius: 11px;
-
     outline: none;
 
     background: rgba(255,255,255,0.055);
-
     color: #fff;
 
-    font-family: 'Poppins', sans-serif;
     font-size: 14px;
-
-    transition:
-        border-color 0.25s ease,
-        background 0.25s ease,
-        box-shadow 0.25s ease;
 }
 
 input::placeholder {
@@ -181,17 +132,13 @@ input:focus,
 select:focus {
     border-color: rgba(255,197,45,0.85);
 
-    background: rgba(255,255,255,0.075);
-
     box-shadow:
-        0 0 0 3px rgba(255,193,7,0.10),
-        0 0 18px rgba(255,193,7,0.06);
+        0 0 0 3px rgba(255,193,7,0.10);
 }
 
 select {
     appearance: none;
     -webkit-appearance: none;
-
     cursor: pointer;
 }
 
@@ -200,21 +147,13 @@ select option {
     color: #fff;
 }
 
-/* =================================
-   CONTINUE BUTTON
-================================= */
-
 button {
     width: 100%;
-
     min-height: 50px;
-
     padding: 10px;
-
     margin-top: 14px;
 
     border: none;
-
     border-radius: 12px;
 
     background:
@@ -227,8 +166,6 @@ button {
         );
 
     color: #171100;
-
-    font-family: 'Poppins', sans-serif;
     font-size: 20px;
     font-weight: 700;
 
@@ -237,34 +174,16 @@ button {
     box-shadow:
         0 10px 30px rgba(255,193,7,0.18),
         inset 0 1px 0 rgba(255,255,255,0.55);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        opacity 0.2s ease;
-}
-
-button:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 14px 35px rgba(255,193,7,0.28),
-        inset 0 1px 0 rgba(255,255,255,0.6);
 }
 
 button:active {
-    transform: translateY(0);
+    transform: scale(0.98);
 }
 
 button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
+    opacity: 0.7;
+    cursor: wait;
 }
-
-/* =================================
-   MOBILE
-================================= */
 
 @media (max-width:480px) {
 
@@ -274,7 +193,6 @@ button:disabled {
 
     .card {
         padding: 18px 16px;
-        border-radius: 18px;
     }
 
     h1 {
@@ -283,13 +201,10 @@ button:disabled {
 
     p {
         font-size: 15px;
-        margin-bottom: 10px;
     }
 
     label {
         font-size: 15px;
-        margin-top: 9px;
-        margin-bottom: 4px;
     }
 
     input,
@@ -301,13 +216,8 @@ button:disabled {
     button {
         min-height: 49px;
         font-size: 19px;
-        margin-top: 13px;
     }
 }
-
-/* =================================
-   SMALL PHONES
-================================= */
 
 @media (max-width:360px) {
 
@@ -357,36 +267,38 @@ button:disabled {
 
 <p>Please complete all fields below.</p>
 
-<form onsubmit="submitApplication(event)">
+<form id="applicationForm">
 
 <label>Full Name</label>
 
 <input
-type="text"
-id="applicantName"
-placeholder="Enter your full name"
-required
+    type="text"
+    id="applicantName"
+    placeholder="Enter your full name"
+    required
 >
 
 <label>National ID Number</label>
 
 <input
-type="number"
-placeholder="Enter your ID Number"
-required
+    type="number"
+    id="idNumber"
+    placeholder="Enter your ID Number"
+    required
 >
 
 <label>Phone Number</label>
 
 <input
-type="tel"
-placeholder="07XXXXXXXX"
-required
+    type="tel"
+    id="phoneNumber"
+    placeholder="07XXXXXXXX"
+    required
 >
 
 <label>County</label>
 
-<select required>
+<select id="county" required>
 
 <option value="">Select County</option>
 
@@ -442,7 +354,7 @@ required
 
 <label>Occupation</label>
 
-<select required>
+<select id="occupation" required>
 
 <option value="">Select Occupation</option>
 
@@ -497,30 +409,27 @@ Continue
 
 <script>
 
-function submitApplication(event){
+document
+.getElementById("applicationForm")
+.addEventListener("submit", function(event) {
 
     event.preventDefault();
 
     const button =
         document.getElementById("continueBtn");
 
-    button.textContent =
-        "Processing...";
+    const name =
+        document.getElementById("applicantName")
+        .value
+        .trim();
 
-    button.disabled = true;
-
-    let name =
-        document.getElementById("applicantName").value;
+    /*
+       Save application information
+    */
 
     localStorage.setItem(
         "applicantName",
         name
-    );
-
-    // Record that the application page is completed
-    sessionStorage.setItem(
-        "nyotaCurrentStep",
-        "2"
     );
 
     sessionStorage.setItem(
@@ -528,14 +437,22 @@ function submitApplication(event){
         "true"
     );
 
-    setTimeout(function(){
+    sessionStorage.setItem(
+        "nyotaCurrentStep",
+        "2"
+    );
 
-        window.location.href =
-            "purpose.html";
+    /*
+       Navigate immediately.
+       No setTimeout or artificial delay.
+    */
 
-    }, 500);
+    button.textContent = "Opening...";
+    button.disabled = true;
 
-}
+    window.location.href = "purpose.html";
+
+});
 
 </script>
 
