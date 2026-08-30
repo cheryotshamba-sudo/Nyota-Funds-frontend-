@@ -20,21 +20,21 @@
 html,
 body{
     width:100%;
-    min-height:100%;
+    height:100%;
+    overflow:hidden;
 }
 
 body{
     background:#0B0217;
     color:#fff;
-    min-height:100vh;
 }
 
 .container{
-    max-width:500px;
     width:100%;
+    max-width:500px;
+    height:100vh;
     margin:auto;
-    min-height:100vh;
-    padding:28px 0 20px;
+    padding:18px 0 12px;
     display:flex;
     flex-direction:column;
 }
@@ -44,21 +44,21 @@ body{
 h1{
     text-align:center;
     color:#D4AF37;
-    font-size:28px;
+    font-size:25px;
     font-weight:700;
-    margin-bottom:18px;
-    line-height:1.2;
+    line-height:1.15;
+    margin-bottom:10px;
 }
 
 /* MESSAGE */
 
 .message{
     text-align:center;
-    font-size:17px;
+    font-size:15px;
     font-weight:400;
-    line-height:1.45;
-    margin-bottom:18px;
-    padding:0 8px;
+    line-height:1.32;
+    padding:0 5px;
+    margin-bottom:10px;
     color:rgba(255,255,255,0.72);
 }
 
@@ -67,15 +67,15 @@ h1{
     font-weight:700;
 }
 
-/* SUB TITLE */
+/* AMOUNT TITLE */
 
 h2{
     text-align:center;
     color:#D4AF37;
-    font-size:19px;
+    font-size:17px;
     font-weight:700;
-    margin-bottom:16px;
-    line-height:1.25;
+    line-height:1.2;
+    margin-bottom:10px;
 }
 
 /* AMOUNT GRID */
@@ -83,22 +83,21 @@ h2{
 .amount-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:14px 17px;
+    gap:9px 17px;
     width:100%;
 }
 
 .amount-btn{
     width:100%;
-    height:70px;
+    height:58px;
     background:rgba(212,175,55,0.055);
     color:#fff;
     border:1px solid rgba(212,175,55,0.25);
     border-radius:15px;
-    padding:10px;
-    font-size:17px;
+    padding:8px;
+    font-size:15px;
     font-weight:700;
     cursor:pointer;
-    transition:.3s;
 }
 
 .amount-btn:hover{
@@ -111,35 +110,36 @@ h2{
     border-color:#D4AF37;
 }
 
-/* FEE DISPLAY */
+/* FEE */
 
 #feeDisplay{
-    margin:28px 0 0;
+    margin-top:15px;
     text-align:center;
-    font-size:17px;
+    font-size:15px;
     font-weight:400;
-    min-height:30px;
+    min-height:24px;
     color:rgba(255,255,255,0.85);
 }
 
 #feeDisplay span{
-    font-size:19px;
+    font-size:17px;
     font-weight:700;
     color:#D4AF37;
 }
 
-/* CONTINUE BUTTON */
+/* CONTINUE */
 
 .continue-btn{
-    margin-top:55px;
     width:100%;
-    height:72px;
-    padding:10px;
+    height:60px;
+    margin-top:auto;
+    margin-bottom:4px;
+    padding:8px;
     background:linear-gradient(135deg,#D4AF37,#A67C00);
     color:#0B0217;
     border:none;
     border-radius:15px;
-    font-size:19px;
+    font-size:17px;
     font-weight:700;
     cursor:pointer;
 }
@@ -155,48 +155,49 @@ h2{
 @media(max-width:380px){
 
     .container{
-        padding-top:22px;
+        padding-top:12px;
+        padding-bottom:8px;
     }
 
     h1{
-        font-size:25px;
-        margin-bottom:15px;
+        font-size:22px;
+        margin-bottom:8px;
     }
 
     .message{
-        font-size:15px;
-        line-height:1.4;
-        margin-bottom:15px;
+        font-size:13px;
+        line-height:1.28;
+        margin-bottom:8px;
     }
 
     h2{
-        font-size:17px;
-        margin-bottom:14px;
+        font-size:15px;
+        margin-bottom:8px;
     }
 
     .amount-grid{
-        gap:12px 12px;
+        gap:7px 10px;
     }
 
     .amount-btn{
-        height:64px;
-        font-size:15px;
-        border-radius:14px;
+        height:52px;
+        font-size:14px;
+        border-radius:13px;
     }
 
     #feeDisplay{
-        margin-top:24px;
-        font-size:15px;
+        margin-top:10px;
+        font-size:14px;
+        min-height:22px;
     }
 
     #feeDisplay span{
-        font-size:17px;
+        font-size:15px;
     }
 
     .continue-btn{
-        margin-top:45px;
-        height:66px;
-        font-size:17px;
+        height:54px;
+        font-size:16px;
     }
 }
 
@@ -208,135 +209,122 @@ h2{
 
 <div class="container">
 
-    <h1>NYOTA FUNDS KENYA</h1>
+<h1>NYOTA FUNDS KENYA</h1>
 
-    <div class="message">
+<div class="message">
 
-        Congratulations 🎉 <span id="applicantName"></span><br><br>
+Congratulations 🎉 <span id="applicantName"></span><br><br>
 
-        You're eligible for <b>NYOTA Funds Limits.</b><br>
+You're eligible for <b>NYOTA Funds Limits.</b><br>
 
-        Kindly choose the amount you want and pay the
-        <b>program processing fee</b> to continue.
-
-    </div>
-
-    <h2>Select Your NYOTA FUNDS AMOUNT</h2>
-
-    <div class="amount-grid">
-
-        <button
-            class="amount-btn"
-            onclick="selectAmount(22000,this)">
-            Ksh 22,000
-        </button>
-
-        <button
-            class="amount-btn"
-            onclick="selectAmount(30000,this)">
-            Ksh 30,000
-        </button>
-
-        <button
-            class="amount-btn"
-            onclick="selectAmount(40000,this)">
-            Ksh 40,000
-        </button>
-
-        <button
-            class="amount-btn"
-            onclick="selectAmount(50000,this)">
-            Ksh 50,000
-        </button>
-
-        <button
-            class="amount-btn"
-            onclick="selectAmount(65000,this)">
-            Ksh 65,000
-        </button>
-
-        <button
-            class="amount-btn"
-            onclick="selectAmount(75000,this)">
-            Ksh 75,000
-        </button>
-
-        <button
-            class="amount-btn"
-            onclick="selectAmount(85000,this)">
-            Ksh 85,000
-        </button>
-
-        <button
-            class="amount-btn"
-            onclick="selectAmount(110000,this)">
-            Ksh 110,000
-        </button>
-
-        <button
-            class="amount-btn"
-            onclick="selectAmount(150000,this)">
-            Ksh 150,000
-        </button>
-
-    </div>
-
-    <div id="feeDisplay">
-        Select an amount to see the processing fee.
-    </div>
-
-    <button
-        class="continue-btn"
-        onclick="continueNext()">
-        Continue
-    </button>
+Kindly choose the amount you want and pay the
+<b>program processing fee</b> to continue.
 
 </div>
 
+<h2>Select Your NYOTA FUNDS AMOUNT</h2>
+
+<div class="amount-grid">
+
+<button class="amount-btn"
+onclick="selectAmount(22000,this)">
+Ksh 22,000
+</button>
+
+<button class="amount-btn"
+onclick="selectAmount(30000,this)">
+Ksh 30,000
+</button>
+
+<button class="amount-btn"
+onclick="selectAmount(40000,this)">
+Ksh 40,000
+</button>
+
+<button class="amount-btn"
+onclick="selectAmount(50000,this)">
+Ksh 50,000
+</button>
+
+<button class="amount-btn"
+onclick="selectAmount(65000,this)">
+Ksh 65,000
+</button>
+
+<button class="amount-btn"
+onclick="selectAmount(75000,this)">
+Ksh 75,000
+</button>
+
+<button class="amount-btn"
+onclick="selectAmount(85000,this)">
+Ksh 85,000
+</button>
+
+<button class="amount-btn"
+onclick="selectAmount(110000,this)">
+Ksh 110,000
+</button>
+
+<button class="amount-btn"
+onclick="selectAmount(150000,this)">
+Ksh 150,000
+</button>
+
+</div>
+
+<div id="feeDisplay">
+Select an amount to see the processing fee.
+</div>
+
+<button
+class="continue-btn"
+onclick="continueNext()">
+
+Continue
+
+</button>
+
+</div>
 
 <script>
 
 const fees = {
 
-    22000: 350,
-    30000: 400,
-    40000: 450,
-    50000: 520,
-    65000: 660,
-    75000: 780,
-    85000: 910,
-    110000: 1250,
-    150000: 1500
+22000:350,
+30000:400,
+40000:450,
+50000:520,
+65000:660,
+75000:780,
+85000:910,
+110000:1250,
+150000:1500
 
 };
 
 let selectedAmount = null;
 
-
-/* GET APPLICANT NAME */
-
 document.getElementById("applicantName").textContent =
-    localStorage.getItem("applicantName") || "Applicant";
+localStorage.getItem("applicantName") || "Applicant";
 
-
-/* SELECT AMOUNT */
 
 function selectAmount(amount, btn){
 
     selectedAmount = amount;
 
     document
-        .querySelectorAll(".amount-btn")
-        .forEach(button => {
-            button.classList.remove("selected");
-        });
+    .querySelectorAll(".amount-btn")
+    .forEach(button=>{
+        button.classList.remove("selected");
+    });
 
     btn.classList.add("selected");
 
     document.getElementById("feeDisplay").innerHTML =
-        "Processing Fee: <span>Ksh " +
-        fees[amount].toLocaleString() +
-        "</span>";
+    "Processing Fee: <span>Ksh " +
+    fees[amount].toLocaleString() +
+    "</span>";
 
     localStorage.setItem(
         "selectedAmount",
@@ -351,8 +339,6 @@ function selectAmount(amount, btn){
 }
 
 
-/* CONTINUE */
-
 function continueNext(){
 
     if(selectedAmount === null){
@@ -364,24 +350,23 @@ function continueNext(){
     }
 
     const button =
-        document.querySelector(".continue-btn");
+    document.querySelector(".continue-btn");
 
     button.textContent =
-        "Processing...";
+    "Processing...";
 
     button.disabled = true;
 
     button.style.opacity =
-        "0.7";
+    "0.7";
 
     button.style.cursor =
-        "not-allowed";
-
+    "not-allowed";
 
     setTimeout(() => {
 
         window.location.href =
-            "payment.html";
+        "payment.html";
 
     },1000);
 
