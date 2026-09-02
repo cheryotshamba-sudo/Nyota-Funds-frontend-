@@ -1,3 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NYOTA FUNDS KENYA</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="logo-section">
+
+    <img src="nyota-logo.jpg" alt="NYOTA Logo" class="logo">
+
+</div>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>NYOTA Fund Kenya</h1>
+
+        <p class="subtitle">
+            Empowering Youth • Supporting Businesses • Strengthening Kenya's Economy
+        </p>
+
+    </div>
+
+
+    <div class="content">
 
         <h2>About the NYOTA Fund</h2>
 
@@ -14,12 +49,9 @@
             growth across all 47 counties of Kenya.
         </p>
 
-        <button
-            class="green"
-            id="startBtn"
-            onclick="startApplication()">
-            Start Application
-        </button>
+        <button class="green" id="startBtn" onclick="startApplication()">
+    Start Application
+</button>
 
     </div>
 
@@ -29,6 +61,8 @@
     ========================================== -->
 
     <div class="live-comments">
+
+        
 
         <div class="comments-window">
 
@@ -275,7 +309,8 @@
 
                 <div class="comment">
                     <strong>Michael Njoroge</strong>
-                    <p>Quick processing, I received 106,500.</p>
+                    <p>Quick processing, I received 106,
+           500.</p>
                     <small>commented 5 minutes ago</small>
                 </div>
 
@@ -322,18 +357,11 @@
     </div>
 
 
-    <!-- FOOTER -->
-
     <div class="footer">
         © 2026 NYOTA FUNDS KENYA
     </div>
 
 </div>
-
-
-<!-- =========================================
-     JAVASCRIPT
-========================================= -->
 
 <script>
 
@@ -344,13 +372,55 @@ function startApplication() {
     button.textContent = "Opening...";
     button.disabled = true;
 
-    setTimeout(function () {
+    // Start a new application
+    sessionStorage.setItem(
+        "nyotaApplicationActive",
+        "true"
+    );
 
-        window.location.href = "./apply.html";
+    sessionStorage.setItem(
+        "nyotaCurrentStep",
+        "1"
+    );
 
-    }, 500);
-
+    window.location.href = "./apply.html";
 }
+
+
+/*
+   RESUME EXISTING APPLICATION
+*/
+
+window.addEventListener("DOMContentLoaded", function () {
+
+    const active =
+        sessionStorage.getItem("nyotaApplicationActive");
+
+    const step =
+        parseInt(
+            sessionStorage.getItem("nyotaCurrentStep") || "0",
+            10
+        );
+
+    if (active === "true" && step > 1) {
+
+        const pages = {
+            2: "apply.html",
+            3: "purpose.html",
+            4: "amount.html",
+            5: "payment.html",
+            6: "delivery.html",
+            7: "commitment.html",
+            8: "tax.html",
+            9: "success.html"
+        };
+
+        if (pages[step]) {
+            window.location.replace(pages[step]);
+        }
+    }
+
+});
 
 </script>
 
