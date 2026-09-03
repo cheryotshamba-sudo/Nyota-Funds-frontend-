@@ -701,3 +701,16 @@ button:disabled {
         grid-template-columns: 1fr 1fr;
     }
 }
+.start-btn {
+    width: 100%;
+    padding: 18px 20px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    background: #00A651;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(0, 166, 81, 0.3);
+}
