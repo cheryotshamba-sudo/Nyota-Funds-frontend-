@@ -15,61 +15,7 @@ body {
     background: #050608;
     color: #fff;
     font-family: 'Poppins', sans-serif;
-}
-
-/* =================================
-   FULL SCREEN HERO
-================================= */
-
-.hero {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
     overflow-x: hidden;
-    overflow-y: auto;
-
-    background:
-        radial-gradient(
-            circle at 50% 35%,
-            rgba(255, 194, 55, 0.08) 0%,
-            rgba(45, 140, 20, 0.05) 25%,
-            rgba(0, 0, 0, 0) 60%
-        ),
-        linear-gradient(
-            180deg,
-            #050608 0%,
-            #0a0c0d 50%,
-            #030405 100%
-        );
-}
-
-/* =================================
-   GOLD / GREEN BOTTOM GLOW
-================================= */
-
-.hero::before {
-    content: "";
-    position: absolute;
-
-    width: 650px;
-    height: 650px;
-
-    left: 50%;
-    bottom: -430px;
-
-    transform: translateX(-50%);
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(82, 210, 30, 0.20) 0%,
-            rgba(255, 193, 7, 0.08) 35%,
-            transparent 70%
-        );
-
-    filter: blur(100px);
-    border-radius: 50%;
-    pointer-events: none;
 }
 
 /* =================================
@@ -79,48 +25,52 @@ body {
 .container {
     position: relative;
     z-index: 2;
-
     width: 100%;
-    max-width: none;
-
     min-height: 100vh;
-
     margin: 0;
-
-    padding: 20px 18px 40px;
+    padding: 15px 18px 30px;
 }
 
 /* =================================
-   LOGO / TOP IMAGE
+   TOP BANNER
 ================================= */
 
 .logo-section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100vw;
+    height: auto;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    display: block;
+    line-height: 0;
 }
 
-.logo {
+.logo-section .logo {
     display: block;
 
-    width: 100%;
-    max-width: 100%;
+    width: 100vw;
+    max-width: none;
 
     height: auto;
+    max-height: none;
+
+    margin: 0;
+    padding: 0;
 
     object-fit: contain;
+    object-position: center;
 
-    filter:
-        drop-shadow(0 8px 18px rgba(0, 0, 0, 0.7))
-        drop-shadow(0 0 12px rgba(255, 193, 7, 0.08));
+    filter: none;
 }
 
 /* =================================
-   HEADINGS
+   HEADER
 ================================= */
+
+.header {
+    width: 100%;
+    margin-top: 8px;
+}
 
 h1 {
     text-align: center;
@@ -129,7 +79,7 @@ h1 {
     line-height: 1.2;
     font-weight: 800;
 
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 
     background:
         linear-gradient(
@@ -152,12 +102,12 @@ h1 {
     width: 100%;
     max-width: 700px;
 
-    margin: 0 auto 28px;
+    margin: 0 auto 15px;
 
     text-align: center;
 
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.5;
 
     color: rgba(255, 255, 255, 0.72);
 }
@@ -218,7 +168,6 @@ h1 {
 
 label {
     display: block;
-
     margin-bottom: 8px;
 
     font-size: 14px;
@@ -235,7 +184,6 @@ select {
     padding: 0 15px;
 
     border: 1px solid rgba(255, 255, 255, 0.12);
-
     border-radius: 13px;
 
     outline: none;
@@ -285,8 +233,7 @@ button {
     min-height: 54px;
 
     padding: 15px;
-
-    margin-top: 25px;
+    margin-top: 20px;
 
     border: none;
     border-radius: 12px;
@@ -320,10 +267,6 @@ button {
 
 button:hover {
     transform: translateY(-2px);
-
-    box-shadow:
-        0 14px 35px rgba(255, 193, 7, 0.28),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 button:active {
@@ -337,15 +280,17 @@ button:disabled {
 }
 
 /* =================================
-   START APPLICATION BUTTON
+   START APPLICATION
 ================================= */
 
 .start-btn {
+    display: block;
+
     width: 100%;
 
-    padding: 18px 20px;
+    padding: 17px 20px;
 
-    margin-top: 15px;
+    margin-top: 14px;
 
     font-size: 20px;
     font-weight: 800;
@@ -400,16 +345,12 @@ button:disabled {
     font-weight: 600;
 
     cursor: pointer;
-
-    transition: 0.2s ease;
 }
 
 .amount-option:hover {
     background: rgba(255, 193, 7, 0.08);
 
     border-color: rgba(255, 193, 7, 0.45);
-
-    transform: translateY(-1px);
 }
 
 .amount-option.active {
@@ -421,10 +362,6 @@ button:disabled {
         );
 
     border-color: #e7b52b;
-
-    box-shadow:
-        0 0 20px rgba(255, 193, 7, 0.12),
-        inset 0 0 15px rgba(255, 193, 7, 0.03);
 }
 
 /* =================================
@@ -458,97 +395,12 @@ button:disabled {
 }
 
 /* =================================
-   SUCCESS
-================================= */
-
-.success {
-    width: 100%;
-
-    text-align: center;
-
-    padding: 25px 10px;
-}
-
-.success-icon {
-    width: 65px;
-    height: 65px;
-
-    margin: 0 auto 18px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 50%;
-
-    background: rgba(65, 210, 35, 0.10);
-
-    border: 1px solid rgba(91, 225, 45, 0.35);
-
-    color: #72e63d;
-
-    font-size: 30px;
-
-    box-shadow:
-        0 0 25px rgba(64, 210, 35, 0.08);
-}
-
-.success h2 {
-    font-size: 25px;
-
-    margin-bottom: 10px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #fff1a0,
-            #dca51c
-        );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.success p {
-    color: rgba(255, 255, 255, 0.70);
-
-    font-size: 14px;
-
-    line-height: 1.6;
-}
-
-/* =================================
-   FOOTER
-================================= */
-
-.footer {
-    position: relative;
-    z-index: 2;
-
-    width: 100%;
-
-    text-align: center;
-
-    margin-top: 25px;
-
-    color: rgba(255, 255, 255, 0.40);
-
-    font-size: 12px;
-}
-
-.footer a {
-    color: #dca51c;
-    text-decoration: none;
-}
-
-/* =================================
    LIVE COMMENTS
 ================================= */
 
 .live-comments {
     width: 100%;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
 .comments-box {
@@ -578,7 +430,7 @@ button:disabled {
 .comments-box h2 {
     text-align: center;
 
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 
     background:
         linear-gradient(
@@ -595,7 +447,7 @@ button:disabled {
 .comments-window {
     width: 100%;
 
-    height: 160px;
+    height: 145px;
 
     overflow: hidden;
 
@@ -607,7 +459,8 @@ button:disabled {
 
     flex-direction: column;
 
-    animation: scrollComments 60s linear infinite;
+    animation:
+        scrollComments 50s linear infinite;
 }
 
 .comment {
@@ -615,7 +468,7 @@ button:disabled {
 
     padding: 10px;
 
-    margin-bottom: 7px;
+    margin-bottom: 6px;
 
     border-radius: 12px;
 
@@ -633,7 +486,7 @@ button:disabled {
 }
 
 .comment p {
-    margin: 0 0 4px;
+    margin: 0 0 3px;
 
     color: rgba(255, 255, 255, 0.85);
 
@@ -641,7 +494,7 @@ button:disabled {
 }
 
 .comment small {
-    opacity: .6;
+    opacity: 0.6;
 
     font-size: 10px;
 }
@@ -659,200 +512,132 @@ button:disabled {
 }
 
 /* =================================
+   FOOTER
+================================= */
+
+.footer {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    text-align: center;
+
+    margin-top: 10px;
+
+    color: rgba(255, 255, 255, 0.40);
+
+    font-size: 12px;
+}
+
+.footer a {
+    color: #dca51c;
+    text-decoration: none;
+}
+
+/* =================================
    MOBILE
 ================================= */
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+
+    /*
+       FULL WIDTH BANNER
+       No black side gaps
+    */
+
+    .logo-section {
+        width: 100vw !important;
+
+        height: auto !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        display: block !important;
+
+        overflow: hidden !important;
+
+        line-height: 0;
+    }
+
+    .logo-section .logo {
+        width: 100vw !important;
+
+        max-width: 100vw !important;
+
+        height: auto !important;
+
+        max-height: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        display: block !important;
+
+        object-fit: contain !important;
+    }
 
     .container {
         width: 100%;
 
-        min-height: 100vh;
-
         padding: 8px 14px 20px;
     }
 
-    /*
-       IMPORTANT:
-       Your HTML uses the image itself
-       with class="logo".
-    */
-
-    .logo-section {
-        width: 100%;
-
-        height: 115px;
-
-        overflow: hidden;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        margin: 0;
-
-        padding: 0;
-    }
-
-    .logo-section .logo {
-        width: 100%;
-
-        height: 115px;
-
-        max-width: 100%;
-
-        max-height: 115px;
-
-        object-fit: contain;
-
-        display: block;
-
-        margin: 0;
-    }
-
     .header {
-        margin-top: 3px;
-
-        margin-bottom: 7px;
+        margin-top: 5px;
+        margin-bottom: 6px;
     }
 
     h1 {
         font-size: 27px;
-
-        margin-top: 3px;
-
         margin-bottom: 5px;
     }
 
     .subtitle {
         font-size: 14px;
-
         line-height: 1.35;
-
         margin-bottom: 8px;
     }
 
-    .content {
-        padding-top: 2px;
-
-        padding-bottom: 4px;
-    }
-
     .content h2 {
-        margin-top: 2px;
-
         margin-bottom: 6px;
     }
 
     .content p {
-        margin-top: 4px;
-
-        margin-bottom: 5px;
-
+        margin-bottom: 6px;
         line-height: 1.45;
     }
 
-    .card {
-        width: 100%;
-
-        padding: 18px 14px;
-
-        border-radius: 19px;
-    }
-
-    input,
-    select {
-        width: 100%;
-
-        height: 50px;
-
-        font-size: 14px;
-    }
-
-    button {
-        width: 100%;
-
-        min-height: 52px;
-
-        font-size: 15px;
-    }
-
     .start-btn {
-        width: 100%;
+        margin-top: 8px;
+        margin-bottom: 5px;
 
         padding: 15px 12px;
-
-        margin-top: 7px;
-
-        margin-bottom: 7px;
 
         font-size: 18px;
     }
 
-    .amount-grid {
-        width: 100%;
-
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 9px;
-    }
-
-    .amount-option {
-        padding: 14px 8px;
-
-        font-size: 14px;
-    }
-
-    /* COMMENTS */
-
-    .live-comments {
-        width: 100%;
-
-        margin-top: 5px;
-    }
-
     .comments-box {
         margin-top: 5px;
-
         padding: 9px;
-    }
-
-    .comments-box h2 {
-        margin-bottom: 6px;
     }
 
     .comments-window {
         height: 125px;
-
-        overflow: hidden;
-    }
-
-    .comments-track {
-        animation:
-            scrollComments 45s linear infinite;
     }
 
     .comment {
         padding: 8px 9px;
-
         margin-bottom: 5px;
-
-        border-radius: 10px;
     }
 
     .comment strong {
-        margin-bottom: 2px;
-
         font-size: 13px;
     }
 
     .comment p {
-        margin-bottom: 2px;
-
         font-size: 12px;
-
         line-height: 1.3;
     }
 
@@ -861,7 +646,7 @@ button:disabled {
     }
 
     .footer {
-        margin-top: 8px;
+        margin-top: 7px;
     }
 }
 
@@ -873,16 +658,7 @@ button:disabled {
 
     .container {
         padding-left: 12px;
-
         padding-right: 12px;
-    }
-
-    .logo-section {
-        height: 100px;
-    }
-
-    .logo-section .logo {
-        height: 100px;
     }
 
     h1 {
@@ -891,14 +667,6 @@ button:disabled {
 
     .subtitle {
         font-size: 13px;
-    }
-
-    .card {
-        padding: 18px 13px;
-    }
-
-    .amount-grid {
-        grid-template-columns: 1fr 1fr;
     }
 
     .comments-window {
