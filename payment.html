@@ -145,10 +145,11 @@ button:disabled {
     width: 100%;
     margin-top: 8px;
     background: #1D293B;
-    border-radius: 20px;
-    padding: 12px 9px;
+    border-radius: 20px 20px 0 0;
+    padding: 12px 9px 25px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+    min-height: calc(100vh - 300px);
 }
 
 .live-comments h3 {
@@ -180,38 +181,6 @@ button:disabled {
     padding: 9px 11px;
     margin: 0;
     flex-shrink: 0;
-}
-
-.comment strong {
-    display: block;
-    font-size: 13px;
-    color: #D4AF37;
-    margin-bottom: 2px;
-}
-
-.comment p {
-    margin: 0;
-    text-align: left;
-    font-size: 11px;
-    line-height: 1.4;
-    color: rgba(255,255,255,0.88);
-}
-
-.comment small {
-    display: block;
-    margin-top: 3px;
-    font-size: 9px;
-    color: rgba(255,255,255,0.48);
-}
-
-@keyframes commentsFlow {
-    from {
-        transform: translateY(0);
-    }
-
-    to {
-        transform: translateY(-50%);
-    }
 }
 
 /* SMALL PHONES */
