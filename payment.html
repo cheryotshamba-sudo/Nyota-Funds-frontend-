@@ -146,18 +146,18 @@ button:disabled {
     margin-top: 8px;
     background: #1D293B;
     border-radius: 20px 20px 0 0;
-    padding: 12px 9px 25px;
+    padding: 12px 9px 0;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0,0,0,0.45);
-    min-height: calc(100vh - 300px);
 }
 
+.comments-title,
 .live-comments h3 {
     text-align: center;
-    margin: 0 0 9px;
     font-size: 17px;
     font-weight: 700;
     color: #fff;
+    margin: 0 0 10px;
 }
 
 .comments-window {
@@ -174,15 +174,44 @@ button:disabled {
 }
 
 .comment {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
+    min-height: 80px;
+    background: #020617;
+    border-radius: 14px;
     border-left: 5px solid #D4AF37;
-    border-radius: 12px;
-    padding: 9px 11px;
-    margin: 0;
+    padding: 10px 12px;
     flex-shrink: 0;
 }
 
+.comment strong {
+    display: block;
+    font-size: 13px;
+    color: #D4AF37;
+    margin-bottom: 3px;
+}
+
+.comment p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.4;
+    color: rgba(255,255,255,0.88);
+}
+
+.comment small {
+    display: block;
+    margin-top: 3px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.48);
+}
+
+@keyframes commentsFlow {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-50%);
+    }
+}
 /* SMALL PHONES */
 
 @media (max-width: 360px) {
